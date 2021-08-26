@@ -1,0 +1,33 @@
+# For temp project init, common ignore for coding
+# reference from common code project, web
+node_modules
+.pnpm-store/
+.env
+
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# compiled output
+dist
+build
+out
+output
+
+# File system OS non-relevant,non content related
+.DS_Store
+*.DS_Store
+**/.DS_Store
+Desktop.ini
+Thumbs.db
+
+# Temp excel file
+~$*.xl*
+
+# For special editor
+.codestory.json
+# .vscode/*
+.idea/
+
+# For quick code, quick output SKIP-COMMIT - freq change
+*.dump.*
