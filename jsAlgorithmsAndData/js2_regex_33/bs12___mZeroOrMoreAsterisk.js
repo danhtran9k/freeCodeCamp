@@ -59,3 +59,7 @@ let chewieRegex = /Aa*/; // Change this line
 
 let result = chewieQuote.match(chewieRegex);
 console.log(result)
+
+let gPhrase = "gut feeling";
+let goRegex = /go*/g
+console.log(gPhrase.match(goRegex))

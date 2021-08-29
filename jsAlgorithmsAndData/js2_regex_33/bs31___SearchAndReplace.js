@@ -50,4 +50,20 @@ let result = str.replace(fixRegex, replaceText);
 
 */
 
+// import {checkRegexArr} from './a0_RegexSummary.js';
+// const arrStrObjKey = ["strTest", "correctTestResult", "strComment"];
+// const arrRegexObjKey = ["regexSyntax", "regexComment"];
+// const showMatching = true;
+// const arrRegexCheck = [
+//   [/(\w+)\s(\w+)\s(\w+)/, ""],
+// ];
+// const arrStrValue = [
+//   ["one two three", "three two one", ""],
+// ];
 
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+
+let result = str.replace(fixRegex, replaceText);
+console.log(result)
