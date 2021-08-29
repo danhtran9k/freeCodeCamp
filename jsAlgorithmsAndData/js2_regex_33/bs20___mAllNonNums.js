@@ -47,4 +47,8 @@ let result = movieName.match(noNumRegex).length;
 
 */
 
-
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; // Change this line
+let result = movieName.match(noNumRegex).length;
+console.log('movieName.match(noNumRegex):', movieName.match(noNumRegex))
+console.log('result:', result)

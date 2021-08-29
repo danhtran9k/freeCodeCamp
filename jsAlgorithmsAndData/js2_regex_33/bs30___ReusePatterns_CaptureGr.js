@@ -61,4 +61,55 @@ let result = reRegex.test(repeatNum);
 
 */
 
+let repeatNum = "42 42 42 42";
+let reRegex = /^(\d+) \1 \1$/; // Change this line
+let result = console.log("reRegex.test(repeatNum):", reRegex.test(repeatNum));
 
+let falseRepeatNum = "42 42 42 42";
+let wrongRegex = /(\d+) \1 \1/; // fail for 4+ group
+// let reRegex = /(\d+) \1{2}/; // wrong, does not pass anything
+// let reRegex = /(\d+) (\d+) (\d+)/; // wrong
+
+console.log(falseRepeatNum.match(wrongRegex));
+
+const arrStrObjKey = [["strTest", "correctTestResult", "comment"]];
+const arrRegexObjKey = [["regexSyntax", "comment"]];
+const arrStrTest = [
+  ["42 42 42", true, ""],
+  ["42 42 42 42", false, ""],
+  ["11 12 13", false, ""],
+  ["1 2 3", false, ""],
+  ["42 42", false, ""],
+  ["42 42 42 ", false, ""],
+
+  //   ["1 42 42 42", ""],
+  //   ["42 42 42 1", ""],
+];
+const arrRegexCheck = [
+  [/^(\d+) \1 \1$/, ""],
+  [/(\d+) \1 \1/, ""],
+  [/(\d+) \1{2}/, ""],
+  [/(\d+) (\d+) (\d+)/, ""],
+];
+const showMatchResult = false;
+
+let checkRegexSyntax = (arrStrTest, arrRegexCheck, showMatchResult) => {
+  arrRegexCheck.forEach((regexSyntax) => {
+    console.log("===============");
+    console.log(`➤ ${regexSyntax[0]} : ${regexSyntax[1]}`);
+    arrStrTest.forEach((str) => {
+      console.log(
+        ` ✍ [${str[0]}]- correct result: ${str[1]} ${
+          str[1] === regexSyntax[0].test(str[0])
+            ? "❎"
+            : str[1] === ""
+            ? "❔"
+            : "❌"
+        }`
+      );
+      showMatchResult ? console.log(str[0].match(regexSyntax[0])) : "";
+    });
+  });
+};
+
+checkRegexSyntax(arrStrTest, arrRegexCheck, showMatchResult);

@@ -8,7 +8,7 @@ https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/reg
 ==================================================================
 DESCRIPTION
 
-pecify Only the Lower Number of Matches
+Specify Only the Lower Number of Matches
 You can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes you only want to specify the lower number of patterns with no upper limit.
 
 To only specify the lower number of patterns, keep the first number followed by a comma.
@@ -54,4 +54,6 @@ let result = haRegex.test(haStr);
 
 */
 
-
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; // Change this line
+let result = haRegex.test(haStr);

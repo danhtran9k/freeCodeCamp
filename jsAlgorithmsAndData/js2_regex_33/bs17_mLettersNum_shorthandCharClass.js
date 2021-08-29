@@ -53,4 +53,10 @@ let result = quoteSample.match(alphabetRegexV2).length;
 
 */
 
+// \w equal [A-Za-z0-9_] include _
+
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g; // Change this line
+let result = quoteSample.match(alphabetRegexV2).length;
+console.log(result)
 
