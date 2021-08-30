@@ -209,4 +209,4 @@ const arrUserName = [
   ["J%4", false, ""],
 ];
 
-checkRegexArr(arrUserName, arrUserRegex, showMatching);
+// checkRegexArr(arrUserName, arrUserRegex, showMatching);
