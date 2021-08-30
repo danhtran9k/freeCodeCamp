@@ -73,4 +73,24 @@ let myNestedArray = [
 
 */
 
-
+let myNestedArray = [
+  // Only change code below this line
+  ['unshift', false, 1, 'complex',
+    [
+      'deep', 'shift', 6,
+      [
+        'mutate',
+        [
+          'iterate', 1.3849, 7, '8.4876', 'deepest'
+        ],
+        'splice', 'slice', 'deeper'
+      ],
+      'method'
+    ]
+  ],
+  ['loop', 'shift', 6, 7, 'method'],
+  ['concat', false, 'dd', 'spread', 'array'],
+  ['mutate', 1327.98, 'splice', 'slice', 'sada'],
+  ['iterate', 1.3849, 7, '8.4876', 'est']
+  // Only change code above this line
+];
