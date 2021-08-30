@@ -62,6 +62,7 @@ let result = userCheck.test(username);
 ==================================================================
 
 */
+// https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-restrict-possible-usernames/301363
 
 let arrRegexUser = [
   [/(?=\w{2,}|)^([a-z]+)(\d*)$/i, "my sol", ""],
