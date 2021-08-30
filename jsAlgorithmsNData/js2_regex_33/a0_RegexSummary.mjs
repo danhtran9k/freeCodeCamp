@@ -53,28 +53,10 @@ access capture groups in the replacement string with dollar signs ($)
 
 */
 
-// Reuse Patterns Using Capture Groups
+//  ➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰
+// let arrRegexObjKey = ["regexSyntax", "regexComment", "replace"];
+// let arrStrObjKey = ["strTest", "correctTestResult", "strComment"];
 
-const showMatching = false;
-const arrRegexObjKey = ["regexSyntax", "regexComment", "replace"];
-const arrRegexCheck = [
-  [/^(\d+) \1 \1$/, "", ""],
-  [/(\d+) \1 \1/, "", ""],
-  [/(\d+) \1{2}/, "", ""],
-  [/(\d+) (\d+) (\d+)/, "", ""],
-];
-const arrStrObjKey = ["strTest", "correctTestResult", "strComment"];
-const arrStrValue = [
-  ["42 42 42", true, ""],
-  ["42 42 42 42", false, ""],
-  ["11 12 13", false, ""],
-  ["1 2 3", false, ""],
-  ["42 42", false, ""],
-  ["42 42 42 ", false, ""],
-
-  ["1 42 42 42", ""],
-  ["42 42 42 1", ""],
-];
 // Combine arr key with arr value to create new arr obj key-value
 const arrsKeyValueCombine = (arrObjKey, arrObjValue) => {
   const arrConvert = [];
@@ -88,28 +70,7 @@ const arrsKeyValueCombine = (arrObjKey, arrObjValue) => {
   return arrConvert;
 };
 
-const checkRegexObj = (arrObjStr, arrRegex, showMatching) => {
-  arrRegex.forEach((regexEle) => {
-    logRegexInfo(regexEle.regexSyntax, regexEle.regexComment);
-    arrObjStr.forEach((strEle) => {
-      logTestResult(
-        strEle.strTest,
-        regexEle.regexSyntax,
-        strEle.correctTestResult
-      );
-      logMatchResult(showMatching, strEle.strTest, regexEle.regexSyntax);
-    });
-  });
-};
-
-const arrObjStr = arrsKeyValueCombine(arrStrObjKey, arrStrValue);
-const arrRegex = arrsKeyValueCombine(arrRegexObjKey, arrRegexCheck);
-// console.log(arrsKeyValueCombine(arrStrObjKey, arrStrValue));
-// console.log(arrsKeyValueCombine(arrRegexObjKey, arrRegexCheck));
-
-// ==================================================
-// Doing directly with array input
-
+// Check matching with array input
 const checkRegexArr = (arrStr, arrRegex, showMatching) => {
   arrRegex.forEach((regexSyntax) => {
     logRegexInfo(regexSyntax[0], regexSyntax[1]);
@@ -120,6 +81,7 @@ const checkRegexArr = (arrStr, arrRegex, showMatching) => {
   });
 };
 
+// Check replace with array input
 const checkRegexReplace = (arrStr, arrRegex, showMatching) => {
   arrRegex.forEach((regexSyntax) => {
     logRegexReplaceInfo(regexSyntax[0], regexSyntax[2], regexSyntax[1]);
@@ -130,12 +92,10 @@ const checkRegexReplace = (arrStr, arrRegex, showMatching) => {
   });
 };
 
-// ==================================================
-
+// ➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰
+//  Console log function
 const matchMethod = (str, regex) => str.match(regex);
 const testMethod = (str, regex) => regex.test(str);
-
-//  Console log function
 
 const logRegexInfo = (syntax, syntaxComment) => {
   console.log("➿➿➿➿➿➿➿➿➿➿➿");
@@ -157,7 +117,7 @@ const logTestResult = (str, regex, correctResult) => {
   console.log(
     ` ✍ [${str}] - correct result: ${correctResult} ${
       regex.test(str) === correctResult
-        ? "❎"
+        ? "✅"
         : correctResult === ""
         ? "❔"
         : "❌"
@@ -168,45 +128,106 @@ const logReplaceCheck = (str, regex, replaceStr, correctResult) =>
   console.log(
     ` ✍ [${str}] - correct result: ${correctResult} ${
       str.replace(regex, replaceStr) === correctResult
-        ? "❎"
+        ? "✅"
         : correctResult === ""
         ? "❔"
         : "❌"
     }`
   );
 
-// export { checkRegexObj, checkRegexArr, checkRegexReplace };
-// checkRegexObj(arrObjStr, arrRegex, showMatching);
+// ➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰
+// for reference only
+// Check matching with object input, need combine-convert step
+
+const checkRegexObj = (arrObjStr, arrRegex, showMatching) => {
+  arrRegex.forEach((regexEle) => {
+    logRegexInfo(regexEle.regexSyntax, regexEle.regexComment);
+    arrObjStr.forEach((strEle) => {
+      logTestResult(
+        strEle.strTest,
+        regexEle.regexSyntax,
+        strEle.correctTestResult
+      );
+      logMatchResult(showMatching, strEle.strTest, regexEle.regexSyntax);
+    });
+  });
+};
+
+// ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+// Backup test-case directly
+// keyArr for array combine
+
+// let showMatching = false;
+// let arrRegexKey = ["regexSyntax", "regexComment", "replace"];
+// let arrStrKey = ["strTest", "correctTestResult", "strComment"];
+
+// ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+// Remove whitespace testcase
+
+// let arrRegexWhitesp = [
+//   [/^(\s+)(\S.*\S)(\s+)$/, "my sol", "$2"],
+//   [/^\s+|\s+$/g, "fcc sol", ""],
+// ];
+// let arrStrWhites = [["   Hello, World!  ", "Hello, World!", ""]];
+
+// ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+// Username testcase
+
+// let arrRegexUser = [
+//   [/(?=\w{2,}|)^([a-z]+)(\d*)$/i, "my sol", ""],
+//   [/^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i, "fcc sol 1", ""],
+//   [/^[a-z]([0-9]{2,}|[a-z]+\d*)$/i, "fcc sol 2", ""],
+// ];
+// let arrStrUser = [
+//   ["JACK", true, ""],
+//   ["J", false, ""],
+//   ["Jo", true, ""],
+//   ["Oceans11", true, ""],
+//   ["RegexGuru", true, ""],
+//   ["007", false, ""],
+//   ["9", false, ""],
+//   ["A1", false, ""],
+//   ["BadUs3rnam3", false, ""],
+//   ["Z97", true, ""],
+//   ["Jc57bT3", false, ""],
+//   ["AB1", true, ""],
+//   ["J%4", false, ""],
+// ];
+
+// ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+// reuse pattern testcase
+
+// let arrRegexReuse = [
+//   [/^(\d+) \1 \1$/, "", ""],
+//   [/(\d+) \1 \1/, "", ""],
+//   [/(\d+) \1{2}/, "", ""],
+//   [/(\d+) (\d+) (\d+)/, "", ""],
+// ];
+// let arrStrReuse = [
+//   ["42 42 42", true, ""],
+//   ["42 42 42 42", false, ""],
+//   ["11 12 13", false, ""],
+//   ["1 2 3", false, ""],
+//   ["42 42", false, ""],
+//   ["42 42 42 ", false, ""],
+
+//   ["1 42 42 42", ""],
+//   ["42 42 42 1", ""],
+// ];
+
+// ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+// ➿ test-run func combine array key and value ➿
+// console.log(arrsKeyValueCombine(arrStrObjKey, arrStrValue));
+// console.log(arrsKeyValueCombine(arrRegexObjKey, arrRegexCheck));
+// ➿ test-run func match regex using object ➿
+// checkRegexObj(
+//   arrsKeyValueCombine(arrStrObjKey, arrStrValue),
+//   arrsKeyValueCombine(arrRegexObjKey, arrRegexCheck),
+//   showMatching
+// );
+// ➿ test-run func match regex using array input directly ➿
 // checkRegexArr(arrStrValue, arrRegexCheck, showMatching);
-
-// ➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰➰
-const arrRegexTestt = [
-  [/^(\s+)(\S.*\S)(\s+)$/, "my sol", "$2"],
-  [/^\s+|\s+$/g, "fcc sol", ""],
-];
-const arrStrTestt = [["   Hello, World!  ", "Hello, World!", ""]];
 // checkRegexReplace(arrStrTestt, arrRegexTestt, showMatching);
-// ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
-// ONE or MORE CRIME
-const arrUserRegex = [
-  [/(?=\w{2,}|)^([a-z]+)(\d*)$/i, "my sol", ""],
-  [/^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i, "fcc sol 1", ""],
-  [/^[a-z]([0-9]{2,}|[a-z]+\d*)$/i, "fcc sol 2", ""],
-];
-const arrUserName = [
-  ["JACK", true, ""],
-  ["J", false, ""],
-  ["Jo", true, ""],
-  ["Oceans11", true, ""],
-  ["RegexGuru", true, ""],
-  ["007", false, ""],
-  ["9", false, ""],
-  ["A1", false, ""],
-  ["BadUs3rnam3", false, ""],
-  ["Z97", true, ""],
-  ["Jc57bT3", false, ""],
-  ["AB1", true, ""],
-  ["J%4", false, ""],
-];
 
-// checkRegexArr(arrUserName, arrUserRegex, showMatching);
+// Export - run-test directly
+export { checkRegexObj, checkRegexArr, checkRegexReplace, arrsKeyValueCombine };

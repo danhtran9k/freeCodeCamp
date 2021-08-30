@@ -37,21 +37,16 @@ let result = hello; // Change this line
 
 */
 
-import {checkRegexReplace} from './a0_RegexSummary.mjs';
-// import * as regexReplace from "./a0_RegexSummary.mjs";
-// const regexReplace = require('./a0_RegexSummary.js');
-
-const showMatching2 = true;
-// const arrRegexObjKey = ["regexSyntax", "regexComment", "replace"];
-const arrRegex2 = [
+let arrRegexRmSpace = [
   [/^(\s+)(\S.*\S)(\s+)$/, "my sol", "$2"],
   [/^\s+|\s+$/g, "fcc sol", ""],
 ];
-// const arrStrObjKey = ["strTest", "correctTestResult", "strComment"];
-const arrStr2 = [["   Hello, World!  ", "Hello, World!", ""]];
+let arrStrRmSpace = [["   Hello, World!  ", "Hello, World!", ""]];
+const showMatching = true;
 
-let hello = "   Hello, World!  ";
-let wsRegex = /change/; // Change this line
-let result = hello; // Change this line
+import { checkRegexReplace } from "./a0_RegexSummary.mjs";
+// import * as regexReplace from "./a0_RegexSummary.mjs";
+// const regexReplace = require('./a0_RegexSummary.js');
+
+checkRegexReplace(arrStrRmSpace, arrRegexRmSpace, showMatching);
 // regexReplace.checkRegexReplace(arrStr, arrRegex, showMatching);
-// checkRegexReplace(arrStr2, arrRegex2, showMatching2)

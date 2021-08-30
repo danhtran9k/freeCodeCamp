@@ -1,0 +1,14 @@
+{
+  "name": "freecodetest",
+  "version": "1.0.0",
+  "description": "demo test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "dtester",
+  "license": "ISC",
+   "type": "module"
+
+}
+

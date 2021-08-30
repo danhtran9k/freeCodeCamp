@@ -61,9 +61,14 @@ let result = str.replace(fixRegex, replaceText);
 //   ["one two three", "three two one", ""],
 // ];
 
-let str = "one two three";
-let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
-let replaceText = "$3 $2 $1"; // Change this line
 
-let result = str.replace(fixRegex, replaceText);
-console.log(result)
+let arrRegexUser = [
+    [/(\w+)\s(\w+)\s(\w+)/, "", "$3 $2 $1"]
+];
+let arrStrUser = [
+    ["one two three", "three two one", ""]
+];
+const showMatching = false;
+import { checkRegexReplace } from "./a0_RegexSummary.mjs";
+
+checkRegexReplace(arrStrUser, arrRegexUser, showMatching);
