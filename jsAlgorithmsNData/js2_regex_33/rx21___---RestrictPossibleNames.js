@@ -63,4 +63,28 @@ let result = userCheck.test(username);
 
 */
 
+let arrRegexUser = [
+  [/(?=\w{2,}|)^([a-z]+)(\d*)$/i, "my sol", ""],
+  [/^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i, "fcc sol 1", ""],
+  [/^[a-z]([0-9]{2,}|[a-z]+\d*)$/i, "fcc sol 2", ""],
+];
+let arrStrUser = [
+  ["JACK", true, ""],
+  ["J", false, ""],
+  ["Jo", true, ""],
+  ["Oceans11", true, ""],
+  ["RegexGuru", true, ""],
+  ["007", false, ""],
+  ["9", false, ""],
+  ["A1", false, ""],
+  ["BadUs3rnam3", false, ""],
+  ["Z97", true, ""],
+  ["Jc57bT3", false, ""],
+  ["AB1", true, ""],
+  ["J%4", false, ""],
+  ["JackOfAllTrades", true, ""],
+];
 
+const showMatching = false;
+import {checkRegexArr} from './a0_RegexSummary.mjs';
+checkRegexArr(arrStrUser, arrRegexUser, showMatching);
