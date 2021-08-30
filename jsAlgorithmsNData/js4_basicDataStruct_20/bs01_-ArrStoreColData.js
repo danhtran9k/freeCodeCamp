@@ -63,4 +63,4 @@ let yourArray; // Change this line
 
 */
 
-
+let yourArray =  ['one', 2, true, undefined, null]; // Change this line

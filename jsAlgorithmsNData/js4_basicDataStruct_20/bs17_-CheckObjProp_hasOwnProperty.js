@@ -70,4 +70,42 @@ console.log(isEveryoneHere(users));
 
 */
 
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
 
+const namesCheck = ["Alan", "Jeff", "Sarah", "Ryan"]
+
+function isEveryoneHere(userObj) {
+  // Only change code below this line
+  let loopCount = 0
+  for (let names of namesCheck) {
+    loopCount++;
+    console.log(`Count loop: ${loopCount}`);
+    if (!(names in userObj)) {
+      console.log(`Total loop: ${loopCount}`);
+      return false;
+    }
+  }
+
+  console.log(`Total loop: ${loopCount}`);
+  return true;
+  // Only change code above this line
+}
+
+console.log(isEveryoneHere(users));
