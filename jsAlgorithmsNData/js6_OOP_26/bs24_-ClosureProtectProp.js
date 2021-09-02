@@ -51,4 +51,15 @@ function Bird() {
 
 */
 
+function Bird() {
+  let weight = 15;
+  // this.weight will give public access
+  this.getWeight = function () {
+    return weight;
+    // return this.weight will return undefined 
+  }
+}
 
+let ducky = new Bird();
+console.log('ducky weight:', ducky.getWeight())
+console.log(' ducky.weight direct access:', ducky.weight)

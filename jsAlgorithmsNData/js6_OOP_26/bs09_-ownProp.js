@@ -58,4 +58,21 @@ let ownProps = [];
 
 */
 
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
 
+let canary = new Bird("Tweety");
+// console.log(canary)
+let ownProps = [];
+// Only change code below this line
+// hasOwnProperty check for the property of the Class of obj itself
+// duck may have some specific prop that Class Bird do not have
+for (let property in canary) {
+  if(canary.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+}
+
+console.log(ownProps);

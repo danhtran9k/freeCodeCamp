@@ -58,3 +58,20 @@ let beagle = new Dog();
 */
 
 
+function Animal() { }
+function Bird() { }
+function Dog() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
+// Only change code below this line
+// reset after created, or reassign to be correct
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+
+let duck = new Bird();
+let beagle = new Dog();
+
+console.log('duck.constructor:', duck.constructor)
+console.log('beagle.constructor:', beagle.constructor)
