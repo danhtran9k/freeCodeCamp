@@ -40,7 +40,16 @@ let result = myRegex; // Change this line
 
 */
 
-let myString = "Hello, World!";
-let myRegex = /Hello/;
-let result = myRegex.test(myString); // Change this line
+const myString = "Hello, World!";
+const myRegex = /or/i;
+let searchStr = "Or"
+let testRegex = "/" + searchStr + "/i"
+// let result = testRegex.test(myString); // Change this line
+// console.log(result)
+let re = new RegExp(`${searchStr}`, 'gi');
+let result = re.test(myString)
+console.log(re)
+console.log('result:', result)
+
+
 

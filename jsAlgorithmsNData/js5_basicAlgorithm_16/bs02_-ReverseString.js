@@ -39,4 +39,15 @@ reverseString("hello");
 
 */
 
+function reverseString(str) {
+  let reverseStr = "";
+  for (let c of str) {
+    reverseStr = c + reverseStr
+  }
+  return reverseStr;
+}
+
+reverseString("hello");
+console.log('reverseString("hello"):', reverseString("hello"))
+
 

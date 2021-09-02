@@ -43,4 +43,21 @@ repeatStringNumTimes("abc", 3);
 
 */
 
+function repeatStringNumTimes(str, num) {
+  return num <= 0
+    ? (str = "")
+    : (str = str + repeatStringNumTimes(str, num - 1));
+}
 
+// function repeatStringNumTimes(str, num) {
+//   var accumulatedStr = "";
+
+//   while (num > 0) {
+//     accumulatedStr += str;
+//     num--;
+//   }
+
+//   return accumulatedStr;
+// }
+
+repeatStringNumTimes("abc", 3);

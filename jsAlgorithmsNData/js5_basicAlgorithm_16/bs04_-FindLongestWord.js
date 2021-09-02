@@ -41,4 +41,16 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
 */
 
+function findLongestWordLength(str) {
+  return str
+    .split(" ")
+    .reduce((longestLength, curr) => Math.max(longestLength, curr.length), 0);
+}
 
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+console.log(
+  findLongestWordLength("The quick brown fox jumped over the lazy dog")
+);
