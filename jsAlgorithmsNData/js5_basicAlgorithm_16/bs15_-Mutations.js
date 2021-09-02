@@ -59,4 +59,48 @@ mutation(["hello", "hey"]);
 
 */
 
+// function mutation(arr) {
+//   let arrTemp = arr[0].toLowerCase();
+//   let strSearch = arr[1].toLowerCase();
+//   // could create a regex str search here
+//   for (let i = 0; i < strSearch.length; i++) {
+//     if (arrTemp.indexOf(strSearch[i]) == -1) {
+//       return false;
+//     }
+//     // mutation(["Mary", "Aarmy"]) will return all with this else
+//     // else {
+//     //   arrTemp =
+//     //     arrTemp.substring(0, indexSearch) + arrTemp.substring(indexSearch + 1);
+//     // }
+//   }
+//   return true;
+// }
 
+
+// console.log(mutation(["hello", "hey"]));
+console.log(mutation(["hello", "llo"]));
+
+// mutation(["Mary", "Aarmy"])
+// should return true - cannot use slice and search here
+
+// sol 2 - fcc
+// convert string to arr and use every
+// function mutation(arr) {
+//   return arr[1]
+//     .toLowerCase()
+//     .split("")
+//     .every(function(letter) {
+//       return arr[0].toLowerCase().indexOf(letter) != -1;
+//     });
+// }
+
+// Sol 3 - fcc
+// function mutation([ target, test ], i = 0) {
+//   target = target.toLowerCase();
+//   test = test.toLowerCase();
+//   return i >= test.length
+//     ? true
+//     : !target.includes(test[i])
+//       ? false
+//       : mutation([ target, test ], i + 1);
+// }

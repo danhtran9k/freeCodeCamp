@@ -40,3 +40,10 @@ bouncer([7, "ate", "", false, 9]);
 */
 
 
+function bouncer(arr) {
+  return arr.filter(ele => !!ele);
+}
+bouncer([7, "ate", "", false, 9]);
+// Note that both below return true, !! convert ele to Boolean value
+console.log(null === true)
+console.log(null === false)

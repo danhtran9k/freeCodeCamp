@@ -41,4 +41,23 @@ chunkArrayInGroups(["a", "b", "c", "d"], 2);
 
 */
 
+function chunkArrayInGroups(arr, size) {
+  // console.log("🚀 ~ file: bs16_-ChunkyMonkey.js ~ line 56 ~ chunkArrayInGroups ~ arr.slice(arr.length - size)", arr.slice(arr.length - size))
+  // console.log("🚀 ~ file: bs16_-ChunkyMonkey.js ~ line 56 ~ chunkArrayInGroups ~  arr.slice(0, arr.length - size)",  arr.slice(0, arr.length - size))
+  return arr.length <= size
+    ? [arr]
+    : [arr.slice(0, size)].concat(chunkArrayInGroups(arr.slice(size), size));
+}
 
+// sol2
+// function chunkArrayInGroups(arr, size) {
+//   let newArr = [];
+//   for (let i = 0; i < arr.length; i += size) {
+
+//     newArr.push(arr.slice(i, i + size));
+//   }
+//   return newArr;
+// }
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2));

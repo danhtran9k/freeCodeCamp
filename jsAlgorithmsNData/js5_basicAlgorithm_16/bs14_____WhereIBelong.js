@@ -65,4 +65,35 @@ getIndexToIns([40, 60], 50);
 
 */
 
+// basic sol with loop
+// function getIndexToIns(arr, num) {
+//   arr.sort((a, b) => a - b);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] >= num)
+//       return i;
+//   }
+//   return arr.length;
+// }
 
+// es6 loop style
+
+function getIndexToIns(arr, num) {
+  let index = arr
+    .sort((curr, next) => curr - next)
+    .findIndex((currNum) => num <= currNum);
+  return index === -1 ? arr.length : index;
+}
+
+// a little tricky
+
+// function getIndexToIns(arr, num) {
+//   return arr
+//     .concat(num)
+//     .sort((a, b) => a - b)
+//     .indexOf(num);
+// }
+
+getIndexToIns([1, 3, 4], 2);
+getIndexToIns([40, 60], 500);
+getIndexToIns([5, 3, 20, 3], 5);
+getIndexToIns([2, 20, 10], 19);
