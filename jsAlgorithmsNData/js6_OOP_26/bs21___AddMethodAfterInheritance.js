@@ -72,4 +72,33 @@ let beagle = new Dog();
 
 */
 
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
 
+function Dog() { }
+
+// Only change code below this line
+
+Dog.prototype = Object.create(Animal.prototype);
+// does not work like this
+// Dog.prototype ={
+//   constructor : Dog,
+//   bark(){
+//     console.log("Woof!")
+//   }
+// }
+
+// Correct sol
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function () {
+  console.log("Woof!");
+};
+// Only change code above this line
+
+let beagle = new Dog();
+
+console.log('beagle.constructor:', beagle.constructor)
+beagle.bark()
+beagle.eat()
+console.log('beagle instanceof Animal:', beagle instanceof Animal)
+console.log('beagle instanceof Dog:', beagle instanceof Dog)

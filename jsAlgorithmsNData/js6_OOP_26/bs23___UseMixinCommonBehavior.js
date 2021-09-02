@@ -70,4 +70,20 @@ let boat = {
 
 */
 
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
 
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+let glideMixin = function (obj){
+  obj.glide = function (){
+    console.log("Mixin example");
+  }
+}
+// Only change code below this line
+glideMixin(bird);
+glideMixin(boat);

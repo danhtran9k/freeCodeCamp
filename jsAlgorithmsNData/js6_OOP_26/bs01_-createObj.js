@@ -45,4 +45,7 @@ let dog = {
 
 */
 
-
+let dog = {
+  name: "Aflac",
+  numLegs: 2
+};

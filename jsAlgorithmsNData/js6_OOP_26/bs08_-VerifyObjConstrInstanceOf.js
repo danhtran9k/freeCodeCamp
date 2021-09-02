@@ -55,4 +55,10 @@ function House(numBedrooms) {
 
 */
 
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
 
+let myHouse = new House(10)
+console.log(myHouse instanceof House);
+// Only change code below this line

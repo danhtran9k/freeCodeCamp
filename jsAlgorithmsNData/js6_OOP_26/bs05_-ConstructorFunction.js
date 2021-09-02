@@ -42,5 +42,9 @@ SETUP
 ==================================================================
 
 */
-
+function Dog() {
+  this.name = "dogName";
+  this.color = "dogColor";
+  this.numLegs = 8;
+}
 

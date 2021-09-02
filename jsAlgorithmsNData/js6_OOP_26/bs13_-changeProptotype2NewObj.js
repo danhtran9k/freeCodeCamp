@@ -61,4 +61,23 @@ Dog.prototype = {
 
 */
 
+function Dog(name) {
+  this.name = name;
+}
 
+Dog.prototype = {
+  // Only change code below this line
+  numLegs: 88, 
+  eat() {
+    console.log("grr grrrrr");
+  },
+  // es6 short for method vs old function method
+  describe: function() {
+    console.log("I have " + this.numLegs + " legs!!!");
+  }
+};
+
+let scubidoo = new Dog("Scobidoo")
+console.log(scubidoo)
+scubidoo.eat()
+scubidoo.describe()
