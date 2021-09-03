@@ -50,4 +50,17 @@ sliceArray(inputAnim, 1, 3);
 
 */
 
-
+function sliceArray(anim, beginSlice, endSlice) {
+  // Only change code below this line
+  // impliment Slice Method
+  // let newArr = [];
+  // for (let index = beginSlice; index < endSlice; index++) {
+  //   newArr.push(anim[index]);
+  // }
+  // return newArr;
+  // Use Slice directly
+  return anim.slice(beginSlice, endSlice);
+  // Only change code above this line
+}
+var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+sliceArray(inputAnim, 1, 3);

@@ -52,4 +52,13 @@ splitify("Hello World,I-am code");
 
 */
 
+function splitify(str) {
+  // Only change code below this line
+  let regexSplit = /\W/
+  return str.split(regexSplit);
+  // Only change code above this line
+}
+splitify("Hello World,I-am code");
+console.log(splitify("Hello World,I-am code"))
 
+// console.log("How9are7you2today".split(/\d/))

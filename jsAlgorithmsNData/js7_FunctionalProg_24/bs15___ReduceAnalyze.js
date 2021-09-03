@@ -3,25 +3,21 @@
 ==================================================================
 LINK
 
-https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-the-map-method-to-extract-data-from-an-array
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-the-reduce-method-to-analyze-data
 
 ==================================================================
 DESCRIPTION
 
-Use the map Method to Extract Data from an Array
-So far we have learned to use pure functions to avoid side effects in a program. Also, we have seen the value in having a function only depend on its input arguments.
+Use the reduce Method to Analyze Data
+Array.prototype.reduce(), or simply reduce(), is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the reduce method.
 
-This is only the beginning. As its name suggests, functional programming is centered around a theory of functions.
+The reduce method allows for more general forms of array processing, and it's possible to show that both filter and map can be derived as special applications of reduce. The reduce method iterates over each item in an array and returns a single value (i.e. string, number, object, array). This is achieved via a callback function that is called on each iteration.
 
-It would make sense to be able to pass them as arguments to other functions, and return a function from another function. Functions are considered first class objects in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.
+The callback function accepts four arguments. The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration, the second is the current element being processed, the third is the index of that element and the fourth is the array upon which reduce is called.
 
-Let's start with some simple array functions, which are methods on the array object prototype. In this exercise we are looking at Array.prototype.map(), or more simply map.
+In addition to the callback function, reduce has an additional parameter which takes an initial value for the accumulator. If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
 
-The map method iterates over each item in an array and returns a new array containing the results of calling the callback function on each element. It does this without mutating the original array.
-
-When the callback is used, it is passed three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the map method was called.
-
-See below for an example using the map method on the users array to return a new array containing only the names of the users as elements. For simplicity, the example only uses the first argument of the callback.
+See below for an example using reduce on the users array to return the sum of all the users' ages. For simplicity, the example only uses the first and second arguments.
 
 const users = [
   { name: 'John', age: 34 },
@@ -29,11 +25,26 @@ const users = [
   { name: 'camperCat', age: 10 }
 ];
 
-const names = users.map(user => user.name);
-console.log(names);
-The console would display the value [ 'John', 'Amy', 'camperCat' ].
+const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
+console.log(sumOfAges);
+The console would display the value 64.
 
-The watchList array holds objects with information on several movies. Use map on watchList to assign a new array of objects to the ratings variable. Each movie in the new array should have only a title key with the name of the film, and a rating key with the IMDB rating. The code in the editor currently uses a for loop to do this, so you should replace the loop functionality with your map expression.
+In another example, see how an object can be returned containing the names of the users as properties with their ages as values.
+
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+const usersObj = users.reduce((obj, user) => {
+  obj[user.name] = user.age;
+  return obj;
+}, {});
+console.log(usersObj);
+The console would display the value { John: 34, Amy: 20, camperCat: 10 }.
+
+The variable watchList holds an array of objects with information on several movies. Use reduce to find the average IMDB rating of the movies directed by Christopher Nolan. Recall from prior challenges how to filter data and map over it to pull what you need. You may need to create other variables, and return the average rating from getRating function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
 
 
 
@@ -42,31 +53,34 @@ TESTCASE
 
 The watchList variable should not change.
 
+Your code should use the reduce method.
+
+The getRating(watchList) should equal 8.675.
+
 Your code should not use a for loop.
 
-Your code should use the map method.
-
-ratings should equal [{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}].
+Your code should return the correct output after modifying the watchList object.
 
 ==================================================================
 SETUP
 
-// Only change code below this line
+// The global variable
 
-var ratings = [];
-for(var i=0; i < watchList.length; i++){
-  ratings.push({title: watchList[i]["Title"],  rating: watchList[i]["imdbRating"]});
+
+function getRating(watchList){
+  // Only change code below this line
+  var averageRating;
+
+
+  // Only change code above this line
+  return averageRating;
 }
-
-// Only change code above this line
-
-console.log(JSON.stringify(ratings));
+console.log(getRating(watchList));
 
 ==================================================================
 
 */
 
-// The global variable
 var watchList = [
   {
     Title: "Inception",
@@ -187,16 +201,53 @@ var watchList = [
   },
 ];
 
-// const ratings = watchList.map((movie) => ({
-//   title: movie["Title"],
-//   rating: movie["imdbRating"],
-// }));
-// Sol2 - object destructuring
-const ratings = watchList.map(({ Title: title, imdbRating: rating }) => ({
-  title,
-  rating,
-}));
-// Only change code above this line
-
-console.log(ratings)
-console.log(JSON.stringify(ratings));
+// The global variable
+// my sol
+// const calAverage = ({ sum, count }) => sum / count;
+// function getRating(watchList) {
+//   return calAverage(
+//     watchList.reduce(
+//       (objSum, { Director: director, imdbRating: rating }) => {
+//         if (director == "Christopher Nolan") {
+//           objSum.sum += Number(rating);
+//           objSum.count++;
+//           return objSum;
+//         }
+//         return objSum;
+//       },
+//       { sum: 0, count: 0 }
+//     )
+//   );
+// }
+// fcc sol
+function getRating(watchList) {
+  // Add your code below this line
+  var count = 0;
+  var averageRating =
+    watchList.reduce((sum, movie) => {
+      if (movie.Director == "Christopher Nolan") {
+        count += 1;
+        return sum + parseFloat(movie.imdbRating);
+      }
+      return sum;
+    }, 0) / count;
+  // Add your code above this line
+  return averageRating;
+}
+// Reduce with return last index switch !!!
+// function getRating(watchList) {
+//   // Add your code below this line
+//   const averageRating = watchList.reduce(
+//     ({ sum, count }, { Director: dir, imdbRating: rating }, idx, arr) => {
+//       if (dir === "Christopher Nolan") {
+//         count++;
+//         sum += Number(rating);
+//       }
+//       return idx === arr.length - 1 ? sum / count : { sum, count };
+//     },
+//     { sum: 0, count: 0 }
+//   );
+//   // Add your code above this line
+//   return averageRating;
+// }
+console.log(getRating(watchList));

@@ -52,3 +52,14 @@ sentensify("May-the-force-be-with-you");
 */
 
 
+function sentensify(str) {
+  // Only change code below this line
+  let regexSplit = /\W/
+  return str.split(regexSplit).join(" ")
+
+  // Only change code above this line
+}
+sentensify("May-the-force-be-with-you");
+console.log(sentensify("May-the-force-be-with-you"))
+let strTest = "There,has,been,an,awakening"
+console.log(sentensify(strTest))
