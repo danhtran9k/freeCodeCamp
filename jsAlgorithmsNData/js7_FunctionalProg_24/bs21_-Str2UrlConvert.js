@@ -52,4 +52,9 @@ function urlSlug(title) {
 
 */
 
-
+let str2UrlTest = "Hold The Door";
+function urlSlug(title) {
+  return title.trim().toLowerCase().split(" ").join("-");
+}
+console.log(str2UrlTest);
+console.log(urlSlug(str2UrlTest));

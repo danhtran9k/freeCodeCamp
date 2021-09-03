@@ -60,3 +60,18 @@ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 */
 
 
+// 
+
+// Cannot return a > b because false = 0, not -1, so a,b does not change
+// cannot return a-b for alphabetical case because return NaN for 2 string, but 2 string can be compare a>b
+// The most safe case is if return -1, 1, which can be use for both number and alphabetical value
+
+function alphabeticalOrder(arr) {
+  // Only change code below this line
+  return arr.sort(function(a, b) {
+    return a === b ? 0 : a < b ? -1 : 1;
+  });
+  // Only change code above this line
+}
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+console.log('alphabeticalOrder(["a", "d", "c", "a", "z", "g"]):', alphabeticalOrder(["a", "d", "c", "a", "z", "g"]))
