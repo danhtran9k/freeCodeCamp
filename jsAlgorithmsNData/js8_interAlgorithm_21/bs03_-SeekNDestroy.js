@@ -41,4 +41,9 @@ destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 */
 
+function destroyer(arr) {
+  let [arrTarget, ...target] = arguments;
+  return arrTarget.filter(ele => !target.includes(ele));
+}
 
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

@@ -46,5 +46,17 @@ translatePigLatin("consonant");
 ==================================================================
 
 */
+function translatePigLatin(str) {
+  let vowelRegex = /[aeiou]/;
+  let indexFirstVowel = str.indexOf(str.match(vowelRegex));
+  return indexFirstVowel === 0
+    ? str + "way"
+    : indexFirstVowel === -1
+    ? str + "ay"
+    : str.slice(indexFirstVowel) + str.slice(0, indexFirstVowel) + "ay";
+}
 
-
+// translatePigLatin("consonant");
+// console.log(translatePigLatin("consonant"))
+translatePigLatin("rhythm");
+console.log(translatePigLatin("rhythm"));

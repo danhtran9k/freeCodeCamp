@@ -40,3 +40,11 @@ spinalCase('This Is Spinal Tap');
 */
 
 
+function spinalCase(str) {
+  return str;
+}
+
+const strTest = [
+  
+]
+spinalCase('This Is Spinal Tap');

@@ -59,5 +59,27 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 ==================================================================
 
 */
+// Union set and exclude
+function diffArray(arr1, arr2) {
+  return arr1
+    .concat(arr2)
+    .filter((ele) => !(arr1.includes(ele) && arr2.includes(ele)));
+}
 
+// same idea but slower
+// function diffArray(arr1, arr2) {
+//   const commonArr = arr1.filter(ele => arr2.includes(ele))
+//   const diffArr = (arr,common) => arr.filter(ele => !common.includes(ele))
+//   return diffArr(arr1,commonArr).concat(diffArr(arr2, commonArr))
+// }
 
+// fcc sol
+// same idea but different write
+// function diffArray(arr1, arr2) {
+//   const excludeArr = (arr, arrExclude) =>
+//     arr.filter((ele) => !arrExclude.includes(ele));
+//   return excludeArr(arr1, arr2).concat(excludeArr(arr2, arr1));
+// }
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
