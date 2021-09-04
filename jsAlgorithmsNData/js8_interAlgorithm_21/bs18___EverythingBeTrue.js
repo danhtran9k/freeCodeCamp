@@ -53,4 +53,33 @@ truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "ma
 
 */
 
+function truthCheck(collection, pre) {
+  // return collection
+  //   .map((item) => item.hasOwnProperty(pre) && !!item[pre])
+  //   .reduce((a, b) => a && b);
+  // return collection.every((item) => item.hasOwnProperty(pre) && !!item[pre]);
+  return collection.every((item) => item[pre]);
+}
 
+console.log(
+  truthCheck(
+    [
+      { user: "Tinky-Winky", sex: "male" },
+      { user: "Dipsy", sex: "male" },
+      { user: "Laa-Laa", sex: "female" },
+      { user: "Po", sex: "female" },
+    ],
+    "sex"
+  )
+);
+truthCheck(
+  [
+    { user: "Tinky-Winky", sex: "male" },
+    { user: "Dipsy", sex: "male" },
+    { user: "Laa-Laa", sex: "female" },
+    { user: "Po", sex: "female" },
+  ],
+  "sex"
+);
+
+console.log('Boolean(undefined):', Boolean(undefined))

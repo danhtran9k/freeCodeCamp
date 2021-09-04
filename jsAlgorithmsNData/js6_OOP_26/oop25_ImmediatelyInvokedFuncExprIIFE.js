@@ -44,5 +44,6 @@ makeNest();
 
 (function () {
   console.log("A cozy nest is ready");
-})()
+})();
 
+(() => console.log("An arrow cozy nest comes next"))();

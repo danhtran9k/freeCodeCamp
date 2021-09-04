@@ -48,4 +48,72 @@ whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: 
 
 */
 
+function whatIsInAName(collection, source) {
+  // var arr = [];
+  // Only change code below this line
+  // without checking has OwnProperty, the condition still return the wanted value (undefined) but we should check exist first
+  // return collection.filter((obj) => {
+  //   for (let key in source) {
+  //     if (!obj.hasOwnProperty(key) || obj[key] !== source[key]) return false;
+  //   }
+  //   return true;
+  // });
 
+  // every sol, no loop with obj key arr
+  var srcKeys = Object.keys(source);
+
+  return collection.filter(function(obj) {
+    return srcKeys.every(function(key) {
+      return obj.hasOwnProperty(key) && obj[key] === source[key];
+    });
+  });
+  // sol3
+  // reduce boolean array to get 1 true or false for filter
+  // var srcKeys = Object.keys(source);
+  // return collection.filter(function (obj) {
+  // return srcKeys.map(function (key) {
+  //   return obj.hasOwnProperty(key) && obj[key] === source[key];
+  // });
+  // .reduce(function (a, b) {
+  //   return a && b;
+  // });
+  // });
+  // Only change code above this line
+
+  // return collection.filter((obj) => obj.hasOwnProperty());
+}
+
+let res = whatIsInAName(
+  [
+    { first: "Romeo", last: "Montague" },
+    { first: "Mercutio", last: null },
+    { first: "Tybalt", last: "Capulet" },
+  ],
+  { last: "Capulet" }
+);
+
+let res2 = whatIsInAName(
+  [
+    { apple: 1, bat: 2 },
+    { apple: 1 },
+    { apple: 1, bat: 2, cookie: 2 },
+    { bat: 2 },
+  ],
+  { apple: 1, bat: 2 }
+);
+// should return
+//  [
+//   { apple: 1, bat: 2 },
+//   { apple: 1, bat: 2, cookie: 2 },
+// ];
+// console.log(res);
+console.log(res2);
+
+let arrTest = [
+  { apple: 1, bat: 2 },
+  { apple: 1 },
+  { apple: 1, bat: 2, cookie: 2 },
+  { bat: 2 },
+];
+// arrTest[1]["cookie"]
+// console.log(arrTest[1]["cookie"]);

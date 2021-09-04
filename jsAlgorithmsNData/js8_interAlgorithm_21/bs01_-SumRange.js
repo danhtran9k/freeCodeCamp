@@ -40,5 +40,30 @@ sumAll([1, 4]);
 ==================================================================
 
 */
+function sumAll(arr) {
+  let max = Math.max(arr[1], arr[0])
+  let min = Math.min(arr[1], arr[0])
+  let sum = 0;
+  for (let index = min; index <= max; index++) {
+    sum = sum + index
+  }
+  return sum;
+}
 
+// Shorter sol
+// function sumAll(arr) {
+//   let sumBetween = 0;
+//   for (let i = Math.min(...arr); i <= Math.max(...arr); i++) {
+//     sumBetween += i;
+//   }
+//   return sumBetween;
+// }
+// Recursion sol
+// function sumAll(arr) {
+//   const [first, last] = [...arr].sort((a, b) => a - b);
+//   return first !== last
+//     ? first + sumAll([first + 1, last])
+//     : first;
+// }
 
+sumAll([1, 4]);
