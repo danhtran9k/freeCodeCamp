@@ -46,6 +46,7 @@ translatePigLatin("consonant");
 ==================================================================
 
 */
+// mySol
 function translatePigLatin(str) {
   let vowelRegex = /[aeiou]/;
   let indexFirstVowel = str.indexOf(str.match(vowelRegex));
@@ -56,7 +57,71 @@ function translatePigLatin(str) {
     : str.slice(indexFirstVowel) + str.slice(0, indexFirstVowel) + "ay";
 }
 
+function translatePigLatinSol1(str) {
+  let consonantRegex = /^[^aeiou]+/;
+  let myConsonants = str.match(consonantRegex);
+  return myConsonants !== null
+    ? str.replace(consonantRegex, "").concat(myConsonants).concat("ay")
+    : str.concat("way");
+}
+
+function translatePigLatinSol2(str) {
+  if (str.match(/^[aeiou]/)) return str + "way";
+  const consonantCluster = str.match(/^[^aeiou]+/)[0];
+  return str.substring(consonantCluster.length) + consonantCluster + "ay";
+}
+
+function translatePigLatinSol3(str) {
+  return str
+    .replace(/^[aeiou]\w*/, "$&way")
+    .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
+}
+// Use wrapp
+function translatePigLatinSol4(str, charPos = 0) {
+  return ['a', 'e', 'i', 'o', 'u'].includes(str[0])
+    ? str + (charPos === 0 ? 'way' : 'ay')
+    : charPos === str.length
+      ? str + 'ay'
+      : translatePigLatinSol4(str.slice(1) + str[0], charPos + 1);
+}
+
 // translatePigLatin("consonant");
 // console.log(translatePigLatin("consonant"))
-translatePigLatin("rhythm");
-console.log(translatePigLatin("rhythm"));
+// translatePigLatin("rhythm");
+// console.log(translatePigLatin("rhythm"));
+
+const pigLatinTest = [
+  ["california", "aliforniacay"],
+  ["paragraphs", "aragraphspay"],
+  ["glove", "oveglay"],
+  ["algorithm", "algorithmway"],
+  ["eight", "eightway"],
+  ["schwartz", "artzschway"],
+  ["rhythm", "rhythmay"],
+];
+
+import * as varTest from "../pj0_checker.js";
+const test = varTest.testSuiteChecker;
+const testArgs = [[]];
+const showReturn = true;
+const oneToOne = false;
+const doubleCheck = false;
+const callDoubleCheck = () => {};
+// Wrapper callback, destruct arguments
+const testInput = pigLatinTest; // change this
+let callback = translatePigLatinSol4; // change this
+// myReplace(str, before, after)
+const wrapCallback = (testInput) => {
+  const str = testInput[0];
+  return callback(str);
+};
+// run command
+test(
+  testInput,
+  testArgs,
+  showReturn,
+  doubleCheck,
+  oneToOne,
+  wrapCallback,
+  callDoubleCheck
+);
