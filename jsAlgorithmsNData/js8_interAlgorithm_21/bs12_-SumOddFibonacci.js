@@ -42,5 +42,74 @@ sumFibs(4);
 ==================================================================
 
 */
+// mysol
+function sumFibs2(num) {
+  let fibsObj = {
+    "n-2": 1,
+    "n-1": 1,
+    sum: 2,
+  };
+  while (fibsObj["n-1"] <= num) {
+    let tempFibs = fibsObj["n-2"] + fibsObj["n-1"];
+    if (tempFibs <= num && tempFibs % 2 == 1) {
+      fibsObj.sum += tempFibs;
+    }
+    fibsObj["n-2"] = fibsObj["n-1"];
+    fibsObj["n-1"] = tempFibs;
+  }
+  return fibsObj.sum;
+}
 
+function sumFibs(num) {
+  let prevNumber = 0;
+  let currNumber = 1;
+  let result = 0;
+  while (currNumber <= num) {
+    if (currNumber % 2 !== 0) {
+      result += currNumber;
+    }
+    currNumber += prevNumber;
+    prevNumber = currNumber - prevNumber;
+  }
 
+  return result;
+}
+
+const sumFibsTest = [
+  [1, 2],
+  [2, 2],
+  [3, 5],
+  [4, 5],
+  [10, 10],
+  [1000, 1785],
+  [4000000, 4613732],
+  [75024, 60696],
+  [75025, 135721],
+];
+import * as varTest from "../pj0_checker.js";
+const test = varTest.testSuiteChecker;
+const testArgs = [[]];
+const showReturn = true;
+const oneToOne = false;
+const doubleCheck = false;
+const callDoubleCheck = () => {};
+// Wrapper callback, destruct arguments
+const testInput = sumFibsTest; // change this
+let callback = sumFibs; // change this
+// myReplace(str, before, after)
+const wrapCallback = (testInput) => {
+  const str = testInput[0];
+  const before = testInput[2];
+  const after = testInput[3];
+  return callback(str, before, after);
+};
+// run command
+test(
+  testInput,
+  testArgs,
+  showReturn,
+  doubleCheck,
+  oneToOne,
+  wrapCallback,
+  callDoubleCheck
+);

@@ -42,5 +42,75 @@ pairElement("GCG");
 ==================================================================
 
 */
+const mapDNA = {
+  A: "T",
+  T: "A",
+  C: "G",
+  G: "C",
+};
+function pairElement(str) {
+  return str.split("").map((ele) => [ele, mapDNA[ele]]);
+}
 
+// pairElement("GCG");
+// TestSuite will not work with array obj result
+const pairElementTest = [
+  [
+    "ATCGA",
+    [
+      ["A", "T"],
+      ["T", "A"],
+      ["C", "G"],
+      ["G", "C"],
+      ["A", "T"],
+    ],
+  ],
+  [
+    "TTGAG",
+    [
+      ["T", "A"],
+      ["T", "A"],
+      ["G", "C"],
+      ["A", "T"],
+      ["G", "C"],
+    ],
+  ],
+  [
+    "CTCTA",
+    [
+      ["C", "G"],
+      ["T", "A"],
+      ["C", "G"],
+      ["T", "A"],
+      ["A", "T"],
+    ],
+  ],
+];
 
+import * as varTest from "../pj0_checker.js";
+const test = varTest.testSuiteChecker;
+const testArgs = [[]];
+const showReturn = true;
+const oneToOne = false;
+const doubleCheck = false;
+const callDoubleCheck = () => {};
+// Wrapper callback, destruct arguments
+const testInput = pairElementTest; // change this
+let callback = pairElement; // change this
+// myReplace(str, before, after)
+const wrapCallback = (testInput) => {
+  const str = testInput[0];
+  const before = testInput[2];
+  const after = testInput[3];
+  return callback(str, before, after);
+};
+// run command
+test(
+  testInput,
+  testArgs,
+  showReturn,
+  doubleCheck,
+  oneToOne,
+  wrapCallback,
+  callDoubleCheck
+);

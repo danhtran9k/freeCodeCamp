@@ -39,4 +39,14 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
 */
 
+function uniteUnique(arr) {
+  return [...arguments].flat().reduce((arr, ele) => {
+    return !arr.includes(ele) ? arr.concat(ele) : arr;
+  }, []);
+}
+// Index operative, same value will return the first index match
+function uniteUnique2 (...arr) {return arr.flat().filter((a, b, c) => c.indexOf(a) == b)}
+// Set operation create new unique value
+const uniteUnique3 = (...arr) => [...new Set(arr.flat())]
 
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
