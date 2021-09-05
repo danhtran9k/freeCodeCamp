@@ -44,4 +44,45 @@ smallestCommons([1,5]);
 
 */
 
+function smallestCommons(arr) {
+  return arr;
+}
 
+const smallestCommonsTest = [
+  [[1, 5], 60],
+
+  [[5, 1], 60],
+
+  [[2, 10], 2520],
+
+  [[1, 13], 360360],
+
+  [[23, 18], 6056820],
+];
+
+import * as varTest from "../pj0_checker.js";
+const test = varTest.testSuiteChecker;
+const testArgs = [[]];
+const showReturn = true;
+const oneToOne = false;
+const doubleCheck = false;
+const callDoubleCheck = () => {};
+// Wrapper callback, destruct arguments
+const testInput = smallestCommonsTest; // change this
+let callback = smallestCommons; // change this
+// myReplace(str, before, after)
+const wrapCallback = (testInput) => {
+  const str = testInput[0];
+  const before = testInput[2];
+  return callback(str, before);
+};
+// run command
+test(
+  testInput,
+  testArgs,
+  showReturn,
+  doubleCheck,
+  oneToOne,
+  wrapCallback,
+  callDoubleCheck
+);
