@@ -65,4 +65,128 @@ bob.getFullName();
 
 */
 
+// getFirstName()
+// getLastName()
+// getFullName()
+// setFirstName(first)
+// setLastName(last)
+// setFullName(firstAndLast)
 
+var Person = function (firstAndLast) {
+  // Only change code below this line
+  // Complete the method below and implement the others similarly
+  let fullName = firstAndLast;
+  this.getFullName = function () {
+    return fullName;
+  };
+  this.getLastName = function () {
+    return fullName.split(" ")[1];
+  };
+  this.getFirstName = function () {
+    return fullName.split(" ")[0];
+  };
+  this.setFullName = function (firstAndLast) {
+    fullName = firstAndLast;
+  };
+  this.setFirstName = function (name) {
+    fullName = name + " " + fullName.split(" ")[1];
+  };
+  this.setLastName = function (name) {
+    fullName = fullName.split(" ")[0] + " " + name;
+  };
+  // this.setFirstName = function (first) {
+  //   let newName = fullName.split(" ");
+  //   newName[0] = first;
+  //   fullName = newName.join(" ");
+  // };
+  // this.setLastName = function (last) {
+  //   let newName = fullName.split(" ");
+  //   newName[1] = last;
+  //   fullName = newName.join(" ");
+  // };
+  // return firstAndLast;
+};
+
+var bob = new Person("Bob Ross");
+// bob.getFullName();
+// console.log("bob.getFullName():", bob.getFullName());
+// Object.keys(bob).length;
+// console.log("Object.keys(bob).length:", Object.keys(bob).length);
+
+// const personTest = [
+//   [Object.keys(bob).length, 6],
+//   [bob instanceof Person, true],
+//   [bob.getFullName(), "Bob Ross"],
+//   [bob.getFirstName(), "Bob"],
+//   [bob.getLastName(), "Ross"],
+//   [bob.firstName, undefined],
+//   [bob.lastName, undefined], // 7
+//   [bob.getFullName(), "One Ross", bob.setFirstName("One")],
+//   [bob.getFullName(), "Haskell Two", bob.setLastName("Two")],
+//   [bob.getLastName(), "Three", bob.setFullName("Trois Three")], // 10
+//   [bob.getFirstName(), "Four", bob.setFullName("Four Quatre")],
+//   [bob.getFullName(), "Fin Final", bob.setFullName("Fin Final")], //12
+// ];
+// const personTest = [
+//   [Object.keys(bob).length, 6],
+//   [bob instanceof Person, true],
+//   [bob.firstName, undefined],
+//   [bob.lastName, undefined],
+//   ["getFullName", "Bob Ross"],
+//   ["getFirstName", "Bob"],
+//   ["getLastName", "Ross"],
+//   ["getFullName", "One Ross", bob.setFirstName("One")],
+//   ["getFullName", "Haskell Two", bob.setLastName("Two")],
+//   ["getLastName", "Three", bob.setFullName("Trois Three")],
+//   ["getFirstName", "Four", bob.setFullName("Four Quatre")],
+//   ["getFullName", "Fin Final", bob.setFullName("Fin Final")],
+// ];
+
+import * as varTest from "../pj0_checker.js";
+const test = varTest.testSuiteChecker;
+const testArgs = [[]];
+const showReturn = true;
+const oneToOne = false;
+const doubleCheck = false;
+const callDoubleCheck = () => {};
+// Wrapper callback, destruct arguments
+const testInput = personTest; // change this
+
+// const wrapCallback = (testInput) => {
+//   testInput[2];
+//   console.log("current name: " + bob.getFullName());
+//   switch (testInput[0]) {
+//     case "getFullName":
+//       console.log(bob.getFullName());
+//       return bob.getFullName();
+//     case "getFirstName":
+//       console.log(bob.getFirstName());
+//       return bob.getFirstName();
+//     case "getLastName":
+//       console.log(bob.getLastName());
+//       return bob.getLastName();
+//     default:
+//       return testInput[0];
+//   }
+// };
+// const wrapCallback = (testInput) => {
+//   testInput[2];
+//   testInput[0];
+//   console.log("recheck current name: " + bob.getFullName());
+//   return testInput[0];
+// };
+
+// run command
+// test(
+//   testInput,
+//   testArgs,
+//   showReturn,
+//   doubleCheck,
+//   oneToOne,
+//   wrapCallback,
+//   callDoubleCheck
+// // );
+// console.log(personTest[10][1])
+// console.log(personTest[10][2])
+// console.log(personTest[10][0])
+// console.log('bob.getFullName():', bob.getFullName())
