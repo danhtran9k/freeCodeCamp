@@ -43,8 +43,8 @@ function sumPrimes(num) {
   while (numCheck <= num) {
     if (primeArr.every((prime) => numCheck % prime != 0)) {
       sum += numCheck;
+      primeArr.push(numCheck);
     }
-    primeArr.push(numCheck);
     numCheck++;
   }
   return sum;
@@ -73,9 +73,14 @@ const sumPrimesTest = [
   [8, 17],
   [9, 17],
   [10, 17],
-  [977, 73156],
+  [11, 28],
+  [12, 28],
+  [13, 41],n
+  [14, 41],
+  [14, 41],
+  // [977, 73156],
 
-  [5000, 1548136],
+  // [5000, 1548136],
   // [500000, 9914236195], // dead calculation, fatality
 ];
 import * as varTest from "../pj0_checker.js";
