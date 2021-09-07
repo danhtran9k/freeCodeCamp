@@ -82,7 +82,7 @@ const yellowFruit = "bananas";
 foods[yellowFruit] = 13;
 foods["grapes"] = 35;
 foods.strawberries = 27;
-
+foods["apples"] = foods["grapes"] ;
 // Only change code above this line
 
 console.log(foods);

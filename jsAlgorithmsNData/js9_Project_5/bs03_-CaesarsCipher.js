@@ -42,4 +42,75 @@ rot13("SERR PBQR PNZC");
 
 */
 
+function rot13(str) {
+  let decodeStr = "";
+  for (const char of str) {
+    const regexChar = /[A-Za-z]/;
+    let shift13 = char.charCodeAt(0) + 13;
+    let checkRange = (shift13 > 90 && shift13 <= 103) || shift13 > 122;
+    let shiftCharCode = checkRange ? shift13 - 26 : shift13;
+    decodeStr += regexChar.test(char)
+      ? String.fromCharCode(shiftCharCode)
+      : char;
+  }
+  return decodeStr;
+}
 
+function rot132(str) {
+  var input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  var output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+  var index = (x) => input.indexOf(x);
+  var translate = (x) => (index(x) > -1 ? output[index(x)] : x);
+  return str.split("").map(translate).join("");
+}
+
+let rot13Test = [
+  ["a!H.A0a*", "n!U.N0n*"],
+  ["aHAa@", "nUNn@"],
+  // ["SERR PBQR PNZC", "FREE CODE CAMP"],
+  // ["SERR CVMMN!", "FREE PIZZA!"],
+  // ["SERR YBIR?", "FREE LOVE?"],
+  // [
+  //   "GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.",
+  //   "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.",
+  // ],
+  // [
+  //   'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  //   'NOPQRSTUVWXYZABCDEFGHIJKLM',
+  // ],
+  // [
+  //   "abcdefghijklmnopqrstuvwxyz",
+  //   "nopqrstuvwxyzabcdefghijklm",
+  // ],
+  [
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+    "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm",
+  ],
+];
+
+import * as varTest from "../pj0_checker.js";
+const test = varTest.testSuiteChecker;
+const testArgs = [[]];
+const showReturn = true;
+const oneToOne = false;
+const doubleCheck = false;
+const callDoubleCheck = () => {};
+// Wrapper callback, destruct arguments
+const testInput = rot13Test; // change this
+let callback = rot13; // change this
+// myReplace(str, before, after)
+const wrapCallback = (testInput) => {
+  const str = testInput[0];
+  const before = testInput[2];
+  return callback(str, before);
+};
+// run command
+test(
+  testInput,
+  testArgs,
+  showReturn,
+  doubleCheck,
+  oneToOne,
+  wrapCallback,
+  callDoubleCheck
+);

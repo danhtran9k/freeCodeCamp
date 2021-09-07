@@ -63,4 +63,63 @@ palindrome("eye");
 
 */
 
+function palindrome(str) {
+  const regexRemoveSpecial = /[^a-zA-Z0-9]/g;
+  const plainStr = str.replace(regexRemoveSpecial, "").toLowerCase();
+  let palindromeArr = [];
+  plainStr.split("").forEach((ele) => palindromeArr.unshift(ele));
+  return palindromeArr.join("") === plainStr;
+}
 
+const palindromeTest = [
+  ["eye", true],
+
+  ["_eye", true],
+
+  ["race car", true],
+
+  ["not a palindrome", false],
+
+  ["A man, a plan, a canal. Panama", true],
+
+  ["never odd or even", true],
+
+  ["nope", false],
+
+  ["almostomla", false],
+
+  ["My age is 0, 0 si ega ym.", true],
+
+  ["1 eye for of 1 eye.", false],
+
+  ["0_0 (: /- :) 0-0", true],
+
+  ["five|_/|four", false],
+];
+
+import * as varTest from "../pj0_checker.js";
+const test = varTest.testSuiteChecker;
+const testArgs = [[]];
+const showReturn = true;
+const oneToOne = false;
+const doubleCheck = false;
+const callDoubleCheck = () => {};
+// Wrapper callback, destruct arguments
+const testInput = palindromeTest; // change this
+let callback = palindrome; // change this
+// myReplace(str, before, after)
+const wrapCallback = (testInput) => {
+  const str = testInput[0];
+  const before = testInput[2];
+  return callback(str, before);
+};
+// run command
+test(
+  testInput,
+  testArgs,
+  showReturn,
+  doubleCheck,
+  oneToOne,
+  wrapCallback,
+  callDoubleCheck
+);

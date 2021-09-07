@@ -1,4 +1,5 @@
 import * as varTest from "./fcc_algoVars.js";
+import isEqual from "../node_modules/lodash.isequal/index.js";
 const testInput = varTest.arrStrReuse;
 const testArgs = varTest.arrRegexReuse;
 const showReturn = true;
@@ -42,6 +43,7 @@ export const testSuiteChecker = (
       );
     }
   });
+  console.log("⛛⛛⛛⛛⛛⛛⛛⛛⛛⛛⛛⛛⛛⛛⛛");
 };
 
 // logging function
@@ -56,7 +58,11 @@ const logArgsInfo = (testArgs) => {
 const logResultCheck = (input, resultReturn, correctResult) => {
   console.log(
     ` ✍ [${input}] - correct result: ${correctResult} ${
-      resultReturn === correctResult ? "✅" : correctResult === "" ? "❔" : "❌"
+      isEqual(resultReturn, correctResult)
+        ? "✅"
+        : correctResult === ""
+        ? "❔"
+        : "❌"
     }`
   );
 };
@@ -77,6 +83,7 @@ const testRunCheckAndShow = (
       doubleCheck ? callDoubleCheck(eleInput, eleArgs) : resultReturn
     );
   }
+  console.log("⛵⛵⛵⛵⛵");
 };
 
 // Wrapping and Callback
