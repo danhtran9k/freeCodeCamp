@@ -80,5 +80,113 @@ convertToRoman(36);
 ==================================================================
 
 */
+// const romanLookup = [
+//   ["M", 1000],
+//   ["CM", 900],
+//   ["D", 500],
+//   ["CD", 400],
+//   ["C", 100],
+//   ["XC", 90],
+//   ["L", 50],
+//   ["XL", 40],
+//   ["X", 10],
+//   ["IX", 9],
+//   ["V", 5],
+//   ["IV", 4],
+//   ["I", 1],
+// ];
 
+const numToRomanLookup = [
+  [1, "I"],
+  [4, "IV"],
+  [5, "V"],
+  [9, "IX"],
+  [10, "X"],
+  [40, "XL"],
+  [50, "L"],
+  [90, "XC"],
+  [100, "C"],
+  [400, "CD"],
+  [500, "D"],
+  [900, "CM"],
+  [1000, "M"],
+];
 
+// sort descending
+numToRomanLookup.sort(([val1], [val2]) => val2 - val1)
+
+function convertToRoman(num) {
+  let romanStr = "";
+  if (num >= 4000) {
+    return false;
+  }
+  while (num > 0) {
+    let [value, str] = numToRomanLookup.find(([val]) => num >= val);
+    romanStr += str;
+    num = num - value;
+  }
+  return romanStr;
+}
+
+const convertToRomanTest = [
+  [1, "I"],
+  [4, "IV"],
+  [5, "V"],
+  [9, "IX"],
+  [400, "CD"],
+  [500, "D"],
+  [1000, "M"],
+
+  [2, "II"],
+  [8, "VIII"],
+  [36, "XXXVI"],
+  [12, "XII"],
+
+  [3, "III"],
+  [16, "XVI"],
+  [29, "XXIX"],
+  [44, "XLIV"],
+  [45, "XLV"],
+  [68, "LXVIII"],
+  [83, "LXXXIII"],
+  [97, "XCVII"],
+  [99, "XCIX"],
+  [501, "DI"],
+  [649, "DCXLIX"],
+  [798, "DCCXCVIII"],
+  [891, "DCCCXCI"],
+
+  [1004, "MIV"],
+  [1006, "MVI"],
+  [1023, "MXXIII"],
+  [2014, "MMXIV"],
+  [3999, "MMMCMXCIX"],
+  [4000, false],
+];
+// https://blog.prepscholar.com/roman-numerals-converter
+import * as varTest from "../pj0_checker.js";
+const test = varTest.testSuiteChecker;
+const testArgs = [[]];
+const showReturn = false;
+const oneToOne = false;
+const doubleCheck = false;
+const callDoubleCheck = () => {};
+// Wrapper callback, destruct arguments
+const testInput = convertToRomanTest; // change this
+let callback = convertToRoman; // change this
+// myReplace(str, before, after)
+const wrapCallback = (testInput) => {
+  const str = testInput[0];
+  const before = testInput[2];
+  return callback(str, before);
+};
+// run command
+test(
+  testInput,
+  testArgs,
+  showReturn,
+  doubleCheck,
+  oneToOne,
+  wrapCallback,
+  callDoubleCheck
+);

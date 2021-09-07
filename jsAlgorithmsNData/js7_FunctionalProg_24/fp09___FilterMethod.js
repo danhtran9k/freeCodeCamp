@@ -181,18 +181,18 @@ var watchList = [
 var filteredList;
 
 // Only change code above this line
-filteredList = watchList
-  .map(({ Title: title, imdbRating: rating }) => ({
-    title,
-    rating,
-  }))
-  .filter(({ rating }) => rating >= 8);
+// filteredList = watchList
+//   .map(({ Title: title, imdbRating: rating }) => ({
+//     title,
+//     rating,
+//   }))
+//   .filter(({ rating }) => rating >= 8);
 
 // Sol use reduce, combine both map and filter
-// filteredList = watchList.reduce(
-//   (prev, { Title: title, imdbRating: rating }) => {
-//     return rating >= 8 ? prev.concat({ title, rating }) : prev;
-//   },
-//   []
-// );
+filteredList = watchList.reduce(
+  (prev, { Title: title, imdbRating: rating }) => {
+    return rating >= 8 ? prev.concat({ title, rating }) : prev;
+  },
+  []
+);
 console.log(filteredList);

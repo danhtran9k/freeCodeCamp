@@ -100,7 +100,7 @@ const doubleCheck = false;
 const callDoubleCheck = () => {};
 // Wrapper callback, destruct arguments
 const testInput = myReplaceTest; // change this
-let callback = myReplace5; // change this
+let callback = myReplace; // change this
 // myReplace(str, before, after)
 const wrapCallback = (testInput) => {
   const str = testInput[0];
