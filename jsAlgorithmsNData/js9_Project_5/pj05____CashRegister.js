@@ -302,6 +302,50 @@ const checkCashRegisterTest = [
     ],
     { status: "INSUFFICIENT_FUNDS", change: [] },
   ],
+  // ❌❌❌MYCASE❌❌❌❌❌❌
+  [
+    [
+      19.7,
+      20.0,
+      [
+        ["PENNY", 0.02],
+        ["NICKEL", 0.0],
+        ["DIME", 0.3],
+        ["QUARTER", 0.75],
+        ["ONE", 0.0],
+        ["FIVE", 0.0],
+        ["TEN", 0.0],
+        ["TWENTY", 0.0],
+        ["ONE HUNDRED", 0.0],
+      ],
+    ],
+    { status: "OPEN", change: [["DIME", 0.3]] },
+  ],
+  [
+    [
+      8.7,
+      20.0,
+      [
+        ["PENNY", 0.02],
+        ["NICKEL", 0.0],
+        ["DIME", 0.3],
+        ["QUARTER", 1],
+        ["ONE", 2],
+        ["FIVE", 20],
+        ["TEN", 30],
+        ["TWENTY", 0.0],
+        ["ONE HUNDRED", 0.0],
+      ],
+    ],
+    {
+      status: "OPEN",
+      change: [
+        ["TEN", 10],
+        ["ONE", 1],
+        ["DIME", 0.3],
+      ],
+    },
+  ],
   // end
 ];
 
@@ -314,7 +358,7 @@ const doubleCheck = false;
 const callDoubleCheck = () => {};
 // Wrapper callback, destruct arguments
 const testInput = checkCashRegisterTest; // change this
-let callback = checkCashRegister2; // change this
+let callback = checkCashRegister; // change this
 // myReplace(str, before, after)
 const wrapCallback = (testInput) => {
   const price = testInput[0][0];
@@ -394,4 +438,26 @@ function checkCashRegister2(price, cash, cid) {
   let answer = transaction(price, cash, cid);
   //here the final answer is provided if the 2 if statements don't catch it first
   return answer;
+}
+
+function tempCode(params) {
+  const denom = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
+
+  let change_arr = denom.reduce(function (acc, curr) {
+    var value = 0;
+    // While there is still money of this type in the drawer
+    // And while the denomination is larger than the change reminaing
+    while (register[curr.name] > 0 && change >= curr.val) {
+      change -= curr.val;
+      register[curr.name] -= curr.val;
+      value += curr.val;
+      // Round change to the nearest hundreth deals with precision errors
+      change = Math.round(change * 100) / 100;
+    }
+    // Add this denomination to the output only if any was used.
+    if (value > 0) {
+      acc.push([curr.name, value]);
+    }
+    return acc; // Return the current Change Array
+  }, []); // Initial value of empty array for reduce
 }
