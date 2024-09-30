@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "ag": "node ./data-algo"
+    "ag": "clear & node ./data-algo"
   },
   "dependencies": {
     "lodash.isequal": "^4.5.0"
