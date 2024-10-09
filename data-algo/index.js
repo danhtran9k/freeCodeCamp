@@ -1,3 +1,3 @@
-import { TEST_maxsub } from './max-sum-subarray.js'
+import { main } from './tree-algo/tree.js'
 
-TEST_maxsub()
+main()
