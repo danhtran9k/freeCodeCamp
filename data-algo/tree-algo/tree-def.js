@@ -20,7 +20,13 @@ export function genTree() {
   return root
 }
 
-// arr is [ [null, head] , [left,right] , ...]
+//   const root2 = genTreeFromCustomArr([
+//   [null, 1],
+//   [2, 3],
+//   [4, 5, null, 6],
+//   [null, null, null, null, null, 7],
+//   [null, null]
+// ])
 export function genTreeFromCustomArr(arr) {
   if (!arr.length) return null
 
@@ -79,4 +85,45 @@ export const getHeightFromBfs = (arr) => {
   }
 
   return [height, sum === len]
+}
+
+export const bfsArr2Tree = (arr) => {
+  if (!arr.length) return null
+
+  const curr = arr.shift()
+  const head = new TreeNode(curr)
+  const queue = [head]
+
+  let isContinue = true
+
+  while (queue.length && isContinue) {
+    isContinue = false
+    let maxLen = queue.length
+
+    for (let i = 0; i < maxLen && arr.length; i++) {
+      const currNode = queue.shift()
+      const left = arr.shift()
+      if (left !== undefined && left !== null) {
+        currNode.left = new TreeNode(left)
+        queue.push(currNode.left)
+        isContinue = true
+      }
+      const right = arr.shift()
+      if (right !== undefined && right !== null) {
+        currNode.right = new TreeNode(right)
+        queue.push(currNode.right)
+        isContinue = true
+      }
+
+      if (left === undefined || right === undefined) break
+    }
+  }
+
+  return head
+}
+
+export const deserializeTree = (data = '') => {
+  if (!data) return null
+  const arr = data.split(',')
+  return bfsArr2Tree(arr)
 }

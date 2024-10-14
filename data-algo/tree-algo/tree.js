@@ -1,22 +1,27 @@
-import { genTree, genTreeFromCustomArr } from './tree-def.js'
-import { travel_NLR, travel_order } from './tree-traverse.js'
+import {
+  bfsArr2Tree,
+  deserializeTree,
+  genTree,
+  genTreeFromCustomArr
+} from './tree-def.js'
+import {
+  arrHardCode1,
+  arrHardCode2,
+  treeHardCode1,
+  treeHardCode2
+} from './tree-hard-code-test.js'
+import { findPath } from './tree-path.js'
+import {
+  serializeBFSTree,
+  travel_LRN,
+  travel_NLR,
+  travel_order
+} from './tree-traverse.js'
 
 const main = () => {
-  const root = genTree()
-
-  // console.log('travel_NLR(root)', travel_NLR(root))
-
-  console.log('travel_order(root)', travel_order(root))
-  const root2 = genTreeFromCustomArr([
-    [null, 1],
-    [2, 3],
-    [4, 5, null, 6],
-    [null, null, null, null, null, 7],
-    [null, null]
-  ])
-  const normalRoot = JSON.stringify(travel_order(root))
-  const myRootConvert = JSON.stringify(travel_order(root2))
-  console.log(myRootConvert === normalRoot, myRootConvert)
+  const root3 = bfsArr2Tree(arrHardCode1)
+  const tmp = findPath(root3, -8)
+  console.log({ tmp })
 }
 
 export { main }
