@@ -1,9 +1,10 @@
 import fs from 'fs'
-import { consonants, kr_hash, vowels } from './kr_hash.js'
+import { kr_hash } from './hash/kr_hash_lookup.js'
+import { consonants, v2_vowel, vowel_min, vowels } from './hash/kr_const.js'
 
 // given the above vowel, and and kr consonant, return the combination of them
 // example:
-// ㅂ -> [["벼","뵤","뷰"],["버","보","부","브"],["배","베","뱨","뱨"],["바","뱌","비"]]
+// ㅂ -> [["벼","뵤","뷰"],["버","보","부","브"],...]
 
 const combine = (initials, vowels, finals = '') => {
   const initial_index = kr_hash[0].indexOf(initials)
@@ -17,42 +18,62 @@ const combine = (initials, vowels, finals = '') => {
   return String.fromCharCode(hangulCode)
 }
 
-export const full_consonant = () => {
+export const full_combine = ({ consonant, vowel, use_consonant = true }) => {
   const result = {}
-  Object.entries(consonants).forEach(([keyConsonantType, arrVals]) => {
-    result[keyConsonantType] = {}
-    for (const consonant of arrVals) {
-      let tmp = Object.entries(vowels).map(([keyVowelType, arrVowels]) => {
-        return arrVowels.map((vowel) => combine(consonant, vowel))
-      })
+  let count = 0
 
-      result[keyConsonantType][consonant] = tmp
-    }
-  })
-  return result
-}
+  // Determine primary and secondary collections based on keyRef
+  const [primary, secondary] = use_consonant
+    ? [consonant, vowel]
+    : [vowel, consonant]
 
-export const full_vowel = () => {
-  const result = {}
-  Object.entries(vowels).forEach(([keyVowelType, arrVals]) => {
-    result[keyVowelType] = {}
-    for (const vowel of arrVals) {
-      let tmp = Object.entries(consonants).map(
-        ([keyConsonantType, arrConsonants]) => {
-          return arrConsonants.map((consonant) => combine(consonant, vowel))
+  Object.entries(primary).forEach(([keyPrimaryType, arrPrimaryVals]) => {
+    result[keyPrimaryType] = {}
+
+    for (const primaryVal of arrPrimaryVals) {
+      let tmp = Object.entries(secondary).map(
+        ([_keySecondaryType, arrSecondaryVals]) => {
+          return arrSecondaryVals.map((secondaryVal) => {
+            count++
+            // Order the combine parameters based on keyRef
+            return use_consonant
+              ? combine(primaryVal, secondaryVal)
+              : combine(secondaryVal, primaryVal)
+          })
         }
       )
 
-      result[keyVowelType][vowel] = tmp
+      result[keyPrimaryType][primaryVal] = tmp
     }
   })
+
+  result.count = count
   return result
 }
 
 export const write_hangul_2char = () => {
-  const consonant = full_consonant()
-  const vowel = full_vowel()
+  const consonant = full_combine({
+    consonant: consonants,
+    vowel: v2_vowel,
+    use_consonant: true
+  })
+
+  const vowel = full_combine({
+    consonant: consonants,
+    vowel: v2_vowel,
+    use_consonant: false
+  })
+
+  const minimum_vowel = full_combine({
+    consonant: consonants,
+    vowel: vowel_min,
+    use_consonant: false
+  })
 
   fs.writeFileSync(`consonant_dump_.json`, JSON.stringify(consonant, null, 2))
   fs.writeFileSync(`vowel_dump_.json`, JSON.stringify(vowel, null, 2))
+  fs.writeFileSync(
+    `minimum_vowel_dump_.json`,
+    JSON.stringify(minimum_vowel, null, 2)
+  )
 }
