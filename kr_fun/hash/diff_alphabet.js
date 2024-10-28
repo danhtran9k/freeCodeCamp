@@ -1,12 +1,9 @@
-import vowel_dump from '../vowel_dump_.json' assert { type: 'json' }
-import consonant_dump from '../consonant_dump_.json' assert { type: 'json' }
-
-export function compareVowelsConsonants() {
+export function compareVowelsConsonants({ ObjectA, ObjectB }) {
   const vowelSet = new Set()
   const consonantSet = new Set()
 
   // Flatten vowel_dump_ and add to vowelSet
-  Object.values(vowel_dump).forEach((category) => {
+  Object.values(ObjectA).forEach((category) => {
     Object.values(category).forEach((group) => {
       group.forEach((subgroup) => {
         subgroup.forEach((char) => vowelSet.add(char))
@@ -15,7 +12,7 @@ export function compareVowelsConsonants() {
   })
 
   // Flatten consonant_dump_ and add to consonantSet
-  Object.values(consonant_dump).forEach((category) => {
+  Object.values(ObjectB).forEach((category) => {
     Object.entries(category).forEach(([, group]) => {
       group.forEach((subgroup) => {
         subgroup.forEach((char) => consonantSet.add(char))
