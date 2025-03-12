@@ -2,7 +2,8 @@
   "type": "module",
   "scripts": {
     "ag": "clear & node ./data-algo",
-    "kr": "clear & node ./kr_fun"
+    "kr": "clear & node ./kr_fun",
+    "leet": "clear & npx nodemon ./index.js"
   },
   "dependencies": {
     "lodash.isequal": "^4.5.0"
