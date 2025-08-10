@@ -51,9 +51,10 @@ const find_first_MinPositive_Index = (arr) => {}
 const find_last_MinPositive_Index = (arr) => {}
 
 // 4-6, 7-9, 10-12
+// STT -     [0 ,  1,  2,  3,  4,  5,  6, 7, 8,10,11,12,13,14,15,16,17]
 const test = [-4, -4, -4, -3, -2, -2, -2, 0, 0, 0, 2, 2, 2, 3, 4, 4, 4]
 // 10-12, 7-9, 4-6
-// const test = [4, , 4, 4 , 3, 2, 2, 2, 0, 0, 0, -2, -2, -2, -3, -4,-4,-4]
+// const test = [4, 4, 4, 4 , 3, 2, 2, 2, 0, 0, 0, -2, -2, -2, -3, -4,-4,-4]
 export const main = () => {
   return find_Last_GreatestNegative_Index(test)
 }
