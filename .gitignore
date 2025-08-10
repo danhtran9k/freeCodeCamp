@@ -2,3 +2,9 @@ package-lock.json
 node_modules
 
 *_dump_*
+*.dump.*
+
+coverage
+.DS_Store
+
+.idea/
