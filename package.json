@@ -8,22 +8,9 @@
   "scripts": {
     "ag": "clear & node ./data-algo",
     "kr": "clear & node ./kr_fun",
-    "leet": "clear & npx nodemon ./index.js",
-    "test": "grunt test"
+    "leet": "clear & npx nodemon ./index.js"
   },
   "dependencies": {
     "lodash.isequal": "^4.5.0"
-  },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "eslint": "^6.7.2",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.19.1",
-    "grunt": "^1.0.4",
-    "grunt-eslint": "^22.0.0",
-    "grunt-mocha-istanbul": "^5.0.2",
-    "grunt-mocha-test": "^0.13.3",
-    "istanbul": "^0.4.5",
-    "mocha": "^6.2.2"
   }
 }
