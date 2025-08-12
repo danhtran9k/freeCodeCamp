@@ -6,7 +6,7 @@
   "types": "index.d.ts",
   "main": "index.js",
   "scripts": {
-    "test": "clear & node ./data-algo/binary-template-simple.js",
+    "test": "node ./data-algo/binary-template-simple.js",
     "ag": "clear & node ./data-algo",
     "kr": "clear & node ./kr_fun",
     "leet": "clear & npx nodemon ./index.js"
