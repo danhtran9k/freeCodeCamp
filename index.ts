@@ -98,12 +98,87 @@ const DIRS = {
 }
 
 function lenOfVDiagonal(grid: number[][]): number {
-  let step = 0
-  setup(grid)
-  return step
+  let res = 0
+  const { lastRow, lastCol, lastDiag, isIn, memoTurn } = setup(grid)
+
+  const walker = (dir: '↙️' | '↘️') => {
+    const [dx, dy] = DIRS[dir]
+
+    return (ixBegin: number, iyBegin: number) => {
+      let ix = ixBegin
+      let iy = iyBegin
+
+      let seen_one = false
+      let step = 0
+      let curr_forward = 0
+      let curr_backward = 0
+
+      // curr luôn valid (head diag luôn valid !)
+      // check invalid với next, invalid thì reset
+
+      while (true) {
+        const curr = grid[ix][iy]
+
+        curr_backward++
+        if (seen_one) {
+          curr_forward++
+
+          // memoTurn forward ↙️ is ↖️ , backward ↗️ is ↘️
+          // memoTurn forward ↘️ is ↙️ , backward ↖️ is ↗️
+
+          res = Math.max(
+            res,
+            curr_forward + memoTurn[ix][iy][dir === '↙️' ? '↖️' : '↙️']
+            // try curr turn
+          )
+        }
+
+        if (curr === 1) {
+          seen_one = true
+        }
+
+        ix += dx
+        iy += dy
+        if (!isIn(ix, iy)) {
+          // if
+          break
+        } else {
+          const next = grid[ix][iy]
+        }
+      }
+    }
+  }
+
+  const walk_topLeft_botRight = walker('↙️')
+  let ixStart = 0
+  let iyStart = 0
+
+  for (let cnt = 0; cnt <= lastDiag; cnt++) {
+    walk_topLeft_botRight(ixStart, iyStart)
+    if (iyStart < lastCol) {
+      iyStart++
+    } else {
+      ixStart++
+    }
+  }
+
+  const walk_botLeft_topRight = walker('↘️')
+  ixStart = lastRow
+  iyStart = 0
+
+  for (let cnt = 0; cnt <= lastDiag; cnt++) {
+    walk_botLeft_topRight(ixStart, iyStart)
+    if (ixStart > 0) {
+      ixStart--
+    } else {
+      iyStart++
+    }
+  }
+
+  return res
 }
 
-const NULLER = 1
+const NULLER = -3
 const setup = (grid: number[][]) => {
   const lastRow = grid.length - 1
   const lastCol = grid[0].length - 1
@@ -131,42 +206,33 @@ const setup = (grid: number[][]) => {
     return { posX, posY, val }
   }
 
+  const setMemoCell = (ix, iy, isMoveUp) => {
+    const curr = grid[ix][iy]
+    const [L, R] = isMoveUp ? ['↖️', '↗️'] : ['↙️', '↘️']
+
+    const left = getByDir(ix, iy, L)
+    const right = getByDir(ix, iy, R)
+
+    if (curr + left.val === 2 || (curr === 1 && left.val === 2)) {
+      memoTurn[ix][iy][L] = memoTurn[left.posX][left.posY][L] + 1
+    }
+
+    if (curr + right.val === 2 || (curr === 1 && right.val === 2)) {
+      memoTurn[ix][iy][R] = memoTurn[right.posX][right.posY][R] + 1
+    }
+  }
+
   //  memoTurn ↖️ ↗️
   for (let ix = 0; ix <= lastRow; ix++) {
     for (let iy = 0; iy <= lastCol; iy++) {
-      const curr = grid[ix][iy]
-
-      if (curr === 1) continue
-
-      const left = getByDir(ix, iy, '↖️')
-      const right = getByDir(ix, iy, '↗️')
-
-      if (curr + left.val === 2) {
-        memoTurn[ix][iy]['↖️'] = memoTurn[left.posX][left.posY]['↖️'] + 1
-      }
-
-      if (curr + right.val === 2) {
-        memoTurn[ix][iy]['↗️'] = memoTurn[right.posX][right.posY]['↗️'] + 1
-      }
+      setMemoCell(ix, iy, true)
     }
   }
 
   // memoTurn ↘️ ↙️
   for (let ix = lastRow; ix >= 0; ix--) {
     for (let iy = 0; iy <= lastCol; iy++) {
-      const curr = grid[ix][iy]
-      if (curr === 1) continue
-
-      const left = getByDir(ix, iy, '↙️')
-      const right = getByDir(ix, iy, '↘️')
-
-      if (curr + left.val === 2) {
-        memoTurn[ix][iy]['↙️'] = memoTurn[left.posX][left.posY]['↙️'] + 1
-      }
-
-      if (curr + right.val === 2) {
-        memoTurn[ix][iy]['↘️'] = memoTurn[right.posX][right.posY]['↘️'] + 1
-      }
+      setMemoCell(ix, iy, false)
     }
   }
 
@@ -192,7 +258,7 @@ const testDiag2x = [
 
 // ↖️↘️ : lastRow -> -lastCol [lastRow,0] -> [0,lastCol] , [+1, +1]
 // ↗️↙️ : 0 -> lastDiag [0,0] -> [lastRow,lastCol] , [-1, +1]
-const moveDiag = (grid) => {
+const move_topRight_botLeft = (grid) => {
   const lastRow = grid.length - 1
   const lastCol = grid[0].length - 1
 
@@ -228,5 +294,5 @@ const moveDiag = (grid) => {
   return rest
 }
 
-moveDiag(testDiag1x)
-moveDiag(testDiag2x)
+move_topRight_botLeft(testDiag1x)
+move_topRight_botLeft(testDiag2x)
