@@ -2,18 +2,7 @@ import fs from 'fs'
 
 const arr = [3, 3, 3, 7, 7, 10, 10, 10, 12, 15, 15, 15, 15]
 //           0, 1, 2, 3, 4,  5,  6,  7,  8,  9, 10, 11, 12
-const test = [2, 3, 10, 12, 15, 20]
-// expect is [lower, upper] of test in relative to arr
-const expect = [
-  [-1, 0],
-  [0, 2],
-  [5, 7],
-  [7, 8],
-  [8, 11],
-  [11, -1]
-]
 
-// write an function save results to file
 const saveResultsToFile = (results) => {
   fs.writeFileSync('results.dump.json', JSON.stringify(results, null, 2))
 }
@@ -21,54 +10,42 @@ const saveResultsToFile = (results) => {
 /*
 -> target = 10 
 const arr = [3,...7, 10, 10, 10, 12, ...15]
+
 const idx = [0,...4,  5,  6,  7,  8, ...12]
+low    T < 0 | 1...,  5,  _,  _,  8, ...13]
+upp      -1 | 0...4, _,  _,  7,  _, ...12] < T
+max ix = len+1
+min ix = -1
 
-(target < max ix num  = lastIx !! -> ĐN sai)
-1. UPPER BOUND ( TARGET < | <= MIN ix_num) 
-1.1 EXCLUDE T < N -> ix = 8
-1.2 INCLUDE T <= N -> ix = 7
+1. UPPER BOUND MIN IX
+ TARGET < | <= MIN ix_num  (UPPER)
+[   false -- TARGET --- true ]
 
-target = 2 -> index = 0
-target = 16 -> index = 13
+1.a T < N -> ix = 8
+1.b T <= N -> ix = 5
 
-2. LOWER BOUND ( MAX ix_num < | <= TARGET )
-2.1 EXCLUDE T > N -> ix = 4
-2.2 INCLUDE T >= N -> ix = 5
+2. LOWER BOUND MAX IX
+(LOWER) MAX ix_num < | <= TARGET 
+[   true -- TARGET --- false ]
+2.a N < T -> ix = 4
+2.b N <= T -> ix = 7
+
 */
 
-const init = () => [0, arr.length]
-const midIx = (left, right) => Math.floor(left + (right - left) / 2)
-
-// CASE 1.1 UPPER BOUND EXCLUDE (max Index num < target)
-const upper_exclude = (arr, target) => {
-  let [left, right] = init()
+// Nên ưu tiên nhìn bài toán theo hướng upper bound - bisect left trước
+const bisect = (arr, target, isExclude = true) => {
+  let [left, right] = [0, arr.length]
   while (left < right) {
-    const mid = midIx(left, right)
-    const cond = arr[mid] > target
-    if (cond) {
-      // target < arr[mid]
-      right = mid
-    } else {
-      // arr[mid] <= target
-      left = mid + 1
-    }
-  }
-  return left
-}
+    const mid = Math.floor(left + (right - left) / 2)
 
-// CASE 1.2 UPPER BOUND INCLUDE (max Index num <= target)
-const upper_include = (arr, target) => {
-  let [left, right] = init()
-  // console.log({ target })
-  while (left < right) {
-    const mid = midIx(left, right)
-    const cond = arr[mid] >= target
+    // default là UPPER_BOUND_EXCLUDE
+    const cond = isExclude ? target < arr[mid] : target <= arr[mid]
 
     if (cond) {
-      // target <= arr[mid]
+      // target < arr[mid]  (or <=)
       right = mid
     } else {
-      // arr[mid] < target
+      // target >= arr[mid] (or >)
       left = mid + 1
     }
   }
@@ -76,27 +53,38 @@ const upper_include = (arr, target) => {
   return left
 }
 
-// CASE 2.1 LOWER BOUND EXCLUDE (Max idx 4 < TARGET = 10 )
-// CASE 2.2 LOWER BOUND INCLUDE (Max idx 5 <= TARGET = 10 )
-const lower_exclude = (arr, target) => upper_include(arr, target) - 1
+// CASE 1.1 UPPER BOUND EXCLUDE
+// (TARGET < MIN ix_num ) 8
+const upper_exclude = (arr, target) => bisect(arr, target)
+
+// CASE 1.2 UPPER BOUND INCLUDE
+// (TARGET <= MIN ix_num ) 5
+const upper_include = (arr, target) => bisect(arr, target, false)
+
+// CASE 2.2 LOWER BOUND INCLUDE = UPPER BOUND EXCLUDE - 1
+// (MAX ix_num <= TARGET ) 4
 const lower_include = (arr, target) => upper_exclude(arr, target) - 1
 
+// CASE 2.1 LOWER BOUND EXCLUDE = UPPER BOUND INCLUDE - 1
+// (MAX ix_num < TARGET ) 7
+const lower_exclude = (arr, target) => upper_include(arr, target) - 1
+
 const debug = () => {
-  const targets = [1, 3, 4, 10, 11, 12, 15, 20]
-  // const targets = [10]
+  // const targets = [10, 11, 1, 20, 3, 15]
+  const targets = [10, 11]
   const results = []
 
   for (const target of targets) {
-    const upperExclude = upper_exclude(arr, target)
-    const upperInclude = upper_include(arr, target)
-    const lowerExclude = lower_exclude(arr, target)
-    const lowerInclude = lower_include(arr, target)
+    const upperExclude_8 = upper_exclude(arr, target)
+    const upperInclude_5 = upper_include(arr, target)
+    const lowerExclude_4 = lower_exclude(arr, target)
+    const lowerInclude_7 = lower_include(arr, target)
     const resTarget = {
       target,
-      upperExclude,
-      upperInclude,
-      lowerExclude,
-      lowerInclude
+      upperExclude_8,
+      upperInclude_5,
+      lowerExclude_4,
+      lowerInclude_7
     }
     results.push(resTarget)
     console.log(resTarget)
