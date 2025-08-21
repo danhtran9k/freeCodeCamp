@@ -9,9 +9,11 @@
     "test": "node ./data-algo/binary-template-simple.js",
     "ag": "clear & node ./data-algo",
     "kr": "clear & node ./kr_fun",
-    "leet": "clear & npx nodemon ./index.js"
+    "leet": "clear & npx nodemon ./index.js",
+    "ab": "node ./index.js"
   },
   "dependencies": {
+    "@datastructures-js/deque": "^1.0.5",
     "lodash.isequal": "^4.5.0"
   }
 }
