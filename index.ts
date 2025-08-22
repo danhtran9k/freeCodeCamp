@@ -1,46 +1,60 @@
-import { PriorityQueue } from './node_modules/@datastructures-js/priority-queue/index'
-type TEdge = number[] // [from, to , weight] , [destTo, weight]
+import { PriorityQueue } from '@datastructures-js/priority-queue'
+// import { Deque } from '@datastructures-js/deque'
+
+type TEdge = number[] // [from, to , weight] or [destTo, weight]
 type TEdges = TEdge[]
-type TQueue = { dest: number; dist: number }
+type TQueue = { source: number; dist: number }
+
 function findAnswer(n: number, edges: TEdges): boolean[] {
   const res = Array(n).fill(false)
-  const minDist = Array(n).fill(Infinity)
-
   const adjs = edgesToAdj(edges, n)
+  const dijkstra = genDijkstra(n, adjs)
+  console.log({ dijkstra })
+  // backtrack Dijkstra from Dest to Source
+  // const btrDeque = new Deque<number>([n - 1])
+  // btrDeque
+  // while (btrDeque.size) {
+  //   const curr = btrDeque
+  // }
+  return res
+}
+
+type TDijkstra = number[]
+
+const genDijkstra = (n: number, adjs: TEdge[][]) => {
+  const dijkstra: TDijkstra = Array(n).fill(Infinity)
+  dijkstra[0] = 0
 
   const minQueue = new PriorityQueue<TQueue>(
     (a, b) => a.dist - b.dist,
-    [{ dest: 0, dist: 0 }]
+    [{ source: 0, dist: 0 }]
   )
 
   while (minQueue.size()) {
-    console.log('🚀 index L17-size: minQueue.size()', { size: minQueue.size() })
-    const { dest, dist } = minQueue.pop()
+    const { source, dist } = minQueue.pop()
 
-    if (dist > minDist[dest]) continue
-    minDist[dest] = dist
+    if (dist > dijkstra[source]) continue
+    dijkstra[source] = dist
 
-    // dest now is from -> adjs[from] = adjs[dist]
-    for (const [distTo, weight] of adjs[dist]) {
-      const prevDistToDist = minDist[distTo]
+    for (const [dest, weight, _] of adjs[source]) {
+      const prevDistToDist = dijkstra[dest]
       const newDist = dist + weight
 
       if (newDist >= prevDistToDist) continue
-      minDist[distTo] = newDist
-      minQueue.enqueue({ dest: distTo, dist: newDist })
-      console.log({ from: dest, to: distTo, size: minQueue.size() })
+      dijkstra[dest] = newDist
+      minQueue.enqueue({ source: dest, dist: newDist })
     }
   }
 
-  console.log(minDist)
-  return res
+  return dijkstra
 }
 
 const edgesToAdj = (edges: TEdges, len: number) => {
   const adjs: TEdge[][] = Array.from({ length: len }, () => [])
-  for (const [from, to, weight] of edges) {
-    adjs[from].push([to, weight])
-    adjs[to].push([from, weight])
+  for (let ixEdge = 0; ixEdge < edges.length; ixEdge++) {
+    const [from, to, weight] = edges[ixEdge]
+    adjs[from].push([to, weight, ixEdge])
+    adjs[to].push([from, weight, ixEdge])
   }
   return adjs
 }
