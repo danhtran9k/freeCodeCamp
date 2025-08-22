@@ -7,9 +7,27 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug Yarn Leet",
+      "name": "Debug Yarn MacHome",
       "runtimeExecutable": "/opt/homebrew/bin/yarn",
-      "runtimeArgs": ["asd"],
+      "runtimeArgs": ["m1"],
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "console": "integratedTerminal",
+      "restart": true,
+      "autoAttachChildProcesses": true,
+      "localRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Yarn window",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["vn"],
       "cwd": "${workspaceFolder}",
       "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
       "console": "integratedTerminal",
