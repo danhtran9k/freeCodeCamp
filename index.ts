@@ -1,81 +1,60 @@
-type TParent = { child: number[]; size: number }
-type TSizes = Record<number, TParent>
-type TInitSizes = Record<number, { size: number; dupInit: number }>
+import { PriorityQueue } from './node_modules/@datastructures-js/priority-queue/index'
+type TEdge = number[] // [from, to , weight] , [destTo, weight]
+type TEdges = TEdge[]
+type TQueue = { dest: number; dist: number }
+function findAnswer(n: number, edges: TEdges): boolean[] {
+  const res = Array(n).fill(false)
+  const minDist = Array(n).fill(Infinity)
 
-function minMalwareSpread(graph: number[][], initial: number[]): number {
-  const len = graph.length
-  const parents = Array(len).fill(-1)
-  // const sizes: { node: number; size: number, sameInit: number }[] = []
-  const initSizes: TInitSizes = {}
-  initial.sort((a, b) => a - b)
+  const adjs = edgesToAdj(edges, n)
 
-  const dfs = (node: number, mark: number) => {
-    // if (parents[node] !== -1) return
-    parents[node] = mark
-    let size = 1
+  const minQueue = new PriorityQueue<TQueue>(
+    (a, b) => a.dist - b.dist,
+    [{ dest: 0, dist: 0 }]
+  )
 
-    const neighbougrs = graph[node]
-    for (let neighb = 0; neighb < len; neighb++) {
-      if (!neighbougrs[neighb] || parents[neighb] !== -1) continue
-      size += dfs(neighb, mark)
-    }
+  while (minQueue.size()) {
+    console.log('🚀 index L17-size: minQueue.size()', { size: minQueue.size() })
+    const { dest, dist } = minQueue.pop()
 
-    return size
-  }
+    if (dist > minDist[dest]) continue
+    minDist[dest] = dist
 
-  for (const start of initial) {
-    const parent = parents[start]
-    if (parent !== -1) {
-      initSizes[parent].dupInit++
-      continue
-    }
-    const size = dfs(start, start)
-    initSizes[start] = {
-      size,
-      dupInit: 1
+    // dest now is from -> adjs[from] = adjs[dist]
+    for (const [distTo, weight] of adjs[dist]) {
+      const prevDistToDist = minDist[distTo]
+      const newDist = dist + weight
+
+      if (newDist >= prevDistToDist) continue
+      minDist[distTo] = newDist
+      minQueue.enqueue({ dest: distTo, dist: newDist })
+      console.log({ from: dest, to: distTo, size: minQueue.size() })
     }
   }
 
-  let minNodeDup = Infinity
-  let maxSize = -Infinity
-  let node = -1
-  for (const [parent, { size, dupInit }] of Object.entries(initSizes)) {
-    const numParent = +parent
-
-    if (dupInit > 1 && numParent < minNodeDup) minNodeDup = numParent
-
-    if (dupInit === 1 && size > maxSize) {
-      maxSize = size
-      node = numParent
-    }
-  }
-
-  return node !== -1 ? node : minNodeDup
+  console.log(minDist)
+  return res
 }
 
-const graph = [
-  [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
-  [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0],
-  [0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0],
-  [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0],
-  [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0],
-  [0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0],
-  [0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0],
-  [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+const edgesToAdj = (edges: TEdges, len: number) => {
+  const adjs: TEdge[][] = Array.from({ length: len }, () => [])
+  for (const [from, to, weight] of edges) {
+    adjs[from].push([to, weight])
+    adjs[to].push([from, weight])
+  }
+  return adjs
+}
+
+const edges = [
+  [0, 1, 4],
+  [0, 2, 1],
+  [1, 3, 2],
+  [1, 4, 3],
+  [1, 5, 1],
+  [2, 3, 1],
+  [3, 5, 3],
+  [4, 5, 2]
 ]
-
-const initial = [7, 8, 6, 2, 3]
-
-// const graph = [
-//   [1, 0, 0, 0],
-//   [0, 1, 0, 0],
-//   [0, 0, 1, 1],
-//   [0, 0, 1, 1]
-// ]
-// const initial = [3, 1]
-
-const rest = minMalwareSpread(graph, initial)
+const n = 6
+const rest = findAnswer(n, edges)
 console.log(rest)
