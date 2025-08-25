@@ -7,11 +7,39 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug Yarn MacHome",
+      "name": "M_Home tsx",
       "runtimeExecutable": "/opt/homebrew/bin/yarn",
-      "runtimeArgs": ["m1"],
+      "runtimeArgs": [
+        "mf"
+      ],
       "cwd": "${workspaceFolder}",
-      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
+      "console": "integratedTerminal",
+      "restart": true,
+      "autoAttachChildProcesses": true,
+      "localRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "M_Home Native",
+      "runtimeExecutable": "/opt/homebrew/bin/yarn",
+      "runtimeArgs": [
+        "m1"
+      ],
+      "cwd": "${workspaceFolder}",
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
       "console": "integratedTerminal",
       "restart": true,
       "autoAttachChildProcesses": true,
@@ -27,9 +55,14 @@
       "request": "launch",
       "name": "Debug Yarn window",
       "runtimeExecutable": "yarn",
-      "runtimeArgs": ["vn"],
+      "runtimeArgs": [
+        "vn"
+      ],
       "cwd": "${workspaceFolder}",
-      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
       "console": "integratedTerminal",
       "restart": true,
       "autoAttachChildProcesses": true,
