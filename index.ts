@@ -1,74 +1,78 @@
-import { PriorityQueue } from '@datastructures-js/priority-queue'
-// import { Deque } from '@datastructures-js/deque'
 
-type TEdge = number[] // [from, to , weight] or [destTo, weight]
-type TEdges = TEdge[]
-type TQueue = { source: number; dist: number }
 
-function findAnswer(n: number, edges: TEdges): boolean[] {
-  const res = Array(n).fill(false)
-  const adjs = edgesToAdj(edges, n)
-  const dijkstra = genDijkstra(n, adjs)
-  console.log({ dijkstra })
-  // backtrack Dijkstra from Dest to Source
-  // const btrDeque = new Deque<number>([n - 1])
-  // btrDeque
-  // while (btrDeque.size) {
-  //   const curr = btrDeque
-  // }
-  return res
-}
 
-type TDijkstra = number[]
 
-const genDijkstra = (n: number, adjs: TEdge[][]) => {
-  const dijkstra: TDijkstra = Array(n).fill(Infinity)
-  dijkstra[0] = 0
 
-  const minQueue = new PriorityQueue<TQueue>(
-    (a, b) => a.dist - b.dist,
-    [{ source: 0, dist: 0 }]
-  )
 
-  while (minQueue.size()) {
-    const { source, dist } = minQueue.pop()
+function minCost(grid: number[][]): number {
+  const { row, col, visited_cost, DPOS, isIn } = setup(grid)
+  if (row === 1 && col === 1) return 0
 
-    if (dist > dijkstra[source]) continue
-    dijkstra[source] = dist
+  let queueZero: { x: number, y: number }[] = []
+  let queueOne: { x: number, y: number }[] = []
+  queueZero.push({ x: 0, y: 0 })
 
-    for (const [dest, weight, _] of adjs[source]) {
-      const prevDistToDist = dijkstra[dest]
-      const newDist = dist + weight
+  while (queueZero.length) {
+    const { x, y } = queueZero.pop()
+    const curr_state = grid[x][y]
+    const curr_cost = visited_cost[x][y]
 
-      if (newDist >= prevDistToDist) continue
-      dijkstra[dest] = newDist
-      minQueue.enqueue({ source: dest, dist: newDist })
+    for (let dirState = 1; dirState <= 4; dirState++) {
+      const [dx, dy] = DPOS[dirState]
+      const nx = x + dx
+      const ny = y + dy
+      if (!isIn(nx, ny)) continue
+
+      const old_next_cost = visited_cost[nx][ny]
+      const move_cost = curr_state === dirState ? 0 : 1
+      const new_cost = curr_cost + move_cost
+      if (new_cost >= old_next_cost) continue
+
+      visited_cost[nx][ny] = new_cost // update before enqueue
+      // if (nx === row - 1 && ny === col - 1) return new_cost
+      // KO BREAK EARLY, phải exhausted queueZero
+
+      if (move_cost === 1) {
+        queueOne.push({ x: nx, y: ny })
+      } else {
+        queueZero.push({ x: nx, y: ny })
+      }
+    }
+
+    if (!queueZero.length) {
+      queueZero = queueOne
+      queueOne = []
     }
   }
 
-  return dijkstra
-}
+  // should be break early
+  return -1
+};
 
-const edgesToAdj = (edges: TEdges, len: number) => {
-  const adjs: TEdge[][] = Array.from({ length: len }, () => [])
-  for (let ixEdge = 0; ixEdge < edges.length; ixEdge++) {
-    const [from, to, weight] = edges[ixEdge]
-    adjs[from].push([to, weight, ixEdge])
-    adjs[to].push([from, weight, ixEdge])
+const setup = (grid: number[][]) => {
+  const row = grid.length
+  const col = grid[0].length
+
+
+  const visited_cost = Array.from({ length: row },
+    () => Array(col).fill(Infinity))
+  visited_cost[0][0] = 0
+
+  const DPOS = {
+    1: [0, 1],
+    2: [0, -1],
+    3: [1, 0],
+    4: [-1, 0]
   }
-  return adjs
+
+  const isIn = (x: number, y: number) =>
+    x >= 0 && y >= 0 && x < grid.length && y < grid[0].length;
+
+  return { row, col, visited_cost, DPOS, isIn }
 }
 
-const edges = [
-  [0, 1, 4],
-  [0, 2, 1],
-  [1, 3, 2],
-  [1, 4, 3],
-  [1, 5, 1],
-  [2, 3, 1],
-  [3, 5, 3],
-  [4, 5, 2]
-]
-const n = 6
-const rest = findAnswer(n, edges)
+
+// const grid = [[1, 1, 1, 1], [2, 2, 2, 2], [1, 1, 1, 1], [2, 2, 2, 2]]
+const grid = [[1, 1, 3], [3, 2, 2], [1, 1, 4]]
+const rest = minCost(grid)
 console.log(rest)
