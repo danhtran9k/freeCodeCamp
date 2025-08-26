@@ -72,6 +72,30 @@
         "${workspaceFolder}/**",
         "!**/node_modules/**"
       ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug index.ts (watch)",
+      "runtimeExecutable": "C:\\Users\\danh2k\\.nvm\\versions\\node\\v20.18.0\\bin\\node.exe",
+      "runtimeArgs": [
+        "--watch",
+        "--import=tsx",
+        "./index.ts"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
+      "restart": true,
+      "autoAttachChildProcesses": true,
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
     }
   ]
 }
