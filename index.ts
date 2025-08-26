@@ -1,78 +1,65 @@
+function criticalConnections(n: number, connections: number[][]): number[][] {
+  const adjs = edgesToAdj(connections, n)
+  const visited = Array(n).fill(-1)
+  const res = []
 
+  const dfs = (node: number, parent: number, depth: number): number => {
+    if (visited[node] !== -1) return visited[node]
 
+    visited[node] = depth
+    let minDepthNeighb = depth
 
+    for (const neighb of adjs[node]) {
+      if (neighb === parent) continue
 
-
-
-function minCost(grid: number[][]): number {
-  const { row, col, visited_cost, DPOS, isIn } = setup(grid)
-  if (row === 1 && col === 1) return 0
-
-  let queueZero: { x: number, y: number }[] = []
-  let queueOne: { x: number, y: number }[] = []
-  queueZero.push({ x: 0, y: 0 })
-
-  while (queueZero.length) {
-    const { x, y } = queueZero.pop()
-    const curr_state = grid[x][y]
-    const curr_cost = visited_cost[x][y]
-
-    for (let dirState = 1; dirState <= 4; dirState++) {
-      const [dx, dy] = DPOS[dirState]
-      const nx = x + dx
-      const ny = y + dy
-      if (!isIn(nx, ny)) continue
-
-      const old_next_cost = visited_cost[nx][ny]
-      const move_cost = curr_state === dirState ? 0 : 1
-      const new_cost = curr_cost + move_cost
-      if (new_cost >= old_next_cost) continue
-
-      visited_cost[nx][ny] = new_cost // update before enqueue
-      // if (nx === row - 1 && ny === col - 1) return new_cost
-      // KO BREAK EARLY, phải exhausted queueZero
-
-      if (move_cost === 1) {
-        queueOne.push({ x: nx, y: ny })
-      } else {
-        queueZero.push({ x: nx, y: ny })
-      }
+      const backDepth = dfs(neighb, node, depth + 1)
+      minDepthNeighb = Math.min(minDepthNeighb, backDepth)
     }
 
-    if (!queueZero.length) {
-      queueZero = queueOne
-      queueOne = []
+    if (minDepthNeighb < depth) {
+      visited[node] = minDepthNeighb
     }
+    console.log({ node, parent, minDepthNeighb })
+    return minDepthNeighb
   }
 
-  // should be break early
-  return -1
-};
-
-const setup = (grid: number[][]) => {
-  const row = grid.length
-  const col = grid[0].length
-
-
-  const visited_cost = Array.from({ length: row },
-    () => Array(col).fill(Infinity))
-  visited_cost[0][0] = 0
-
-  const DPOS = {
-    1: [0, 1],
-    2: [0, -1],
-    3: [1, 0],
-    4: [-1, 0]
+  dfs(0, -1, 0)
+  console.log({ visited })
+  for (const [from, to] of connections) {
+    if (visited[from] === visited[to]) continue
+    res.push([from, to])
   }
-
-  const isIn = (x: number, y: number) =>
-    x >= 0 && y >= 0 && x < grid.length && y < grid[0].length;
-
-  return { row, col, visited_cost, DPOS, isIn }
+  return res
 }
 
+const edgesToAdj = (edges: number[][], len: number) => {
+  const adjs: number[][] = Array.from({ length: len }, () => [])
+  for (const [from, to] of edges) {
+    adjs[from].push(to)
+    adjs[to].push(from)
+  }
+  return adjs
+}
 
-// const grid = [[1, 1, 1, 1], [2, 2, 2, 2], [1, 1, 1, 1], [2, 2, 2, 2]]
-const grid = [[1, 1, 3], [3, 2, 2], [1, 1, 4]]
-const rest = minCost(grid)
+// garanteed 2 cons the same , just swap pos and from to
+// result khác biệt rõ ràng, visited depth khác, res cũng khác luôn
+// const cons = [[0, 1],[0, 2],[1, 2],[1, 3],[1, 5],[1, 7],[2, 6],[2, 8],[3, 4],[3, 9],[4, 5],[6, 7]]
+const conns = [
+  [6, 7],
+  [1, 2],
+  [3, 4],
+  [9, 3],
+  [0, 1],
+  [7, 1],
+  [2, 6],
+  [8, 2],
+  [5, 4],
+  [1, 3],
+  [5, 1],
+  [2, 0]
+]
+const n = 10
+// expect [[2,8], [3,9]]
+// array depth trả ra SAI, KQ sai khủng khiếp
+const rest = criticalConnections(n, conns)
 console.log(rest)
