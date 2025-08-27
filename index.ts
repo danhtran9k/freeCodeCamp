@@ -1,65 +1,175 @@
-function criticalConnections(n: number, connections: number[][]): number[][] {
-  const adjs = edgesToAdj(connections, n)
-  const visited = Array(n).fill(-1)
-  const res = []
+/*
 
-  const dfs = (node: number, parent: number, depth: number): number => {
-    if (visited[node] !== -1) return visited[node]
+You are given a 2D integer matrix grid of size n x m, where each element is either 0, 1, or 2.
 
-    visited[node] = depth
-    let minDepthNeighb = depth
+A V-shaped diagonal segment is defined as:
 
-    for (const neighb of adjs[node]) {
-      if (neighb === parent) continue
+The segment starts with 1.
+The subsequent elements follow this infinite sequence: 2, 0, 2, 0, ....
+The segment:
+Starts along a diagonal direction (top-left to bottom-right, bottom-right to top-left, top-right to bottom-left, or bottom-left to top-right).
+Continues the sequence in the same diagonal direction.
+Makes at most one clockwise 90-degree turn to another diagonal direction while maintaining the sequence.
 
-      const backDepth = dfs(neighb, node, depth + 1)
-      minDepthNeighb = Math.min(minDepthNeighb, backDepth)
-    }
+n == grid.length
+m == grid[i].length
+1 <= n, m <= 500
+grid[i][j] is either 0, 1 or 2.
+*/
 
-    if (minDepthNeighb < depth) {
-      visited[node] = minDepthNeighb
-    }
-    console.log({ node, parent, minDepthNeighb })
-    return minDepthNeighb
+const tc = [
+  {
+    grid: [
+      [2, 2, 1, 2, 2],
+      [2, 0, 2, 2, 0],
+      [2, 0, 1, 1, 0],
+      [1, 0, 2, 2, 2],
+      [2, 0, 0, 2, 2]
+    ],
+    expected: 5
+  },
+  {
+    grid: [
+      [2, 2, 2, 2, 2],
+      [2, 0, 2, 2, 0],
+      [2, 0, 1, 1, 0],
+      [1, 0, 2, 2, 2],
+      [2, 0, 0, 2, 2]
+    ],
+    expected: 4
+  },
+  {
+    grid: [
+      [1, 2, 2, 2, 2],
+      [2, 2, 2, 2, 0],
+      [2, 0, 0, 0, 0],
+      [0, 0, 2, 2, 2],
+      [2, 0, 0, 2, 0]
+    ],
+    expected: 5
+  },
+  {
+    grid: [[1]],
+    expected: 1
+  },
+  {
+    grid: [[2]],
+    expected: 2
+  },
+  {
+    grid: [[0]],
+    expected: 0
+  },
+  {
+    grid: [[0, 0, 2]],
+    expected: 0
+  },
+  {
+    grid: [
+      [0, 0, 0, 2, 2],
+      [0, 1, 0, 0, 0],
+      [0, 0, 1, 0, 0]
+    ],
+    expected: 3
+  },
+  {
+    grid: [
+      [0, 0, 2],
+      [2, 0, 0]
+    ],
+    expected: 0
+  },
+  {
+    grid: [
+      [0, 0, 2, 2],
+      [0, 0, 1, 0]
+    ],
+    expected: 1
   }
-
-  dfs(0, -1, 0)
-  console.log({ visited })
-  for (const [from, to] of connections) {
-    if (visited[from] === visited[to]) continue
-    res.push([from, to])
-  }
-  return res
-}
-
-const edgesToAdj = (edges: number[][], len: number) => {
-  const adjs: number[][] = Array.from({ length: len }, () => [])
-  for (const [from, to] of edges) {
-    adjs[from].push(to)
-    adjs[to].push(from)
-  }
-  return adjs
-}
-
-// garanteed 2 cons the same , just swap pos and from to
-// result khác biệt rõ ràng, visited depth khác, res cũng khác luôn
-// const cons = [[0, 1],[0, 2],[1, 2],[1, 3],[1, 5],[1, 7],[2, 6],[2, 8],[3, 4],[3, 9],[4, 5],[6, 7]]
-const conns = [
-  [6, 7],
-  [1, 2],
-  [3, 4],
-  [9, 3],
-  [0, 1],
-  [7, 1],
-  [2, 6],
-  [8, 2],
-  [5, 4],
-  [1, 3],
-  [5, 1],
-  [2, 0]
 ]
-const n = 10
-// expect [[2,8], [3,9]]
-// array depth trả ra SAI, KQ sai khủng khiếp
-const rest = criticalConnections(n, conns)
-console.log(rest)
+
+const DIRS = {
+  '↖️': [-1, -1],
+  '↗️': [-1, 1],
+  '↘️': [1, 1],
+  '↙️': [1, -1]
+}
+
+function lenOfVDiagonal(grid: number[][]): number {
+  let step = 0
+  setup(grid)
+  return step
+}
+
+const NULLER = 1
+const setup = (grid: number[][]) => {
+  const lastRow = grid.length - 1
+  const lastCol = grid[0].length - 1
+
+  const lastDiag = lastRow + lastCol
+
+  const isIn = (x, y) => x >= 0 && y >= 0 && x <= lastRow && y <= lastCol
+
+  const memoTurn = Array.from({ length: lastRow + 1 }, () =>
+    Array.from({ length: lastCol + 1 }, () => ({
+      '↖️': 0,
+      '↗️': 0,
+      '↘️': 0,
+      '↙️': 0
+    }))
+  )
+
+  const getByDir = (ix, iy, dir) => {
+    const [dx, dy] = DIRS[dir]
+
+    const posX = ix + dx
+    const posY = iy + dy
+
+    const val = isIn(posX, posY) ? grid[posX][posY] : NULLER
+    return { posX, posY, val }
+  }
+
+  //  memoTurn ↖️ ↗️
+  for (let ix = 0; ix <= lastRow; ix++) {
+    for (let iy = 0; iy <= lastCol; iy++) {
+      const curr = grid[ix][iy]
+
+      if (curr === 1) continue
+
+      const left = getByDir(ix, iy, '↖️')
+      const right = getByDir(ix, iy, '↗️')
+
+      if (curr + left.val === 2) {
+        memoTurn[ix][iy]['↖️'] = memoTurn[left.posX][left.posY]['↖️'] + 1
+      }
+
+      if (curr + right.val === 2) {
+        memoTurn[ix][iy]['↗️'] = memoTurn[right.posX][right.posY]['↗️'] + 1
+      }
+    }
+  }
+
+  // memoTurn ↘️ ↙️
+  for (let ix = lastRow; ix >= 0; ix--) {
+    for (let iy = 0; iy <= lastCol; iy++) {
+      const curr = grid[ix][iy]
+      if (curr === 1) continue
+
+      const left = getByDir(ix, iy, '↙️')
+      const right = getByDir(ix, iy, '↘️')
+
+      if (curr + left.val === 2) {
+        memoTurn[ix][iy]['↙️'] = memoTurn[left.posX][left.posY]['↙️'] + 1
+      }
+
+      if (curr + right.val === 2) {
+        memoTurn[ix][iy]['↘️'] = memoTurn[right.posX][right.posY]['↘️'] + 1
+      }
+    }
+  }
+
+  return { lastCol, lastRow, lastDiag, isIn, memoTurn }
+}
+
+const resl = lenOfVDiagonal(tc[1].grid)
+console.log(resl)
