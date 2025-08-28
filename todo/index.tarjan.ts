@@ -1,5 +1,8 @@
+// https://leetcode.com/problems/critical-connections-in-a-network/
+// 1192. Critical Connections in a Network
+
 function criticalConnections(n: number, connections: number[][]): number[][] {
-  const adjs = edgesToAdj(connections, n)
+  const adjs = edgesToAdj_1192(connections, n)
   const visited = Array(n).fill(-1)
   const res = []
 
@@ -32,7 +35,7 @@ function criticalConnections(n: number, connections: number[][]): number[][] {
   return res
 }
 
-const edgesToAdj = (edges: number[][], len: number) => {
+const edgesToAdj_1192 = (edges: number[][], len: number) => {
   const adjs: number[][] = Array.from({ length: len }, () => [])
   for (const [from, to] of edges) {
     adjs[from].push(to)
@@ -44,7 +47,7 @@ const edgesToAdj = (edges: number[][], len: number) => {
 // garanteed 2 cons the same , just swap pos and from to
 // result khác biệt rõ ràng, visited depth khác, res cũng khác luôn
 // const cons = [[0, 1],[0, 2],[1, 2],[1, 3],[1, 5],[1, 7],[2, 6],[2, 8],[3, 4],[3, 9],[4, 5],[6, 7]]
-const conns = [
+const conns_1192 = [
   [6, 7],
   [1, 2],
   [3, 4],
@@ -61,5 +64,5 @@ const conns = [
 const n = 10
 // expect [[2,8], [3,9]]
 // array depth trả ra SAI, KQ sai khủng khiếp
-const rest = criticalConnections(n, conns)
-console.log(rest)
+const res_criticalConnections = criticalConnections(n, conns_1192)
+console.log(res_criticalConnections)

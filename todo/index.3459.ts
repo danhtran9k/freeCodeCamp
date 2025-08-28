@@ -19,7 +19,7 @@ m == grid[i].length
 grid[i][j] is either 0, 1 or 2.
 */
 
-const tc = [
+const tc_3459 = [
   {
     grid: [
       [2, 2, 1, 2, 2],
@@ -90,21 +90,21 @@ const tc = [
   }
 ]
 
-const DIRS = {
+const DIRS_3459 = {
   '↖️': [-1, -1],
   '↗️': [-1, 1],
   '↘️': [1, 1],
   '↙️': [1, -1]
 }
 
-function lenOfVDiagonal(grid: number[][]): number {
+function lenOfVDiagonal_3459(grid: number[][]): number {
   let step = 0
-  setup(grid)
+  setup_3459(grid)
   return step
 }
 
 const NULLER = 1
-const setup = (grid: number[][]) => {
+const setup_3459 = (grid: number[][]) => {
   const lastRow = grid.length - 1
   const lastCol = grid[0].length - 1
 
@@ -173,7 +173,7 @@ const setup = (grid: number[][]) => {
   return { lastCol, lastRow, lastDiag, isIn, memoTurn }
 }
 
-const resl = lenOfVDiagonal(tc[1].grid)
+const resl = lenOfVDiagonal_3459(tc_3459[1].grid)
 console.log(resl)
 
 const testDiag1x = [
@@ -192,7 +192,7 @@ const testDiag2x = [
 
 // ↖️↘️ : lastRow -> -lastCol [lastRow,0] -> [0,lastCol] , [+1, +1]
 // ↗️↙️ : 0 -> lastDiag [0,0] -> [lastRow,lastCol] , [-1, +1]
-const moveDiag = (grid) => {
+const moveDiag_3459 = (grid) => {
   const lastRow = grid.length - 1
   const lastCol = grid[0].length - 1
 
@@ -228,5 +228,5 @@ const moveDiag = (grid) => {
   return rest
 }
 
-moveDiag(testDiag1x)
-moveDiag(testDiag2x)
+moveDiag_3459(testDiag1x)
+moveDiag_3459(testDiag2x)
