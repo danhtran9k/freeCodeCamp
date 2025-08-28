@@ -196,43 +196,51 @@ const setup = (grid: number[][]) => {
     }))
   )
 
-  const getByDir = (ix, iy, dir) => {
+  const getByDir = (dir) => {
     const [dx, dy] = DIRS[dir]
 
-    const posX = ix + dx
-    const posY = iy + dy
+    return (ix, iy) => {
+      const posX = ix + dx
+      const posY = iy + dy
 
-    const val = isIn(posX, posY) ? grid[posX][posY] : NULLER
-    return { posX, posY, val }
+      const val = isIn(posX, posY) ? grid[posX][posY] : NULLER
+      return { posX, posY, val }
+    }
   }
 
-  const setMemoCell = (ix, iy, isMoveUp) => {
-    const curr = grid[ix][iy]
+  const memoSetter = (isMoveUp: boolean) => {
     const [L, R] = isMoveUp ? ['↖️', '↗️'] : ['↙️', '↘️']
+    const getLeft = getByDir(L)
+    const getRight = getByDir(R)
 
-    const left = getByDir(ix, iy, L)
-    const right = getByDir(ix, iy, R)
+    return (ix, iy) => {
+      const curr = grid[ix][iy]
+      const left = getLeft(ix, iy)
+      const right = getRight(ix, iy)
 
-    if (curr + left.val === 2 || (curr === 1 && left.val === 2)) {
-      memoTurn[ix][iy][L] = memoTurn[left.posX][left.posY][L] + 1
-    }
+      if (curr + left.val === 2 || (curr === 1 && left.val === 2)) {
+        memoTurn[ix][iy][L] = memoTurn[left.posX][left.posY][L] + 1
+      }
 
-    if (curr + right.val === 2 || (curr === 1 && right.val === 2)) {
-      memoTurn[ix][iy][R] = memoTurn[right.posX][right.posY][R] + 1
+      if (curr + right.val === 2 || (curr === 1 && right.val === 2)) {
+        memoTurn[ix][iy][R] = memoTurn[right.posX][right.posY][R] + 1
+      }
     }
   }
 
   //  memoTurn ↖️ ↗️
+  const setterUp = memoSetter(true)
   for (let ix = 0; ix <= lastRow; ix++) {
     for (let iy = 0; iy <= lastCol; iy++) {
-      setMemoCell(ix, iy, true)
+      setterUp(ix, iy)
     }
   }
 
   // memoTurn ↘️ ↙️
+  const setterDown = memoSetter(false)
   for (let ix = lastRow; ix >= 0; ix--) {
     for (let iy = 0; iy <= lastCol; iy++) {
-      setMemoCell(ix, iy, false)
+      setterDown(ix, iy)
     }
   }
 
