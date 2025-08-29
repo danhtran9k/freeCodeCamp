@@ -97,19 +97,25 @@ const DIRS = {
   '↙️': [1, -1]
 }
 
+const DEBUG = 4
+
 function lenOfVDiagonal(grid: number[][]): number {
-  let res = 0
+  let step = 0
   const { lastRow, lastCol, lastDiag, isIn, memoTurn } = setup(grid)
 
   const walker = (dir: '↙️' | '↘️') => {
     const [dx, dy] = DIRS[dir]
+
+    // memoTurn forward ↙️ is ↖️ , backward ↗️ is ↘️
+    // memoTurn forward ↘️ is ↙️ , backward ↖️ is ↗️
+    const DIR_MEMO_FORWARD = dir === '↙️' ? '↖️' : '↙️'
+    const DIR_MEMO_BACKWARD = dir === '↙️' ? '↘️' : '↗️'
 
     return (ixBegin: number, iyBegin: number) => {
       let ix = ixBegin
       let iy = iyBegin
 
       let seen_one = false
-      // let step = 0
       let curr_forward = 0
       let curr_backward = 0
 
@@ -119,24 +125,24 @@ function lenOfVDiagonal(grid: number[][]): number {
 
       while (true) {
         const curr = grid[ix][iy]
+        curr_backward = Math.max(
+          1 + curr_backward,
+          1 + memoTurn[ix][iy][DIR_MEMO_BACKWARD]
+        )
 
         if (curr === 1) {
           seen_one = true
-          // update backward vào res
-          // reset forward = 0
-          // reset backward = 0
+          step = Math.max(step, curr_backward)
+          curr_forward = 0
+          curr_forward = 0
         }
 
-        curr_backward++
         if (seen_one) {
           curr_forward++
 
-          // memoTurn forward ↙️ is ↖️ , backward ↗️ is ↘️
-          // memoTurn forward ↘️ is ↙️ , backward ↖️ is ↗️
-
-          res = Math.max(
-            res,
-            curr_forward + memoTurn[ix][iy][dir === '↙️' ? '↖️' : '↙️']
+          step = Math.max(
+            step,
+            curr_forward + memoTurn[ix][iy][DIR_MEMO_FORWARD]
             // try curr turn
           )
         }
@@ -148,13 +154,19 @@ function lenOfVDiagonal(grid: number[][]): number {
         if (!isIn(ix, iy)) break
 
         const next = grid[ix][iy]
+        const sum = curr + next
+        const isForwardValid =
+          (curr === 1 && next === 2) || (curr !== 1 && sum === 2)
 
-        if ((next === 1 || curr === 1) && next + curr === 3) continue // extend validity
+        if (!isForwardValid) {
+          seen_one = false
+          curr_forward = 0
+        }
 
-        // else reset window
-        seen_one = false
-        curr_forward = 0
-        curr_backward = 0
+        const isBackwardValid =
+          (next === 1 && curr === 2) || (next !== 1 && sum === 2)
+
+        if (!isBackwardValid) curr_backward = 0
       }
     }
   }
@@ -185,7 +197,7 @@ function lenOfVDiagonal(grid: number[][]): number {
     }
   }
 
-  return res
+  return step
 }
 
 const NULLER = -3
@@ -196,7 +208,7 @@ const setup = (grid: number[][]) => {
   const lastDiag = lastRow + lastCol
 
   const isIn = (x, y) => x >= 0 && y >= 0 && x <= lastRow && y <= lastCol
-
+  
   const memoTurn = Array.from({ length: lastRow + 1 }, () =>
     Array.from({ length: lastCol + 1 }, () => ({
       '↖️': 0,
@@ -228,11 +240,17 @@ const setup = (grid: number[][]) => {
       const left = getLeft(ix, iy)
       const right = getRight(ix, iy)
 
-      if (curr + left.val === 2 || (curr === 1 && left.val === 2)) {
+      if (
+        (curr !== 1 && curr + left.val === 2) ||
+        (curr === 1 && left.val === 2)
+      ) {
         memoTurn[ix][iy][L] = memoTurn[left.posX][left.posY][L] + 1
       }
 
-      if (curr + right.val === 2 || (curr === 1 && right.val === 2)) {
+      if (
+        (curr !== 1 && curr + right.val === 2) ||
+        (curr === 1 && right.val === 2)
+      ) {
         memoTurn[ix][iy][R] = memoTurn[right.posX][right.posY][R] + 1
       }
     }
@@ -257,60 +275,16 @@ const setup = (grid: number[][]) => {
   return { lastCol, lastRow, lastDiag, isIn, memoTurn }
 }
 
-const resl = lenOfVDiagonal(tc[1].grid)
-console.log({ resl, expected: tc[1].expected })
-
-const testDiag1x = [
-  [11, 12, 13, 14, 15, 16],
-  [17, 18, 19, 20, 21, 22],
-  [23, 24, 25, 26, 27, 28]
+const tc_fail = [
+  [1, 0, 2, 1, 1, 1, 1, 2, 1, 2, 1, 0, 0, 2, 0, 2, 1],
+  [1, 0, 2, 0, 0, 0, 2, 2, 2, 0, 0, 1, 0, 1, 1, 2, 0],
+  [0, 1, 0, 0, 2, 1, 1, 2, 2, 1, 2, 1, 0, 1, 0, 1, 1],
+  [0, 2, 1, 0, 0, 1, 0, 0, 2, 1, 0, 1, 2, 2, 0, 0, 2],
+  [2, 1, 0, 1, 2, 2, 1, 0, 1, 2, 2, 2, 0, 0, 0, 1, 0],
+  [0, 0, 2, 0, 0, 0, 0, 1, 0, 1, 0, 0, 2, 2, 0, 1, 2],
+  [0, 2, 0, 2, 0, 2, 1, 2, 2, 1, 0, 1, 0, 1, 0, 0, 1]
 ]
 
-const testDiag2x = [
-  [11, 12, 13],
-  [14, 15, 16],
-  [17, 18, 19],
-  [20, 21, 22],
-  [23, 24, 25]
-]
-
-// ↖️↘️ : lastRow -> -lastCol [lastRow,0] -> [0,lastCol] , [+1, +1]
-// ↗️↙️ : 0 -> lastDiag [0,0] -> [lastRow,lastCol] , [-1, +1]
-const move_topRight_botLeft = (grid) => {
-  const lastRow = grid.length - 1
-  const lastCol = grid[0].length - 1
-
-  const lastDiag = lastRow + lastCol //↗️↙️ : 0 -> lastDiag
-
-  const isIn = (x, y) => x >= 0 && y >= 0 && x <= lastRow && y <= lastCol
-  let ixStart = 0
-  let iyStart = 0
-  const rest = []
-
-  for (let cnt = 0; cnt <= lastDiag; cnt++) {
-    let ix = ixStart
-    let iy = iyStart
-    const tmp = []
-
-    while (true) {
-      tmp.push(grid[ix][iy])
-      ix += 1
-      iy -= 1
-      if (!isIn(ix, iy)) break
-    }
-
-    rest.push(tmp)
-    if (iyStart < lastCol) {
-      iyStart += 1
-    } else {
-      ixStart += 1
-    }
-  }
-
-  console.log(rest)
-
-  return rest
-}
-
-// move_topRight_botLeft(testDiag1x)
-// move_topRight_botLeft(testDiag2x)
+const expected = 5
+const resl = lenOfVDiagonal(tc_fail)
+console.log({ resl, expected })
