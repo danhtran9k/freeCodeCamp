@@ -109,15 +109,23 @@ function lenOfVDiagonal(grid: number[][]): number {
       let iy = iyBegin
 
       let seen_one = false
-      let step = 0
+      // let step = 0
       let curr_forward = 0
       let curr_backward = 0
 
       // curr luôn valid (head diag luôn valid !)
-      // check invalid với next, invalid thì reset
+      // check invalid với next, next invalid sẽ reset curr !!
+      // -> đảm bảo khi jump qua next thì next là curr bây giờ sẽ valid
 
       while (true) {
         const curr = grid[ix][iy]
+
+        if (curr === 1) {
+          seen_one = true
+          // update backward vào res
+          // reset forward = 0
+          // reset backward = 0
+        }
 
         curr_backward++
         if (seen_one) {
@@ -133,18 +141,20 @@ function lenOfVDiagonal(grid: number[][]): number {
           )
         }
 
-        if (curr === 1) {
-          seen_one = true
-        }
-
+        // window check
         ix += dx
         iy += dy
-        if (!isIn(ix, iy)) {
-          // if
-          break
-        } else {
-          const next = grid[ix][iy]
-        }
+
+        if (!isIn(ix, iy)) break
+
+        const next = grid[ix][iy]
+
+        if ((next === 1 || curr === 1) && next + curr === 3) continue // extend validity
+
+        // else reset window
+        seen_one = false
+        curr_forward = 0
+        curr_backward = 0
       }
     }
   }
@@ -248,7 +258,7 @@ const setup = (grid: number[][]) => {
 }
 
 const resl = lenOfVDiagonal(tc[1].grid)
-console.log(resl)
+console.log({ resl, expected: tc[1].expected })
 
 const testDiag1x = [
   [11, 12, 13, 14, 15, 16],
@@ -302,5 +312,5 @@ const move_topRight_botLeft = (grid) => {
   return rest
 }
 
-move_topRight_botLeft(testDiag1x)
-move_topRight_botLeft(testDiag2x)
+// move_topRight_botLeft(testDiag1x)
+// move_topRight_botLeft(testDiag2x)
