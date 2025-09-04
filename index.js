@@ -1,75 +1,84 @@
-import { Deque } from '@datastructures-js/deque'
+// class Solution {
+//   adjs = []
 
-function numSubmat(mat) {
-  const row = mat.length
-  const col = mat[0].length
-  const debug = mat.map((row) => [...row])
+//   ids = []
+//   visited = []
+//   articulationSet = []
 
-  let res = 0
+//   id = 0
 
-  let prevStack = new Deque() // [col, area, row]
-  for (let ir = 0; ir < row; ir++) {
-    let mergeCol = -1
-    let mergeArea = 0
-    let substract = 0
-    const nextQueue = new Deque()
+//   articulationPoints(V, edges) {
+//     this.adjs = this._getAdj(edges)
 
-    for (let ic = 0; ic < col; ic++) {
-      const curr = mat[ir][ic]
-      const fullArea = (ir + 1) * (ic + 1)
+//     this.ids = Array(V).fill(-1)
+//     this.visited = Array(V).fill(-1)
+//     this.articulationSet = Array(V).fill(false)
 
-      if (!curr) {
-        nextQueue.pushFront([ic, fullArea, ir])
-        substract = fullArea
-        mergeArea = fullArea
-        mergeCol = ic
-        debug[ir][ic] = 0
-        console.log('newSubtract from Zero', { substract, mergeCol })
-        continue
-      }
+//     // console.log(adj)
+//     for (let node = 0; node < V; node++) {
+//       if (this.visited[node] !== -1) continue
+//       this.dfsTarjan(node, -1)
+//     }
 
-      // while (prevStack.size() && prevStack.back()[0] < ic) {
-      //   console.log(prevStack)
-      //   const popStack = prevStack.popBack()
-      //   nextQueue.pushFront(popStack)
-      // }
+//     const res = []
+//     for (let node = 0; node < V; node++) {
+//       if (this.articulationSet[node]) res.push(node)
+//     }
+//     return res.length ? res : [-1]
+//   }
 
-      // pop then pushFront - unshift to Queue
-      // update new substract with new Queue if existd
-      if (prevStack.size() && ic === prevStack.back()[0]) {
-        let [prevCol, prevSubtract, prevRow] = prevStack.popBack()
+//   dfsTarjan(node, parent) {
+//     this.ids[node] = this.id
+//     this.visited[node] = this.id
+//     this.id++
 
-        if (mergeCol >= 0) {
-          const subtrackMerge = (prevCol - mergeCol) * (prevRow + 1)
-          substract += subtrackMerge
-          // substract = mergeArea + subtrackMerge
-          console.log({ subtrackMerge, substract, prevCol, mergeCol })
-        } else {
-          substract = prevSubtract
-        }
-        nextQueue.pushFront([prevCol, substract, prevRow])
-      }
+//     let child = 0
+//     for (const neighb of this.adjs[node]) {
+//       if (neighb === parent || neighb === node) continue
 
-      res += fullArea - substract
-      debug[ir][ic] = fullArea - substract
-    }
+//       if (this.visited[neighb] === -1) {
+//         child++
+//         this.dfsTarjan(neighb, node)
 
-    prevStack = nextQueue
-    console.log('nextQueue', nextQueue)
-  }
+//         if (parent !== -1 && this.visited[neighb] >= this.ids[node]) {
+//           this.articulationSet[node] = true
+//         }
+//       }
 
-  console.log(debug)
-  return res
-}
+//       this.visited[node] = Math.min(this.visited[node], this.visited[neighb])
+//     }
 
-const matrix = [
-  [1, 1, 1, 1, 0, 1],
-  [1, 1, 1, 1, 1, 1],
-  [1, 1, 0, 1, 1, 1],
-  [1, 1, 1, 0, 1, 1],
-  [1, 1, 1, 1, 1, 1],
-  [1, 0, 1, 1, 1, 0]
-]
+//     if (parent === -1 && child > 1) this.articulationSet[node] = true
+//   }
 
-const res = numSubmat(matrix)
-console.log(res)
+//   _getAdj(V, edges) {
+//     const adj = Array.from({ length: V }, () => [])
+//     for (const [u, v] of edges) {
+//       adj[u].push(v)
+//       adj[v].push(u)
+//     }
+//     return adj
+//   }
+// }
+
+// const V = 10
+// const edges = [
+//   [1, 6],
+//   [0, 5],
+//   [7, 2],
+//   [4, 6],
+//   [7, 5],
+//   [7, 5],
+//   [9, 8],
+//   [6, 5],
+//   [1, 2],
+//   [1, 1],
+//   [6, 7],
+//   [2, 1],
+//   [3, 3],
+//   [8, 7],
+//   [6, 3]
+// ]
+
+// const Sol = new Solution()
+// console.log(Sol.articulationPoints(V, edges))
