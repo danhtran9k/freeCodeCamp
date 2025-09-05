@@ -1,4 +1,4 @@
-export const adjsToMatrix = (V, adjs) => {
+export const adjsToMatrixUndirected = (V, adjs) => {
   const matrix = Array.from({ length: V }, () => Array(V).fill(0))
   for (let i = 0; i < V; i++) {
     matrix[i][i] = 1
