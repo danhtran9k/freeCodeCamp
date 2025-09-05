@@ -1,5 +1,6 @@
 // https://www.geeksforgeeks.org/problems/articulation-point-1/0
-import { adjsToMatrix } from './graph-present-convert'
+import { tc_articulation } from '../testcase/gen-tc-tarjan'
+import { adjsToMatrixUndirected } from './graph-present-convert'
 
 export class SolutionArticulation {
   articulationPoints(V, edges) {
@@ -9,7 +10,7 @@ export class SolutionArticulation {
     const set_full = this.ap_full_tarjan(V, adjs)
     const set_hybrid = this.ap_hybrid(V, adjs)
 
-    const matrix = adjsToMatrix(V, adjs)
+    const matrix = adjsToMatrixUndirected(V, adjs)
     console.log({ set_min, set_full, set_hybrid })
 
     const points = set_full
@@ -142,59 +143,6 @@ export class SolutionArticulation {
       adj[v].push(u)
     }
     return adj
-  }
-}
-
-export const tc_articulation = {
-  tc160: {
-    V: 10,
-    adjs: [
-      [2], // 0
-      [5, 6], // 1
-      [0, 9], // 2
-      [5, 7], // 3
-      [5, 6, 8], // 4
-      [1, 3, 4, 6], // 5
-      [1, 4, 5, 6, 6, 7, 9], // 6 (có self-loop: 6,6)
-      [3, 6], // 7
-      [4], // 8
-      [2, 6] // 9
-    ]
-  },
-  // swap lại thứ tự để control đường đi dfs
-  tc8: {
-    V: 8,
-    adjs: [
-      [1],
-      [5, 2, 0],
-      [1, 7, 6, 3],
-      [4, 5, 2],
-      [5, 3],
-      [3, 4, 1],
-      [2, 7],
-      [6, 2]
-    ]
-  },
-  tc8b: {
-    V: 8,
-    adjs: [
-      [1],
-      [0, 2, 5],
-      [6, 3, 7, 1],
-      [4, 5, 2],
-      [5, 3],
-      [3, 4, 1],
-      [2, 7],
-      [6, 2]
-    ]
-  },
-  tcBasic: {
-    V: 5,
-    adjs: [[2, 3], [0], [1], [4]]
-  },
-  tcBasicUndireced: {
-    V: 5,
-    adjs: [[1, 2, 3], [0, 2], [0, 1], [0, 4], [3]]
   }
 }
 
