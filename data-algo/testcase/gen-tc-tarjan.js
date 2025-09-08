@@ -43,6 +43,23 @@ export const tc_articulation = {
     }
 }
 export const tc_edge = {
+    // https://leetcode.com/problems/shortest-cycle-in-a-graph/
+    //
+    tc_cycle_size_1: {
+        V: 6,
+        edges: [
+            [2, 1],
+            [4, 1],
+            [5, 1],
+            [5, 0],
+            [4, 0],
+            [3, 0],
+            [3, 2]
+            // [5,2] // tạo ra 3 cycle con và 1 cycle lớn
+            // Thêm cạnh trên vô thì ko còn bridge hay AP nữa
+            // Case đặc biệt chồng chéo SCC với nhau
+        ]
+    },
     // https://www.geeksforgeeks.org/problems/strongly-connected-component-tarjanss-algo-1587115621/1
     tc_gfg_scc_0: {
         V: 5,

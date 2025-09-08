@@ -1,30 +1,58 @@
-import { run_lc_685 } from './data-algo/graph-algo/tree_redudant_conns'
+import { tc_edge } from './data-algo/testcase/gen-tc-tarjan'
+import { GraphConverter } from './data-algo/testcase/graph-converter'
 
-// run_lc_685()
+function findShortestCycle(n: number, edges: number[][]): number {
+    let minDepth = Infinity
+    const visited = Array(n).fill(false)
 
-function getNoZeroIntegers(n: number): number[] {
-    if (n < 10) return [1, n - 1]
-    let small = 0
+    const bfs = (node, parent) => {
+        let depth = 1
+        let queue = [node]
+        visited[node] = true
 
-    let tmp = n
-    let next = 1
-    let base = 0
+        while (queue.length) {
+            const nextQueue = []
+            const node = queue.shift()
+            const neighbors = edges[node]
 
-    while (tmp >= 10) {
-        const last = tmp % 10
-        if (last > next) {
-            small += Math.pow(10, base) * (10 - last)
-        } else {
-            small += Math.pow(10, base) * (10 - next)
+            for (const neighb of neighbors) {
+                if (neighb === parent) continue
+
+                if (visited[neighb]) return depth
+                visited[neighb] = true
+                nextQueue.push(neighb)
+            }
+
+            depth++
+            queue = nextQueue
         }
-        small += Math.pow(10, base) * (10 - last)
 
-        tmp = Math.floor(tmp / 10)
-        base++
-        console.log({ tmp, small, last })
+        // depth exit inside loop
+        return -1
     }
 
-    return [small, n - small]
+    for (let node = 0; node < n; node++) {
+        if (!visited[node]) bfs(node, -1)
+    }
+
+    return minDepth === Infinity ? -1 : minDepth
 }
 
-console.log(getNoZeroIntegers(2218))
+const lc_run = () => {
+    // const { edges, V } = tc_edge.tc_cycle_size_1
+    const V = 6
+    const edges = [
+        [4, 1],
+        [5, 1],
+        [3, 2],
+        [5, 0],
+        [5, 2],
+        [4, 0],
+        [3, 0],
+        [2, 1]
+    ]
+    const test = findShortestCycle(V, edges)
+    console.log(test)
+}
+
+lc_run()
