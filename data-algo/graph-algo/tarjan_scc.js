@@ -3,17 +3,17 @@ import { GraphConverter } from '../testcase/graph-converter'
 
 /**
  * @param {number} V
- * @param {number[][]} adj
+ * @param {number[][]} adjs
  * @returns {number[][]}
  */
 export class SolutionTarjanScc {
     // Function to return a list of lists of integers denoting the members
     // of strongly connected components in the given graph.
-    tarjans(V, adj) {
-        return this.dfs_tarjan_undirected(V, adj)
+    tarjans(V, adjs) {
+        return this.dfs_tarjan_undirected(V, adjs)
     }
 
-    dfs_tarjan_undirected(V, adj) {
+    dfs_tarjan_undirected(V, adjs) {
         let id = 0
         const ids = Array(V).fill(-1)
         const low = Array(V).fill(-1)
@@ -36,7 +36,7 @@ export class SolutionTarjanScc {
         const popStack = (idNode, group) => {
             const nodeStack = stack.pop()
             onStack[nodeStack] = false
-            low[nodeStack] = idNode
+            // low[nodeStack] = idNode // thừa
 
             group.push(nodeStack)
 
@@ -45,7 +45,7 @@ export class SolutionTarjanScc {
 
         function dfs(node, parent) {
             entryTrigger(node)
-            const neighbors = adj[node] ?? []
+            const neighbors = adjs[node] ?? []
 
             for (const neighb of neighbors) {
                 if (neighb === parent) continue
@@ -76,7 +76,7 @@ export class SolutionTarjanScc {
 
         return result.sort((a, b) => a[0] - b[0])
     }
-    dfs_tarjan_directed(V, adj) {
+    dfs_tarjan_directed(V, adjs) {
         let id = 0
         const ids = Array(V).fill(-1)
         const low = Array(V).fill(-1)
@@ -108,7 +108,7 @@ export class SolutionTarjanScc {
 
         function dfs(node, parent) {
             entryTrigger(node)
-            const neighbors = adj[node] ?? []
+            const neighbors = adjs[node] ?? []
 
             for (const neighb of neighbors) {
                 if (neighb === parent) continue
