@@ -14,11 +14,12 @@ function uDS_arr(nodes: number) {
         return n1 <= n2
     }
 
-    function uf(na, nb) {
+    function uf(na, nb, isExec = true) {
         const parent_na = find(na)
         const parent_nb = find(nb)
 
         if (parent_na === parent_nb) return false
+        if (!isExec) return true
 
         if (isRankN1(parent_na, parent_nb)) {
             parents[parent_nb] = parent_na
@@ -51,11 +52,12 @@ function uDS_Map(nodes: number) {
         return n1 <= n2
     }
 
-    function uf(na, nb) {
+    function uf(na, nb, isExec = true) {
         const parent_na = find(na)
         const parent_nb = find(nb)
 
         if (parent_na === parent_nb) return false
+        if (!isExec) return true
 
         if (isRankN1(parent_na, parent_nb)) {
             parents.set(parent_nb, parent_na)
