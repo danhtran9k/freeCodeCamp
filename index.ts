@@ -1,58 +1,77 @@
-import { tc_edge } from './data-algo/testcase/gen-tc-tarjan'
-import { GraphConverter } from './data-algo/testcase/graph-converter'
+function findCriticalAndPseudoCriticalEdges(
+    n: number,
+    edges: number[][]
+): number[][] {
+    const sortedEdges = edges
+        .map(([from, to, weight], ix) => [from, to, weight, ix++])
+        .sort((a, b) => a[2] - b[2])
 
-function findShortestCycle(n: number, edges: number[][]): number {
-    let minDepth = Infinity
-    const visited = Array(n).fill(false)
+    const res = []
+    const union = uDS_Map(n)
 
-    const bfs = (node, parent) => {
-        let depth = 1
-        let queue = [node]
-        visited[node] = true
-
-        while (queue.length) {
-            const nextQueue = []
-            const node = queue.shift()
-            const neighbors = edges[node]
-
-            for (const neighb of neighbors) {
-                if (neighb === parent) continue
-
-                if (visited[neighb]) return depth
-                visited[neighb] = true
-                nextQueue.push(neighb)
-            }
-
-            depth++
-            queue = nextQueue
+    let minWeight = Infinity
+    for (const [from, to, weight] of sortedEdges) {
+        if (union.uf(from, to, false)) {
+            res.push([from, to])
+            minWeight = weight
         }
-
-        // depth exit inside loop
-        return -1
     }
-
-    for (let node = 0; node < n; node++) {
-        if (!visited[node]) bfs(node, -1)
-    }
-
-    return minDepth === Infinity ? -1 : minDepth
+    console.log(sortedEdges)
+    return res
 }
 
-const lc_run = () => {
-    // const { edges, V } = tc_edge.tc_cycle_size_1
-    const V = 6
+function uDS_Map(nodes: number) {
+    const parents = new Map()
+    for (let node = 0; node < nodes; node++) {
+        parents.set(node, node)
+    }
+
+    function find(node: number) {
+        let parent = parents.get(node)
+        if (parent === node) return node
+
+        parents.set(node, find(parent))
+        return parents.get(node)
+    }
+
+    function isRankN1(n1, n2) {
+        return n1 <= n2
+    }
+
+    function uf(na, nb, isExec = true) {
+        const parent_na = find(na)
+        const parent_nb = find(nb)
+
+        if (parent_na === parent_nb) return false
+        if (!isExec) return true
+
+        if (isRankN1(parent_na, parent_nb)) {
+            parents.set(parent_nb, parent_na)
+        } else {
+            parents.set(parent_na, parent_nb)
+        }
+        return true
+    }
+
+    return { parents, find, uf }
+}
+
+// ================================================
+// EXECUTE
+
+const lc = () => {
+    const n = 5
     const edges = [
-        [4, 1],
-        [5, 1],
-        [3, 2],
-        [5, 0],
-        [5, 2],
-        [4, 0],
-        [3, 0],
-        [2, 1]
+        [0, 1, 1],
+        [1, 2, 1],
+        [2, 3, 2],
+        [0, 3, 2],
+        [0, 4, 3],
+        [3, 4, 3],
+        [1, 4, 6]
     ]
-    const test = findShortestCycle(V, edges)
-    console.log(test)
-}
 
-lc_run()
+    const res = findCriticalAndPseudoCriticalEdges(n, edges)
+    console.log(res)
+}
+lc()
