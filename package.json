@@ -13,7 +13,8 @@
     "ts": "npx nodemon --watch . --ext ts --exec \"node tsx ./index.ts\"",
     "m1": "node --watch --experimental-strip-types --inspect=9228 ./index.ts",
     "vn": "node --watch --import=tsx ./index.ts",
-    "mf": "node --watch --import=tsx ./index.ts"
+    "mf": "node --watch --import=tsx ./index.ts",
+    "fetch": "set NODE_TLS_REJECT_UNAUTHORIZED=0 && node --watch --import=tsx ./index.ts"
   },
   "dependencies": {
     "@datastructures-js/deque": "^1.0.5",
