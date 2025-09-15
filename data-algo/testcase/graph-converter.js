@@ -38,11 +38,11 @@ const matrixToAdjs = (matrix) => {
     return adjs
 }
 
-const edgeUndirectedToAdjs = (V, edges) => {
+const edgeToAdjs = (V, edges, isUndirected = true) => {
     const adjs = Array.from({ length: V }, () => [])
     for (const [from, to] of edges) {
         adjs[from].push(to)
-        adjs[to].push(from)
+        if (isUndirected) adjs[to].push(from)
     }
     return adjs
 }
@@ -52,7 +52,7 @@ export const GraphConverter = {
     edgeDirectedToMatrix,
     edgeUndirectedToMatrix,
     matrixToAdjs,
-    edgeUndirectedToAdjs
+    edgeToAdjs
 }
 
 const debug = [
