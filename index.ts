@@ -1,103 +1,147 @@
-import { demo } from './data-algo/fetch-lc/index'
+import { daily_lc } from './daily'
+import { Deque } from './node_modules/@datastructures-js/deque/index'
+daily_lc()
 
-function largestPathValue(colors: string, edges: number[][]): number {
-    let res = 0
+// ================================================
+const IX_OFFSET = 1
+function minNumberOfSemesters(
+    n: number,
+    relations: number[][],
+    k: number
+): number {
+    const { adjs, queueBfs: queue, inDegree } = setup(n + IX_OFFSET, relations)
+    // constrain no cycle -> skip check
 
-    const { adjs, nodeCount, updateColorCount, color_count } = setup(
-        colors,
-        edges
-    )
+    let count = 0
+    while (queue.size()) {
+        count++
+        const maxTake = Math.min(k, queue.size())
 
-    let id = 0
-    let idStart = -1
-    let hasCycle = false
-    const ids = Array(nodeCount).fill(-1)
-
-    const dfs = (node) => {
-        if (hasCycle) return
-
-        ids[node] = id
-        id++
-
-        for (const neighb of adjs[node]) {
-            if (ids[node] >= ids[neighb] && ids[neighb] >= idStart) {
-                hasCycle = true
-                return
+        for (let i = 1; i <= maxTake; i++) {
+            const relation = queue.popFront()
+            const followUps = adjs[relation]
+            for (const course of followUps) {
+                inDegree[course]--
+                if (!inDegree[course]) queue.pushBack(course)
             }
-
-            if (ids[neighb] === -1) dfs(neighb)
-            updateColorCount(node, neighb)
         }
-
-        const currColorIndex = updateColorCount(node, node)
-        res = Math.max(res, color_count[node][currColorIndex])
-        console.log({ node, res, currColorIndex })
     }
 
-    for (let node = 0; node < nodeCount; node++) {
-        if (ids[node] !== -1) continue
+    return count
+}
 
-        idStart = id
-        dfs(node)
-        if (hasCycle) return -1
+const setup = (n: number, relations: number[][]) => {
+    const adjs = Array.from({ length: n }, () => [])
+    const inDegree = new Array(n).fill(0)
+
+    for (const [from, to] of relations) {
+        adjs[from].push(to)
+        inDegree[to]++
     }
 
-    return res
-}
-
-const OFFSET_IX = 97
-const COLOR_COUNT = 26
-const setup = (colors: string, edges: number[][]) => {
-    const nodeCount = colors.length
-
-    const adjs = Array.from({ length: nodeCount }, () => [])
-    for (const [from, to] of edges) adjs[from].push(to)
-
-    const color_count = Array.from({ length: nodeCount }, () =>
-        Array(COLOR_COUNT).fill(0)
-    )
-    const cIndex = (node: number) => colors.charCodeAt(node) - OFFSET_IX
-    const updateColorCount = (node: number, neighb: number) => {
-        const nodeColorIx = cIndex(node)
-
-        if (node !== neighb) {
-            for (let cIx = 0; cIx < COLOR_COUNT; cIx++) {
-                color_count[node][cIx] = Math.max(
-                    color_count[node][cIx],
-                    color_count[neighb][cIx]
-                )
-            }
-        } else {
-            color_count[node][nodeColorIx]++
-        }
-
-        return nodeColorIx
+    const queueBfs = new Deque<number>()
+    for (let course = IX_OFFSET; course < n; course++) {
+        if (inDegree[course] === 0) queueBfs.pushBack(course)
     }
-    return { adjs, nodeCount, color_count, updateColorCount }
+
+    return { adjs, queueBfs, inDegree }
 }
 
-const debug = () => {
-    const tc = [
-        {
-            colors: 'dkuugdddk',
-            edges: [
-                [0, 1],
-                [1, 2],
-                [2, 3],
-                [3, 4],
-                [4, 5],
-                [4, 6],
-                [2, 6],
-                [6, 7],
-                [5, 7],
-                [6, 8],
-                [7, 8]
-            ]
-        }
-    ]
-    const { colors, edges } = tc[0]
-    console.log(largestPathValue(colors, edges))
+function debug() {
+    const { n, relations, k } = tc[0]
+    const res = minNumberOfSemesters(n, relations, k)
+    console.log(res)
 }
 
-// debug()
-demo()
+var tc = [
+    {
+        n: 13,
+        k: 9, // expected 3
+        relations: [
+            [12, 8],
+            [2, 4],
+            [3, 7],
+            [6, 8],
+            [11, 8],
+            [9, 4],
+            [9, 7],
+            [12, 4],
+            [11, 4],
+            [6, 4],
+            [1, 4],
+            [10, 7],
+            [10, 4],
+            [1, 7],
+            [1, 8],
+            [2, 7],
+            [8, 4],
+            [10, 8],
+            [12, 7],
+            [5, 4],
+            [3, 4],
+            [11, 7],
+            [7, 4],
+            [13, 4],
+            [9, 8],
+            [13, 8]
+        ]
+    },
+    {
+        n: 4,
+        relations: [
+            [2, 1],
+            [3, 1],
+            [1, 4]
+        ],
+        k: 2
+    },
+    {
+        n: 5,
+        relations: [
+            [2, 1],
+            [3, 1],
+            [4, 1],
+            [1, 5]
+        ],
+        k: 2
+    },
+    {
+        n: 11,
+        relations: [
+            [2, 6],
+            [2, 9],
+            [2, 8],
+            [2, 10],
+            [2, 3],
+            [2, 7],
+            [2, 0],
+            [6, 1],
+            [6, 8],
+            [6, 4],
+            [6, 3],
+            [6, 0],
+            [9, 8],
+            [9, 3],
+            [9, 7],
+            [9, 0],
+            [1, 4],
+            [1, 3],
+            [1, 7],
+            [8, 10],
+            [8, 5],
+            [8, 3],
+            [4, 3],
+            [4, 7],
+            [10, 5],
+            [10, 3],
+            [10, 7],
+            [10, 0],
+            [3, 7],
+            [3, 0],
+            [7, 0]
+        ],
+        k: 2
+    }
+]
+
+debug()
