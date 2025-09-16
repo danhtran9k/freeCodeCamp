@@ -9,46 +9,87 @@ function minNumberOfSemesters(
     relations: number[][],
     k: number
 ): number {
-    const { adjs, queueBfs: queue, inDegree } = setup(n + IX_OFFSET, relations)
-    // constrain no cycle -> skip check
+    const { initMask, getQueueMask } = setup(n, relations)
+    const dp = { 0: 0 } // baseCase : stateMask = 0 -> dp = 0
 
-    let count = 0
-    while (queue.size()) {
-        count++
-        const maxTake = Math.min(k, queue.size())
+    const dfs = (maskState: number) => {
+        if (dp[maskState] !== undefined) return dp[maskState]
 
-        for (let i = 1; i <= maxTake; i++) {
-            const relation = queue.popFront()
-            const followUps = adjs[relation]
-            for (const course of followUps) {
-                inDegree[course]--
-                if (!inDegree[course]) queue.pushBack(course)
-            }
+        const maskCanLearn = getQueueMask(maskState, true)
+        const countCanLearn = countBits(maskCanLearn)
+
+        if (countCanLearn <= k) {
+            // k cover all current course can learn
+            // learned mean bit is off
+            const learnAllState = maskState ^ maskCanLearn
+            dp[maskState] = 1 + dfs(learnAllState)
+            return dp[maskState]
         }
+
+        // for subMask, enum normally by formula
+        // but use XOR to patch 0 for learned state
+        // Always try greedy enqueue FULLY k
+        // cause we cannot more than k, and smaller case is covered above
+        dp[maskState] = Infinity
+
+        let subMaskLearn = maskCanLearn
+        while (subMaskLearn) {
+            const nextState = maskState ^ subMaskLearn
+            if (countBits(nextState) === k) {
+                dp[maskState] = Math.min(dp[maskState], dfs(nextState) + 1)
+            }
+            subMaskLearn = (subMaskLearn - 1) & maskCanLearn
+            // https://cp-algorithms.com/algebra/all-submasks.html
+        }
+
+        return dp[maskState]
     }
 
+    return dfs(initMask)
+}
+
+const countBits = (n) => {
+    let count = 0
+    while (n) {
+        n &= n - 1 // Clear the least significant bit
+        count++
+    }
     return count
 }
 
 const setup = (n: number, relations: number[][]) => {
-    const adjs = Array.from({ length: n }, () => [])
-    const inDegree = new Array(n).fill(0)
+    const totalState = 1 << n
+    const initMask = totalState - 1
+    // toggle all bit, 1 mean not learn !!
 
+    const maskRequired = Array(n).fill(0)
     for (const [from, to] of relations) {
-        adjs[from].push(to)
-        inDegree[to]++
+        maskRequired[to - IX_OFFSET] |= 1 << (from - IX_OFFSET)
     }
 
-    const queueBfs = new Deque<number>()
-    for (let course = IX_OFFSET; course < n; course++) {
-        if (inDegree[course] === 0) queueBfs.pushBack(course)
+    // course degree 0 => maskRequered = 0 !!
+    const getQueueMask = (maskState: number, isReverse = false) => {
+        let maskQueueCanLearn = 0
+        maskState = isReverse ? maskState ^ initMask : maskState
+
+        for (let course = 0; course < n; course++) {
+            const hasLearned = maskState & (1 << course)
+            if (hasLearned) continue
+
+            const courseRequirements = maskRequired[course]
+            const canLearn =
+                (courseRequirements & maskState) === courseRequirements
+
+            if (canLearn) maskQueueCanLearn |= 1 << course
+        }
+        return maskQueueCanLearn
     }
 
-    return { adjs, queueBfs, inDegree }
+    return { totalState, getQueueMask, initMask }
 }
 
-function debug() {
-    const { n, relations, k } = tc[0]
+const debug = () => {
+    const { n, relations, k } = tc[2]
     const res = minNumberOfSemesters(n, relations, k)
     console.log(res)
 }
@@ -141,6 +182,18 @@ var tc = [
             [7, 0]
         ],
         k: 2
+    },
+    {
+        n: 7,
+        relations: [
+            [3, 0],
+            [3, 1],
+            [3, 2],
+            [3, 4],
+            [5, 4],
+            [6, 5]
+        ],
+        k: 100
     }
 ]
 
