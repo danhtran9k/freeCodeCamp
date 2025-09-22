@@ -17,6 +17,7 @@
     "fetch": "set NODE_TLS_REJECT_UNAUTHORIZED=0 && node --watch --import=tsx ./index.ts"
   },
   "dependencies": {
+    "@datastructures-js/binary-search-tree": "^5.3.3",
     "@datastructures-js/deque": "^1.0.5",
     "@datastructures-js/heap": "^4.3.3",
     "@datastructures-js/priority-queue": "^6.3.3",

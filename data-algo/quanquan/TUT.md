@@ -106,7 +106,6 @@ Built Request:
 }
 ```
 
-export API_KEY=AIzaSyC89mBJaGaFgzXLtf6BBol1AMM3k97vuFg
 curl "https://translation.googleapis.com/language/translate/v2?target=es&key=${API_KEY}&q=${TEXT}"
 
 gcloud iam service-accounts create tts-qwiklab
