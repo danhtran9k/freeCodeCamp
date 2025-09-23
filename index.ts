@@ -46,7 +46,7 @@ const setup = (edges: number[][], online: boolean[], k: number) => {
     )
     for (const [from, to, cost] of edges) {
         if (!online[from] || !online[to] || cost > k) continue
-        adjs[from][to] = Math.max
+        // adjs[from][to] = Math.max
     }
 
     const bisect = (arr, target, isExclude = true) => {
@@ -73,5 +73,3 @@ const setup = (edges: number[][], online: boolean[], k: number) => {
 
     return { len, adjs, target, max_cost }
 }
-
-const debug = () => {}
