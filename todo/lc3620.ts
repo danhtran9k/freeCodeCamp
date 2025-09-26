@@ -1,47 +1,122 @@
+export const lc_3260 = () => {
+    // for (const { edges, online, k, expected } of tc_3260) {
+    //     const resl = findMaxPathScore(edges, online, k)
+    //     console.log({ resl, expected, nodes: online.length, k })
+    // }
+
+    const { edges, online, k, expected } = tc_3260[0]
+    const resl = findMaxPathScore(edges, online, k)
+    console.log({ resl, expected, nodes: online.length, k })
+}
+
 function findMaxPathScore(
     edges: number[][],
     online: boolean[],
     k: number
 ): number {
-    const { graph, end } = setup_3620(edges, online)
+    const { check, maxWeight } = setup_3620(edges, online, k)
 
-    let max = -1
-    const dfs = (node, total, min) => {
-        // if (total > k) return
-        if (node === end) {
-            max = Math.max(max, min)
-            return
+    let left = 0
+    let right = maxWeight
+
+    while (left < right) {
+        const mid = Math.floor(left + (right - left) / 2)
+        const canReach = check(mid)
+        if (canReach) {
+            right = mid
+        } else {
+            left = mid + 1
         }
+    }
+
+    return left - 1
+}
+
+// all edge has been filter < k in graph / adjs
+const topoSSSP = (graph, topo, k) => (min) => {
+    const len = graph.length
+
+    // const minWeight = Array(len).fill(Infinity)
+    const pathWeight = Array(len).fill(Infinity)
+    pathWeight[0] = 0
+
+    for (const node of topo) {
+        const curr = pathWeight[node]
+        if (curr === Infinity) continue
 
         for (const { to, cost } of graph[node]) {
-            if (!online[to] || total + cost > k) continue
+            const currPath = pathWeight[node] + cost
+            if (cost < min || currPath > k || currPath > pathWeight[to])
+                continue
 
-            dfs(to, total + cost, Math.min(min, cost))
+            // minWeight[to] = Math.min(minWeight[to], minWeight[node])
+            pathWeight[to] = currPath
         }
     }
 
-    dfs(0, 0, Infinity)
-    return max
+    return pathWeight[len - 1] !== Infinity
 }
-
-const setup_3620 = (edges: number[][], online: boolean[]) => {
+type TGraph = Record<number, { to: number; cost: number }[]>
+const setup_3620 = (edges: number[][], online: boolean[], k?: number) => {
     const len = online.length
-    const end = len - 1
 
-    const graph = Array.from({ length: len }, () => [])
-    for (const [from, to, cost] of edges) graph[from].push({ to, cost })
+    let maxWeight = 0
+    const graph: TGraph = Array.from({ length: len }, () => [])
+    const inDegree = Array(len).fill(0)
 
-    return { graph, end }
+    for (const [from, to, cost] of edges) {
+        if (!online[from] || !online[to]) continue
+        graph[from].push({ to, cost })
+        inDegree[to]++
+        maxWeight = Math.max(maxWeight, cost)
+    }
+
+    const topo = topoSort(inDegree, graph)
+    const check = topoSSSP(graph, topo, k)
+    console.log({ topo })
+    return { maxWeight, check }
 }
 
-export const lc_3260 = () => {
-    for (const { edges, online, k, expected } of tc_3260) {
-        const resl = findMaxPathScore(edges, online, k)
-        console.log({ resl, expected, nodes: online.length, k })
+const topoSort = (inDegree: number[], graph: TGraph) => {
+    let queue = []
+    const topo = []
+
+    for (let node = 0; node < inDegree.length; node++) {
+        if (inDegree[node] === 0) queue.push(node)
     }
+
+    while (queue.length) {
+        const nextQueue = []
+
+        for (const node of queue) {
+            topo.push(node)
+
+            for (const { to } of graph[node]) {
+                inDegree[to]--
+                if (!inDegree[to]) nextQueue.push(to)
+            }
+        }
+
+        queue = nextQueue
+    }
+
+    return topo
 }
 
 const tc_3260 = [
+    {
+        edges: [
+            [0, 1, 9],
+            [0, 1, 5],
+            [1, 3, 7],
+            [0, 2, 22],
+            [0, 2, 6],
+            [2, 3, 50]
+        ],
+        online: [true, true, true, true],
+        k: 1000,
+        expected: 22
+    },
     {
         edges: [
             [2, 3, 50],
