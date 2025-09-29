@@ -1,22 +1,25 @@
 
 # Step 1: Fetch taxonomy & plocy details
-echo "${BOLD}${CYAN}Fetching taxonomy name, ID & policy...${RESET}"
 export TAXONOMY_NAME=$(gcloud data-catalog taxonomies list \
   --location=us \
   --project=$DEVSHELL_PROJECT_ID \
   --format="value(displayName)" \
   --limit=1)
 
+echo "TAXONOMY_NAME: $TAXONOMY_NAME"
 export TAXONOMY_ID=$(gcloud data-catalog taxonomies list \
   --location=us \
   --format="value(name)" \
   --filter="displayName=$TAXONOMY_NAME" | awk -F'/' '{print $6}')
 
+echo "TAXONOMY_ID: $TAXONOMY_ID"
 export POLICY_TAG=$(gcloud data-catalog taxonomies policy-tags list \
   --location=us \
   --taxonomy=$TAXONOMY_ID \
   --format="value(name)" \
   --limit=1)
+
+echo "POLICY_TAG: $POLICY_TAG"
 
 # Step 2: Create BigQuery dataset
 bq mk online_shop
@@ -26,6 +29,8 @@ bq mk --connection --location=US --project_id=$DEVSHELL_PROJECT_ID --connection_
 
 # Step 4: Grant the service account permission to read Cloud Storage files
 export SERVICE_ACCOUNT=$(bq show --format=json --connection $DEVSHELL_PROJECT_ID.US.user_data_connection | jq -r '.cloudResource.serviceAccountId')
+
+echo "SERVICE_ACCOUNT: $SERVICE_ACCOUNT"
 
 gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
   --member=serviceAccount:$SERVICE_ACCOUNT \
@@ -152,11 +157,9 @@ bq query --use_legacy_sql=false --format=csv \
 "SELECT * EXCEPT(zip, latitude, ip_address, longitude) 
 FROM \`${DEVSHELL_PROJECT_ID}.online_shop.user_online_sessions\`"
 
-echo
-
 # Step 10: Remove IAM policy binding
+
+export USER_2="FILL__HERE"
 gcloud projects remove-iam-policy-binding ${DEVSHELL_PROJECT_ID} \
   --member="user:$USER_2" \
   --role="roles/storage.objectViewer"
-
-echo

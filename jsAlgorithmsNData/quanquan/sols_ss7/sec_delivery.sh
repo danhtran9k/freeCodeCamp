@@ -1,10 +1,11 @@
-
 export PROJECT_ID=$(gcloud config get-value project)
 export PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID \
 --format='value(projectNumber)')
 export ZONE=$(gcloud compute project-info describe \
 --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
 export REGION=$(echo "$ZONE" | cut -d '-' -f 1-2)
+
+echo "PROJECT_ID: $PROJECT_ID - PROJECT_NUMBER: $PROJECT_NUMBER - ZONE: $ZONE - REGION: $REGION"
 
 gcloud services enable \
 cloudkms.googleapis.com \
@@ -59,6 +60,8 @@ images:
 EOF
 
 gcloud builds submit
+
+echo "✅✅✅✅✅✅✅✅ 1st SUBMIT ✅✅✅✅✅✅✅✅"
 
 cat > ./vulnerability_note.json << EOM
 {
@@ -239,6 +242,8 @@ EOF
 sed -i "s|<command url>|${REGION}-docker.pkg.dev/${PROJECT_ID}/artifact-scanning-repo/sample-image:latest|g" cloudbuild.yaml
 
 gcloud builds submit
+
+echo "✅✅✅✅✅✅✅✅ 2th SUBMIT ✅✅✅✅✅✅✅✅"
 
 cat > ./Dockerfile << EOF
 FROM python:3.8-alpine
