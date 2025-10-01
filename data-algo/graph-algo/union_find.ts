@@ -1,9 +1,9 @@
 function uDS_arr(nodes: number) {
     const parents = Array.from({ length: nodes }, (_, i) => i)
-    const size = Array(nodes).fill(1)
+    // const size = Array(nodes).fill(1)
 
     function find(node: number) {
-        let parent = parents[node]
+        const parent = parents[node]
         if (parent === node) return node
 
         parents[node] = find(parent)
@@ -23,10 +23,8 @@ function uDS_arr(nodes: number) {
 
         if (isRankN1(parent_na, parent_nb)) {
             parents[parent_nb] = parent_na
-            size[parent_na]++
         } else {
             parents[parent_na] = parent_nb
-            size[parent_nb]++
         }
         return true
     }
@@ -41,7 +39,7 @@ function uDS_Map(nodes: number) {
     }
 
     function find(node: number) {
-        let parent = parents.get(node)
+        const parent = parents.get(node)
         if (parent === node) return node
 
         parents.set(node, find(parent))

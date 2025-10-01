@@ -1,7 +1,6 @@
-import { daily_lc } from './daily'
-import { lc_332 } from './todo/lc_332'
-daily_lc()
+// Code HERE
 
 // ================================================
 // ================================================
-lc_332()
+import { daily_lc } from './todo/daily'
+daily_lc()
