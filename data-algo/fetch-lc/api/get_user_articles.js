@@ -1,5 +1,5 @@
-import { lcPostQl } from './utils/fetch-QL'
-import { query_user_articles } from './utils/lc-query'
+import { lcPostQl } from './fetch-QL'
+import { query_user_articles } from './api_lc_query'
 
 export const getUserArticles = async () => {
     console.log('re-fetch')

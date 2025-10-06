@@ -1,6 +1,6 @@
-import { lcPostQl } from './utils/fetch-QL.js'
-import { query_list_filter, self_solved } from './utils/lc-query.js'
-import { getRelativePath } from './getPath.js'
+import { lcPostQl } from './fetch-QL.js'
+import { query_list_filter, self_solved } from './api_lc_query.js'
+import { getRelativePath } from '../getPath.js'
 import fs from 'fs'
 
 export const getSolved = async () => {

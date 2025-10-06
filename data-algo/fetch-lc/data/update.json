@@ -1,0 +1,1669 @@
+[
+  {
+    "difficulty": "HARD",
+    "id": 3964,
+    "paidOnly": false,
+    "questionFrontendId": "3700",
+    "status": "TO_DO",
+    "title": "Number of ZigZag Arrays II",
+    "titleSlug": "number-of-zigzag-arrays-ii",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.2816953316953317,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 3962,
+    "paidOnly": false,
+    "questionFrontendId": "3699",
+    "status": "TO_DO",
+    "title": "Number of ZigZag Arrays I",
+    "titleSlug": "number-of-zigzag-arrays-i",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.23306616961789378,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 4015,
+    "paidOnly": false,
+    "questionFrontendId": "3698",
+    "status": "TO_DO",
+    "title": "Split Array With Minimum Difference",
+    "titleSlug": "split-array-with-minimum-difference",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.25778388278388276,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4039,
+    "paidOnly": false,
+    "questionFrontendId": "3697",
+    "status": "TO_DO",
+    "title": "Compute Decimal Representation",
+    "titleSlug": "compute-decimal-representation",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.5803464986297976,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4066,
+    "paidOnly": true,
+    "questionFrontendId": "3696",
+    "status": "TO_DO",
+    "title": "Maximum Distance Between Unequal Words in Array I",
+    "titleSlug": "maximum-distance-between-unequal-words-in-array-i",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.8647058823529412,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 4010,
+    "paidOnly": false,
+    "questionFrontendId": "3695",
+    "status": "TO_DO",
+    "title": "Maximize Alternating Sum Using Swaps",
+    "titleSlug": "maximize-alternating-sum-using-swaps",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.6251828822238479,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 4021,
+    "paidOnly": false,
+    "questionFrontendId": "3694",
+    "status": "TO_DO",
+    "title": "Distinct Points Reachable After Substring Removal",
+    "titleSlug": "distinct-points-reachable-after-substring-removal",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.5234842015371477,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 4041,
+    "paidOnly": false,
+    "questionFrontendId": "3693",
+    "status": "TO_DO",
+    "title": "Climbing Stairs II",
+    "titleSlug": "climbing-stairs-ii",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.6317132203833322,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4053,
+    "paidOnly": false,
+    "questionFrontendId": "3692",
+    "status": "TO_DO",
+    "title": "Majority Frequency Characters",
+    "titleSlug": "majority-frequency-characters",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.6702107147775789,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 4007,
+    "paidOnly": false,
+    "questionFrontendId": "3691",
+    "status": "TO_DO",
+    "title": "Maximum Total Subarray Value II",
+    "titleSlug": "maximum-total-subarray-value-ii",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Greedy",
+        "slug": "greedy",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Segment Tree",
+        "slug": "segment-tree",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Heap (Priority Queue)",
+        "slug": "heap-priority-queue",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.10801596783123052,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3928,
+    "paidOnly": false,
+    "questionFrontendId": "3690",
+    "status": "TO_DO",
+    "title": "Split and Merge Array Transformation",
+    "titleSlug": "split-and-merge-array-transformation",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "slug": "breadth-first-search",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.43680405517699855,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 4005,
+    "paidOnly": false,
+    "questionFrontendId": "3689",
+    "status": "TO_DO",
+    "title": "Maximum Total Subarray Value I",
+    "titleSlug": "maximum-total-subarray-value-i",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Greedy",
+        "slug": "greedy",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.5804501774457534,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4009,
+    "paidOnly": false,
+    "questionFrontendId": "3688",
+    "status": "TO_DO",
+    "title": "Bitwise OR of Even Numbers in an Array",
+    "titleSlug": "bitwise-or-of-even-numbers-in-an-array",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Bit Manipulation",
+        "slug": "bit-manipulation",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Simulation",
+        "slug": "simulation",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.7970079557246628,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4060,
+    "paidOnly": true,
+    "questionFrontendId": "3687",
+    "status": "TO_DO",
+    "title": "Library Late Fee Calculator",
+    "titleSlug": "library-late-fee-calculator",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Simulation",
+        "slug": "simulation",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.9630281690140845,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 4027,
+    "paidOnly": false,
+    "questionFrontendId": "3686",
+    "status": "TO_DO",
+    "title": "Number of Stable Subsequences",
+    "titleSlug": "number-of-stable-subsequences",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.489921040408732,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3873,
+    "paidOnly": false,
+    "questionFrontendId": "3685",
+    "status": "TO_DO",
+    "title": "Subsequence Sum After Capping Elements",
+    "titleSlug": "subsequence-sum-after-capping-elements",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "slug": "two-pointers",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sorting",
+        "slug": "sorting",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.15142999982760702,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 3997,
+    "paidOnly": false,
+    "questionFrontendId": "3684",
+    "status": "TO_DO",
+    "title": "Maximize Sum of At Most K Distinct Elements",
+    "titleSlug": "maximize-sum-of-at-most-k-distinct-elements",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Greedy",
+        "slug": "greedy",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sorting",
+        "slug": "sorting",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.7141479216713984,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4012,
+    "paidOnly": false,
+    "questionFrontendId": "3683",
+    "status": "TO_DO",
+    "title": "Earliest Time to Finish One Task",
+    "titleSlug": "earliest-time-to-finish-one-task",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.8198573760022705,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 4050,
+    "paidOnly": true,
+    "questionFrontendId": "3682",
+    "status": "TO_DO",
+    "title": "Minimum Index Sum of Common Elements",
+    "titleSlug": "minimum-index-sum-of-common-elements",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.802660753880266,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 3990,
+    "paidOnly": false,
+    "questionFrontendId": "3681",
+    "status": "TO_DO",
+    "title": "Maximum XOR of Subsequences",
+    "titleSlug": "maximum-xor-of-subsequences",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Greedy",
+        "slug": "greedy",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Bit Manipulation",
+        "slug": "bit-manipulation",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.5033736074062451,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3991,
+    "paidOnly": false,
+    "questionFrontendId": "3680",
+    "status": "TO_DO",
+    "title": "Generate Schedule",
+    "titleSlug": "generate-schedule",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Greedy",
+        "slug": "greedy",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.20911793855302277,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3953,
+    "paidOnly": false,
+    "questionFrontendId": "3679",
+    "status": "TO_DO",
+    "title": " Minimum Discards to Balance Inventory",
+    "titleSlug": "minimum-discards-to-balance-inventory",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sliding Window",
+        "slug": "sliding-window",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Simulation",
+        "slug": "simulation",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Counting",
+        "slug": "counting",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.3399366403336408,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4011,
+    "paidOnly": false,
+    "questionFrontendId": "3678",
+    "status": "TO_DO",
+    "title": "Smallest Absent Positive Greater Than Average",
+    "titleSlug": "smallest-absent-positive-greater-than-average",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.333772804253221,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 4023,
+    "paidOnly": false,
+    "questionFrontendId": "3677",
+    "status": "TO_DO",
+    "title": "Count Binary Palindromic Numbers",
+    "titleSlug": "count-binary-palindromic-numbers",
+    "topicTags": [
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Bit Manipulation",
+        "slug": "bit-manipulation",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.21440273523755254,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 4000,
+    "paidOnly": false,
+    "questionFrontendId": "3676",
+    "status": "TO_DO",
+    "title": "Count Bowl Subarrays",
+    "titleSlug": "count-bowl-subarrays",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Stack",
+        "slug": "stack",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Monotonic Stack",
+        "slug": "monotonic-stack",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.41373794401317343,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3999,
+    "paidOnly": false,
+    "questionFrontendId": "3675",
+    "status": "TO_DO",
+    "title": "Minimum Operations to Transform String",
+    "titleSlug": "minimum-operations-to-transform-string",
+    "topicTags": [
+      {
+        "name": "String",
+        "slug": "string",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Greedy",
+        "slug": "greedy",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.5960714692900304,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 3998,
+    "paidOnly": false,
+    "questionFrontendId": "3674",
+    "status": "TO_DO",
+    "title": "Minimum Operations to Equalize Array",
+    "titleSlug": "minimum-operations-to-equalize-array",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Bit Manipulation",
+        "slug": "bit-manipulation",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Brainteaser",
+        "slug": "brainteaser",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.5353024567762302,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 4043,
+    "paidOnly": false,
+    "questionFrontendId": "3673",
+    "status": "TO_DO",
+    "title": "Find Zombie Sessions",
+    "titleSlug": "find-zombie-sessions",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.5168906647293862,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 4036,
+    "paidOnly": true,
+    "questionFrontendId": "3672",
+    "status": "TO_DO",
+    "title": "Sum of Weighted Modes in Subarrays",
+    "titleSlug": "sum-of-weighted-modes-in-subarrays",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sliding Window",
+        "slug": "sliding-window",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Counting",
+        "slug": "counting",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Ordered Set",
+        "slug": "ordered-set",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.5710843373493976,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 3989,
+    "paidOnly": false,
+    "questionFrontendId": "3671",
+    "status": "TO_DO",
+    "title": "Sum of Beautiful Subsequences",
+    "titleSlug": "sum-of-beautiful-subsequences",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Tree",
+        "slug": "tree",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Number Theory",
+        "slug": "number-theory",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.17693466891233048,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3915,
+    "paidOnly": false,
+    "questionFrontendId": "3670",
+    "status": "TO_DO",
+    "title": "Maximum Product of Two Integers With No Common Bits",
+    "titleSlug": "maximum-product-of-two-integers-with-no-common-bits",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Bit Manipulation",
+        "slug": "bit-manipulation",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.12379847530659596,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3947,
+    "paidOnly": false,
+    "questionFrontendId": "3669",
+    "status": "TO_DO",
+    "title": "Balanced K-Factor Decomposition",
+    "titleSlug": "balanced-k-factor-decomposition",
+    "topicTags": [
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Backtracking",
+        "slug": "backtracking",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Number Theory",
+        "slug": "number-theory",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.3128980249899234,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4008,
+    "paidOnly": false,
+    "questionFrontendId": "3668",
+    "status": "TO_DO",
+    "title": "Restore Finishing Order",
+    "titleSlug": "restore-finishing-order",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.8950194176494801,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4029,
+    "paidOnly": true,
+    "questionFrontendId": "3667",
+    "status": "TO_DO",
+    "title": "Sort Array By Absolute Value",
+    "titleSlug": "sort-array-by-absolute-value",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "slug": "two-pointers",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sorting",
+        "slug": "sorting",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.8802721088435375,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 3983,
+    "paidOnly": false,
+    "questionFrontendId": "3666",
+    "status": "TO_DO",
+    "title": "Minimum Operations to Equalize Binary String",
+    "titleSlug": "minimum-operations-to-equalize-binary-string",
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "String",
+        "slug": "string",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Breadth-First Search",
+        "slug": "breadth-first-search",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.18028210402585956,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3938,
+    "paidOnly": false,
+    "questionFrontendId": "3665",
+    "status": "TO_DO",
+    "title": "Twisted Mirror Path Count",
+    "titleSlug": "twisted-mirror-path-count",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Matrix",
+        "slug": "matrix",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.47501930076100135,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3877,
+    "paidOnly": false,
+    "questionFrontendId": "3664",
+    "status": "TO_DO",
+    "title": "Two-Letter Card Game",
+    "titleSlug": "two-letter-card-game",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "String",
+        "slug": "string",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Counting",
+        "slug": "counting",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Enumeration",
+        "slug": "enumeration",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.10404523120414617,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 3994,
+    "paidOnly": false,
+    "questionFrontendId": "3663",
+    "status": "TO_DO",
+    "title": "Find The Least Frequent Digit",
+    "titleSlug": "find-the-least-frequent-digit",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Counting",
+        "slug": "counting",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.6958549018058244,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 4017,
+    "paidOnly": true,
+    "questionFrontendId": "3662",
+    "status": "TO_DO",
+    "title": "Filter Characters by Frequency",
+    "titleSlug": "filter-characters-by-frequency",
+    "topicTags": [
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "String",
+        "slug": "string",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Counting",
+        "slug": "counting",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.890909090909091,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 3982,
+    "paidOnly": false,
+    "questionFrontendId": "3661",
+    "status": "TO_DO",
+    "title": "Maximum Walls Destroyed by Robots",
+    "titleSlug": "maximum-walls-destroyed-by-robots",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "slug": "binary-search",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sorting",
+        "slug": "sorting",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.2769924812030075,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3981,
+    "paidOnly": false,
+    "questionFrontendId": "3660",
+    "status": "TO_DO",
+    "title": "Jump Game IX",
+    "titleSlug": "jump-game-ix",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.21078709778500226,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3979,
+    "paidOnly": false,
+    "questionFrontendId": "3659",
+    "status": "TO_DO",
+    "title": "Partition Array Into K-Distinct Groups",
+    "titleSlug": "partition-array-into-k-distinct-groups",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Counting",
+        "slug": "counting",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.40836345413641256,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 3995,
+    "paidOnly": false,
+    "questionFrontendId": "3658",
+    "status": "TO_DO",
+    "title": "GCD of Odd and Even Sums",
+    "titleSlug": "gcd-of-odd-and-even-sums",
+    "topicTags": [
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Number Theory",
+        "slug": "number-theory",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.8095251782018855,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 4025,
+    "paidOnly": false,
+    "questionFrontendId": "3657",
+    "status": "TO_DO",
+    "title": "Find Loyal Customers",
+    "titleSlug": "find-loyal-customers",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.610363526812613,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 4006,
+    "paidOnly": true,
+    "questionFrontendId": "3656",
+    "status": "TO_DO",
+    "title": "Determine if a Simple Graph Exists",
+    "titleSlug": "determine-if-a-simple-graph-exists",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Binary Search",
+        "slug": "binary-search",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Graph",
+        "slug": "graph",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sorting",
+        "slug": "sorting",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Prefix Sum",
+        "slug": "prefix-sum",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.5,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 3975,
+    "paidOnly": false,
+    "questionFrontendId": "3655",
+    "status": "TO_DO",
+    "title": "XOR After Range Multiplication Queries II",
+    "titleSlug": "xor-after-range-multiplication-queries-ii",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Divide and Conquer",
+        "slug": "divide-and-conquer",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.253931369900027,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3966,
+    "paidOnly": false,
+    "questionFrontendId": "3654",
+    "status": "TO_DO",
+    "title": "Minimum Sum After Divisible Sum Deletions",
+    "titleSlug": "minimum-sum-after-divisible-sum-deletions",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Hash Table",
+        "slug": "hash-table",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Prefix Sum",
+        "slug": "prefix-sum",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.32693327943814265,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3974,
+    "paidOnly": false,
+    "questionFrontendId": "3653",
+    "status": "TO_DO",
+    "title": "XOR After Range Multiplication Queries I",
+    "titleSlug": "xor-after-range-multiplication-queries-i",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Divide and Conquer",
+        "slug": "divide-and-conquer",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Simulation",
+        "slug": "simulation",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.642544663587262,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3980,
+    "paidOnly": false,
+    "questionFrontendId": "3652",
+    "status": "TO_DO",
+    "title": "Best Time to Buy and Sell Stock using Strategy",
+    "titleSlug": "best-time-to-buy-and-sell-stock-using-strategy",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sliding Window",
+        "slug": "sliding-window",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Prefix Sum",
+        "slug": "prefix-sum",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.4053838071419058,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 3889,
+    "paidOnly": false,
+    "questionFrontendId": "3651",
+    "status": "TO_DO",
+    "title": "Minimum Cost Path with Teleportations",
+    "titleSlug": "minimum-cost-path-with-teleportations",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Matrix",
+        "slug": "matrix",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.1816529601526648,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3887,
+    "paidOnly": false,
+    "questionFrontendId": "3650",
+    "status": "TO_DO",
+    "title": "Minimum Cost Path with Edge Reversals",
+    "titleSlug": "minimum-cost-path-with-edge-reversals",
+    "topicTags": [
+      {
+        "name": "Graph",
+        "slug": "graph",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Heap (Priority Queue)",
+        "slug": "heap-priority-queue",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Shortest Path",
+        "slug": "shortest-path",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.4648272093976233,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3963,
+    "paidOnly": false,
+    "questionFrontendId": "3649",
+    "status": "TO_DO",
+    "title": "Number of Perfect Pairs",
+    "titleSlug": "number-of-perfect-pairs",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "slug": "two-pointers",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sorting",
+        "slug": "sorting",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.31229970739863455,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3945,
+    "paidOnly": false,
+    "questionFrontendId": "3648",
+    "status": "TO_DO",
+    "title": "Minimum Sensors to Cover Grid",
+    "titleSlug": "minimum-sensors-to-cover-grid",
+    "topicTags": [
+      {
+        "name": "Math",
+        "slug": "math",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.6852326498422713,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3987,
+    "paidOnly": true,
+    "questionFrontendId": "3647",
+    "status": "TO_DO",
+    "title": "Maximum Weight in Two Bags",
+    "titleSlug": "maximum-weight-in-two-bags",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Dynamic Programming",
+        "slug": "dynamic-programming",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.649923896499239,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "HARD",
+    "id": 3951,
+    "paidOnly": false,
+    "questionFrontendId": "3646",
+    "status": "TO_DO",
+    "title": "Next Special Palindrome Number",
+    "titleSlug": "next-special-palindrome-number",
+    "topicTags": [
+      {
+        "name": "Backtracking",
+        "slug": "backtracking",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Bit Manipulation",
+        "slug": "bit-manipulation",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.25435540069686413,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3959,
+    "paidOnly": false,
+    "questionFrontendId": "3645",
+    "status": "TO_DO",
+    "title": "Maximum Total from Optimal Activation Order",
+    "titleSlug": "maximum-total-from-optimal-activation-order",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "slug": "two-pointers",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Greedy",
+        "slug": "greedy",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Sorting",
+        "slug": "sorting",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Heap (Priority Queue)",
+        "slug": "heap-priority-queue",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.3565355507801551,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3950,
+    "paidOnly": false,
+    "questionFrontendId": "3644",
+    "status": "TO_DO",
+    "title": "Maximum K to Sort a Permutation",
+    "titleSlug": "maximum-k-to-sort-a-permutation",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Bit Manipulation",
+        "slug": "bit-manipulation",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.33208665906499424,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 3973,
+    "paidOnly": false,
+    "questionFrontendId": "3643",
+    "status": "TO_DO",
+    "title": "Flip Square Submatrix Vertically",
+    "titleSlug": "flip-square-submatrix-vertically",
+    "topicTags": [
+      {
+        "name": "Array",
+        "slug": "array",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Two Pointers",
+        "slug": "two-pointers",
+        "__typename": "CommonTagNode"
+      },
+      {
+        "name": "Matrix",
+        "slug": "matrix",
+        "__typename": "CommonTagNode"
+      }
+    ],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.6754246493396093,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "EASY",
+    "id": 3996,
+    "paidOnly": false,
+    "questionFrontendId": "3642",
+    "status": "TO_DO",
+    "title": "Find Books with Polarized Opinions",
+    "titleSlug": "find-books-with-polarized-opinions",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.43289778971791426,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  },
+  {
+    "difficulty": "MEDIUM",
+    "id": 3992,
+    "paidOnly": true,
+    "questionFrontendId": "3641",
+    "status": "TO_DO",
+    "title": "Longest Semi-Repeating Subarray",
+    "titleSlug": "longest-semi-repeating-subarray",
+    "topicTags": [],
+    "frequency": null,
+    "isInMyFavorites": false,
+    "acRate": 0.6754250386398764,
+    "contestPoint": null,
+    "__typename": "ProblemSetQuestionNode"
+  }
+]

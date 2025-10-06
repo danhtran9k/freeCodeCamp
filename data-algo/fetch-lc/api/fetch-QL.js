@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import { LC_QL } from './lc-query'
+import { LC_QL } from './api_lc_query'
 
 const AUTH_HEADERS = {
     Cookie: `LEETCODE_SESSION=${process.env.LEETCODE_SESSION}`

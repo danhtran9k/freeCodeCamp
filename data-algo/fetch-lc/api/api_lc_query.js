@@ -26,7 +26,9 @@ export const DAILY_PARAMS = {
     START_MONTH: 4, // 4
 
     END_YEAR: 2025,
-    END_MONTH: 9
+    END_MONTH: 9,
+
+    SLEEP_TIME: 2000
 }
 
 // query article chỉ có questionSlug ? ko có FE_Id

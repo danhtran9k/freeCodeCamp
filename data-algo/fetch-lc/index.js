@@ -1,5 +1,5 @@
 import { getLeetDaily } from './get_records'
-import { getSolved } from './getSolved'
+import { getSolved } from './api/getSolved'
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
