@@ -3,10 +3,13 @@ function uDS_arr(nodes: number) {
     // const size = Array(nodes).fill(1)
 
     function find(node: number) {
-        const parent = parents[node]
-        if (parent === node) return node
+        // const parent = parents[node]
+        // if (parent !== node) return node
 
-        parents[node] = find(parent)
+        // parents[node] = find(parent)
+        // return parents[node]
+
+        if (parents[node] !== node) parents[node] = find(parents[node])
         return parents[node]
     }
 
