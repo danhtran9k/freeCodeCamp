@@ -1,0 +1,20 @@
+{
+  "request_id": "2804be60-9fd4-44c3-b258-afb3f108761b",
+  "trace_id": "e6f8912b-2de3-41cc-afed-dc2a793205e9",
+  "detail": {},
+  "code": "0",
+  "message": "SUCCESS",
+  "svc_code": 0,
+  "sdk_res_code": 0,
+  "data": {
+    "id": "6",
+    "emp_no": "C9104",
+    "email": "danh2k@nexondv.com",
+    "display_name": "Tran Luong Danh [danh2k]",
+    "account": "danh2k",
+    "projects": [],
+    "ui_permissions": [],
+    "role": "Admin"
+  },
+  "cause": {}
+}
