@@ -1,61 +1,39 @@
 class Solution:
-    def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
-        WORD_KEY = "$"
+    def smallestSufficientTeam(self, req_skills: List[str],
+                               people: List[List[str]]) -> List[int]:
+        n = len(people)
+        m = len(req_skills)
+        skill_id = dict()
 
-        trie = {}
-        for word in words:
-            node = trie
-            for letter in word:
-                # retrieve the next node; If not found, create a empty node.
-                node = node.setdefault(letter, {})
-            # mark the existence of a word in trie node
-            node[WORD_KEY] = word
+        for i, skill in enumerate(req_skills):
+            skill_id[skill] = i
+        skills_mask_of_person = [0] * n
+        for i in range(n):
+            for skill in people[i]:
+                skills_mask_of_person[i] |= 1 << skill_id[skill]
+        dp = [-1] * (1 << m)
+        dp[0] = 0
 
-        rowNum = len(board)
-        colNum = len(board[0])
+        def foo(skills_mask):
+            if dp[skills_mask] != -1:
+                return dp[skills_mask]
 
-        matchedWords = []
+            for i in range(n):
+                new_skills_mask = skills_mask & ~skills_mask_of_person[i]
 
-        def backtracking(row, col, parent):
+                if new_skills_mask != skills_mask:
+                    people_mask = foo(new_skills_mask) | (1 << i)
 
-            letter = board[row][col]
-            currNode = parent[letter]
+                    if (dp[skills_mask] == -1 or
+                        people_mask.bit_count()
+                       < dp[skills_mask].bit_count()):
+                        dp[skills_mask] = people_mask
+            return dp[skills_mask]
 
-            # check if we find a match of word
-            word_match = currNode.pop(WORD_KEY, False)
-            if word_match:
-                # also we removed the matched word to avoid duplicates,
-                #   as well as avoiding using set() for results.
-                matchedWords.append(word_match)
-
-            # Before the EXPLORATION, mark the cell as visited
-            board[row][col] = "#"
-
-            # Explore the neighbors in 4 directions, i.e. up, right, down, left
-            for rowOffset, colOffset in [(-1, 0), (0, 1), (1, 0), (0, -1)]:
-                newRow, newCol = row + rowOffset, col + colOffset
-                if (
-                    newRow < 0
-                    or newRow >= rowNum
-                    or newCol < 0
-                    or newCol >= colNum
-                ):
-                    continue
-                if not board[newRow][newCol] in currNode:
-                    continue
-                backtracking(newRow, newCol, currNode)
-
-            # End of EXPLORATION, we restore the cell
-            board[row][col] = letter
-
-            # Optimization: incrementally remove the matched leaf node in Trie.
-            if not currNode:
-                parent.pop(letter)
-
-        for row in range(rowNum):
-            for col in range(colNum):
-                # starting from each of the cells
-                if board[row][col] in trie:
-                    backtracking(row, col, trie)
-
-        return matchedWords
+        answer_mask = foo((1 << m) - 1)
+        ans = []
+        
+        for i in range(n):
+            if (answer_mask >> i) & 1:
+                ans.append(i)
+        return ans

@@ -1,43 +1,77 @@
-function calculate(s: string): number {
-  const stack = [] // [res , sign , res , sign ...]
+type TMemo = { mask: bigint; count: number } // mask
+function smallestSufficientTeam(
+    req_skills: string[],
+    people: string[][]
+): number[] {
+    const { lenPeople, personMap, fullReqMask, maskToSelect } = setup(
+        req_skills,
+        people
+    )
 
-  let res = 0
+    // vì return any possible, memo chỉ cần lưu 1 mask valid
+    // bitCount của mask là min
+    const memo: Record<string, TMemo> = {}
+    memo[0] = { mask: 0n, count: 0 }
 
-  let sign = 1
-  let merging = 0
+    const dfs = (reqMaskInt: bigint) => {
+        const reqMask = reqMaskInt.toString()
+        if (memo[reqMask]) return memo[reqMask]
 
-  for (const char of s) {
-      if (isNumChar(char)) {
-          merging = merging * 10 + Number(char)
-      }
+        let best: TMemo = { mask: 0n, count: Infinity }
+        for (let ix = 0; ix < lenPeople; ix++) {
+            const currSkill = personMap[ix]
+            const skillNeedLeft = reqMaskInt & ~BigInt(currSkill)
 
-      if (char === '+' || char === '-') {
-          res += sign * merging
-          sign = char === '+' ? 1 : -1
-          merging = 0
-      }
+            if (skillNeedLeft === reqMaskInt) continue // nothing change
 
-      if (char === '(') {
-          stack.push(res)
+            const selectOne = 1n << BigInt(ix)
+            const { mask: maskNeedLeft, count: countNeedLeft } =
+                dfs(skillNeedLeft)
 
-          stack.push(sign)
-          // reset
-          sign = 1
-          res = 0
-      }
+            const maskSelect = maskNeedLeft | selectOne
+            const countSelect = countNeedLeft + 1
 
-      if (char === ')') {
-          const right = sign * merging
-          
-          const bracketSign = stack.pop()
-          const left = stack.pop()
-          res = left + bracketSign * (res + right)
+            if (countSelect < best.count) {
+                best = { mask: maskSelect, count: countSelect }
+            }
+        }
 
-          merging = 0
-      }
-  }
+        memo[reqMask] = best
+        return best
+    }
 
-  return res + sign * merging
+    const { mask } = dfs(fullReqMask)
+    return maskToSelect(mask)
 }
 
-const isNumChar = (char: string) => char >= '0' && char <= '9'
+const setup = (req_skills: string[], people: string[][]) => {
+    const lenSkills = req_skills.length
+    const lenPeople = people.length
+    const reqMap: Record<string, number> = {}
+
+    for (let ix = 0; ix < lenSkills; ix++) {
+        reqMap[req_skills[ix]] = ix
+    }
+
+    const personMap: bigint[] = Array(lenPeople).fill(0n)
+    for (let ix = 0; ix < lenPeople; ix++) {
+        for (const skill of people[ix]) {
+            const idSkill = reqMap[skill]
+            personMap[ix] |= 1n << BigInt(idSkill)
+        }
+    }
+
+    const fullReqMask = (1n << BigInt(lenSkills)) - 1n
+
+    const maskToSelect = (mask: bigint) => {
+        const result: number[] = []
+        for (let ix = 0; ix < lenPeople; ix++) {
+            if (mask & (1n << BigInt(ix))) {
+                result.push(ix)
+            }
+        }
+        return result
+    }
+
+    return { lenPeople, personMap, fullReqMask, maskToSelect }
+}
