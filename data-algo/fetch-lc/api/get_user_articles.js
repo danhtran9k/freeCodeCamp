@@ -11,10 +11,11 @@ import { lcPostQl } from './fetch-QL'
 
 const KEY_FRONTEND_ID = 'frontend_id'
 const KEY_DIFF = 'difficulty'
-const ADDITIONAL_HEADINGS = [KEY_FRONTEND_ID, KEY_DIFF]
+const ADDITIONAL_HEADINGS = [KEY_FRONTEND_ID, KEY_DIFF, "user"]
 
+const username = articlePayload.username
 export const getUserArticles = async () => {
-    console.log('🔒 re-fetch')
+    console.log('🔒 re-fetch ➡️  ➡️  ➡️  ', username)
 
     const res = await lcPostQl(query_user_articles, articlePayload)
     const MODIFIED_HEADINGS = [...ARTICLE_HEADINGS, ...ADDITIONAL_HEADINGS]
@@ -46,6 +47,8 @@ const processRawArticleRes = (res) => {
 
         node[KEY_FRONTEND_ID] = problem?.[KEY_FRONTEND_ID] ?? '0'
         node[KEY_DIFF] = problem?.[KEY_DIFF] ?? ''
+        node.user = username
+        
         node.slug = `${LC_COM}/problems/${questionSlug}/solutions/${topicId}/${slug}/`
         return node
     })

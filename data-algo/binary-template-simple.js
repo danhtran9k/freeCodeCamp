@@ -1,7 +1,7 @@
 import fs from 'fs'
 
-const arr = [3, 3, 3, 7, 7, 10, 10, 10, 12, 15, 15, 15, 15]
-//           0, 1, 2, 3, 4,  5,  6,  7,  8,  9, 10, 11, 12
+export const bisect_tc = [3, 3, 3, 7, 7, 10, 10, 10, 12, 15, 15, 15, 15]
+//                        0, 1, 2, 3, 4,  5,  6,  7,  8,  9, 10, 11, 12
 
 const saveResultsToFile = (results) => {
     fs.writeFileSync('results.dump.json', JSON.stringify(results, null, 2))
@@ -37,16 +37,15 @@ UPPER hay LOWER còn liên quan tới đồng biến hay nghịch biến !!
 */
 
 // Nên ưu tiên nhìn bài toán theo hướng upper bound - bisect left trước
-const bisect = (arr, target, isExclude = true) => {
+// default là UPPER_BOUND_EXCLUDE
+export const bisect = (arr, target, isExclude = true) => {
     let [left, right] = [0, arr.length]
     while (left < right) {
         const mid = Math.floor(left + (right - left) / 2)
 
-        // default là UPPER_BOUND_EXCLUDE
         const cond = isExclude ? target < arr[mid] : target <= arr[mid]
 
         if (cond) {
-            // target < arr[mid]  (or <=)
             right = mid
         } else {
             // target >= arr[mid] (or >)
@@ -73,16 +72,16 @@ const lower_include = (arr, target) => upper_exclude(arr, target) - 1
 // (MAX ix_num < TARGET ) 7
 const lower_exclude = (arr, target) => upper_include(arr, target) - 1
 
-const debug = () => {
+export const debug_bisect = () => {
     // const targets = [10, 11, 1, 20, 3, 15]
     const targets = [10, 11]
     const results = []
 
     for (const target of targets) {
-        const upperExclude_8 = upper_exclude(arr, target)
-        const upperInclude_5 = upper_include(arr, target)
-        const lowerExclude_4 = lower_exclude(arr, target)
-        const lowerInclude_7 = lower_include(arr, target)
+        const upperExclude_8 = upper_exclude(bisect_tc, target)
+        const upperInclude_5 = upper_include(bisect_tc, target)
+        const lowerExclude_4 = lower_exclude(bisect_tc, target)
+        const lowerInclude_7 = lower_include(bisect_tc, target)
         const resTarget = {
             target,
             upperExclude_8,
@@ -97,8 +96,6 @@ const debug = () => {
 
     saveResultsToFile(results)
 }
-
-debug()
 
 /*
 Case max Index lower Bound 

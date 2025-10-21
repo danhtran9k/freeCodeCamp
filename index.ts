@@ -1,8 +1,13 @@
 // Code HERE
 
-import { skill_issue } from './todo/daily'
-skill_issue()
+
+
 // ================================================
 // ================================================
 import { daily_lc } from './todo/magicSum/daily'
 daily_lc()
+
+// ================================================
+// ================================================
+// import { lc_run_skip_tls } from './data-algo/fetch-lc/index'
+// lc_run_skip_tls()
