@@ -69,6 +69,24 @@ ${LC_QL}/?query=query{
 
 // ================================================
 // ArticleOrderByEnum = MOST_RECENT | ? (LEAST_RECENT, MOST_VOTED, LEAST_VOTED)
+const GOOD_SOLS = ['TFDLeeter', 'najwer23', 'endlesscheng']
+const USER_NAME = GOOD_SOLS.at(-1)
+export const articlePayload = {
+    username: USER_NAME,
+    skip: 0,
+    first: 500,
+    orderBy: 'MOST_RECENT'
+}
+
+export const ARTICLE_HEADINGS = [
+    // 'title',
+    'slug',
+    'questionSlug'
+    // 'questionTitle'
+    // 'topicId',
+    // 'uuid'
+]
+
 export const query_user_articles = `
 query 
 ugcArticleUserSolutionArticles(
@@ -95,13 +113,9 @@ ugcArticleUserSolutionArticles(
         }
         edges {
           node {
-            topicId
-            uuid
-            title
             slug
-            topicId
             questionSlug
-            questionTitle
+            topicId
           }
         }
       }
@@ -110,7 +124,7 @@ ugcArticleUserSolutionArticles(
 
 // ================================================
 
-const query_test = `
+export const query_test = `
   query 
   recentAcSubmissionList(
     $username: String!, $limit: Int!

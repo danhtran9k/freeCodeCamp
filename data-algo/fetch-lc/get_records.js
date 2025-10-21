@@ -20,9 +20,11 @@ export const getLeetDaily = async () => {
 }
 
 export function append_to_arr(response, arr) {
+    const HEADINGS = arr[0]
+    
     for (const daily of response) {
         let row = []
-        for (const headKey of DAILY_HEADINGS) {
+        for (const headKey of HEADINGS) {
             let dailyInfo = daily[headKey]
 
             if (dailyInfo !== undefined) {
@@ -52,4 +54,6 @@ export function append_to_arr(response, arr) {
 
         arr.push(row)
     }
+
+    return arr
 }
