@@ -1,6 +1,6 @@
-import { all_free_problems } from '../data/data-import'
+import { all_free_problems, LC_SELF_FINISH_SET } from '../data/data-importer'
 import { append_to_arr } from '../get_records'
-import { save_file } from '../utils/csv_analyze'
+import { save_file, sleep } from '../utils/csv_analyze'
 import {
     ARTICLE_HEADINGS,
     articlePayload,
@@ -11,47 +11,94 @@ import { lcPostQl } from './fetch-QL'
 
 const KEY_FRONTEND_ID = 'frontend_id'
 const KEY_DIFF = 'difficulty'
-const ADDITIONAL_HEADINGS = [KEY_FRONTEND_ID, KEY_DIFF, "user"]
 
-const username = articlePayload.username
+const MODIFIED_HEADINGS = [
+    ...ARTICLE_HEADINGS,
+    KEY_FRONTEND_ID,
+    KEY_DIFF,
+    'user'
+]
+
+// ===============================================
+// FILTER TOGGLE
+const HARD_FILTER = true
+const EXCLUDE_FINISH = true
+
+const GOOD_SOLS = [
+    'TFDLeeter',
+    'najwer23',
+    'endlesscheng',
+    'Manu-Bharadwaj-BN',
+    'andreev-dev',
+    'michaelm12358',
+    'jairtorres1003',
+    'ranganathv415',
+    'kyratzakos',
+    'Ala-dine',
+    'rojas'
+]
+
+const RELOAD = []
+
+// ===============================================
+
 export const getUserArticles = async () => {
-    console.log('🔒 re-fetch ➡️  ➡️  ➡️  ', username)
-
-    const res = await lcPostQl(query_user_articles, articlePayload)
-    const MODIFIED_HEADINGS = [...ARTICLE_HEADINGS, ...ADDITIONAL_HEADINGS]
     const csv = [MODIFIED_HEADINGS]
 
-    const data = processRawArticleRes(res)
-    append_to_arr(data, csv)
-    save_file(csv, 'articles')
+    for (const username of RELOAD) {
+        console.log('🔒 re-fetch ➡️  ➡️  ➡️  ', username)
+        const res = await lcPostQl(
+            query_user_articles,
+            articlePayload(username)
+        )
+        const data = processRawArticleRes(res, username)
+        append_to_arr(data, csv)
+        sleep(1000)
+    }
 
+    save_file(csv, 'articles')
     console.log('✅ DONE')
 }
 
-const processRawArticleRes = (res) => {
+const processRawArticleRes = (res, username) => {
     const graphQlData = res['ugcArticleUserSolutionArticles']
 
     console.log('ℹ️ TOTAL', graphQlData.totalNum)
 
-    const data = graphQlData.edges.map((ele) => {
-        const { node } = ele
-        // article hơi đặc biệt,
-        // data được wrap lại bên trong 1 lớp node nũa
+    // article hơi đặc biệt,
+    // data được wrap lại bên trong 1 lớp node nũa
+    const data = graphQlData.edges
+        .map(({ node }) => {
+            const problem = all_free_problems.find(
+                (problem) => problem.problem_slug === node.questionSlug
+            )
 
-        const { questionSlug, topicId, slug } = node
-
-        // https://leetcode.com/problems/design-spreadsheet/solutions/7206071/javascript-easy-solution-with-obj-by-naj-e4a0/
-        const problem = all_free_problems.find(
-            (problem) => problem.problem_slug === questionSlug
-        )
-
-        node[KEY_FRONTEND_ID] = problem?.[KEY_FRONTEND_ID] ?? '0'
-        node[KEY_DIFF] = problem?.[KEY_DIFF] ?? ''
-        node.user = username
-        
-        node.slug = `${LC_COM}/problems/${questionSlug}/solutions/${topicId}/${slug}/`
-        return node
-    })
+            return {
+                ...node,
+                slug: getArticleLink(node),
+                [KEY_DIFF]: problem?.[KEY_DIFF] ?? '',
+                [KEY_FRONTEND_ID]: problem?.[KEY_FRONTEND_ID] ?? '0',
+                user: username
+            }
+        })
+        .filter(filterNode)
 
     return data
+}
+
+// https://leetcode.com/problems/design-spreadsheet/solutions/7206071/javascript-easy-solution-with-obj-by-naj-e4a0/
+const getArticleLink = (node) => {
+    const { questionSlug, topicId, slug } = node
+    return `${LC_COM}/problems/${questionSlug}/solutions/${topicId}/${slug}/`
+}
+
+const filterNode = (node) => {
+    const frontend_id = Number(node[KEY_FRONTEND_ID])
+    const isHard = node[KEY_DIFF].toLowerCase().trim() === 'hard'
+    const isFinished = LC_SELF_FINISH_SET.has(frontend_id)
+
+    if (HARD_FILTER && !isHard) return false
+    if (EXCLUDE_FINISH && isFinished) return false
+
+    return true
 }

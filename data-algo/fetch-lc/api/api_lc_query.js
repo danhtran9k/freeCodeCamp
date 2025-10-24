@@ -69,14 +69,13 @@ ${LC_QL}/?query=query{
 
 // ================================================
 // ArticleOrderByEnum = MOST_RECENT | ? (LEAST_RECENT, MOST_VOTED, LEAST_VOTED)
-const GOOD_SOLS = ['TFDLeeter', 'najwer23', 'endlesscheng', 'Manu-Bharadwaj-BN']
-const USER_NAME = GOOD_SOLS.at(-1)
-export const articlePayload = {
-    username: USER_NAME,
+
+export const articlePayload = (username) => ({
+    username,
     skip: 0,
     first: 3000,
     orderBy: 'MOST_RECENT'
-}
+})
 
 export const ARTICLE_HEADINGS = [
     // 'title',
