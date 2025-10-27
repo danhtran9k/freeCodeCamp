@@ -3,18 +3,18 @@ import fs from 'fs'
 import { parse } from 'csv-parse'
 import { getRelativePath } from '../getPath'
 
-export function save_file(arr, filename) {
+const escapeCsvCell = (s) => {
+    const ESCAPE_CHAR = '""'
+    const hasCharNeedEscape = String(s).match(/,|"/)
+    if (!hasCharNeedEscape) return s
+
+    return `"${s.replace(/"/g, ESCAPE_CHAR)}"`
+}
+
+export function save_csv(arr, filename) {
     const filePath = getRelativePath(filename + '.csv')
 
-    const escapeCsvCell = (s) => {
-        const ESCAPE_CHAR = '""'
-        const hasCharNeedEscape = String(s).match(/,|"/)
-        if (!hasCharNeedEscape) return s
-
-        return `"${s.replace(/"/g, ESCAPE_CHAR)}"`
-    }
-
-    // row: string[]
+    // arr: string[][], row: string[]
     const content = arr
         .map((row) => row.map(escapeCsvCell).join(','))
         .join('\n')
@@ -22,7 +22,7 @@ export function save_file(arr, filename) {
     fs.writeFileSync(filePath, content, 'utf8')
 }
 
-export const read_csv = (filename) =>
+export const read_stream_csv = (filename) =>
     new Promise((resolve, reject) => {
         const headers = {} // Record<string, number>
         const rows = []

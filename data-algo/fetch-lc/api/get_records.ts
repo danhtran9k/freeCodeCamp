@@ -1,29 +1,36 @@
-import { DAILY_HEADINGS, LC_COM } from './api/api_lc_query'
-import { getDailyRange } from './api/get_daily_filter'
-import { save_file } from './utils/csv_analyze'
+import { DAILY_HEADINGS, LC_COM } from './api_lc_query'
+import { getDailyRange } from './get_daily_filter'
+import { save_csv } from '../utils/csv_analyze'
 
 export const getLeetDaily = async () => {
     const daily_csv = [DAILY_HEADINGS]
     const weekly_csv = [DAILY_HEADINGS]
 
-    const processFunc = (response) => {
+    const processFunc = (response: any) => {
         append_to_arr(response['challenges'], daily_csv)
         append_to_arr(response['weeklyChallenges'], weekly_csv)
     }
 
     await getDailyRange(processFunc)
 
-    save_file(daily_csv, 'daily')
-    save_file(weekly_csv, 'weekly')
+    save_csv(daily_csv, 'daily')
+    save_csv(weekly_csv, 'weekly')
 
-    console.log('finished writing')
+    console.log('✅ DONE getLeetDaily')
 }
 
-export function append_to_arr(response, arr) {
+export type QuestionItem = {
+    [key: string]: any
+    question: {
+        [key: string]: any
+    }
+}
+
+export function append_to_arr(response: QuestionItem[], arr: string[][]): string[][] {
     const HEADINGS = arr[0]
     
     for (const daily of response) {
-        let row = []
+        let row: string[] = []
         for (const headKey of HEADINGS) {
             let dailyInfo = daily[headKey]
 
@@ -41,7 +48,7 @@ export function append_to_arr(response, arr) {
             if (headKey === 'status') value = value === 'ac' ? 'X' : ''
             if (headKey === 'isPaidOnly') value = value ? '!!!' : ''
             if (headKey === 'topicTags') {
-                value = detailInfo[headKey].map((el) => el.slug).join(', ')
+                value = detailInfo[headKey].map((el: any) => el.slug).join(', ')
             }
 
             // if (headKey === 'acRate') {
@@ -57,3 +64,4 @@ export function append_to_arr(response, arr) {
 
     return arr
 }
+

@@ -16,7 +16,7 @@ export const getDailyRange = async (processFunc) => {
                 continue
             }
 
-            console.log(`fetching: ${year}-${month}`)
+            console.log(`🔵 fetching: ${year}-${month}`)
             const url = daily_get_url(year, month)
 
             const payload = await lcGetQl(url)

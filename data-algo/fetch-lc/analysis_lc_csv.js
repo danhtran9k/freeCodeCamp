@@ -1,11 +1,11 @@
 import { getRelativePath } from './getPath'
-import { compare, initDiff, round, read_csv } from './utils/csv_analyze'
+import { compare, initDiff, round, read_stream_csv } from './utils/csv_analyze'
 
 const FILE_NAME = './data/daily.csv'
 
 export const analysis_lc_csv = async () => {
     const path = getRelativePath(FILE_NAME)
-    const { rows, headers } = await read_csv(path)
+    const { rows, headers } = await read_stream_csv(path)
     // headers: date, titleSlug, questionFrontendId, title, difficulty, acRate
     const counts = {}
     const last_appearance = {}

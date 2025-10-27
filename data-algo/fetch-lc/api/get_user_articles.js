@@ -1,6 +1,6 @@
 import { all_free_problems, LC_SELF_FINISH_SET } from '../data/data-importer'
-import { append_to_arr } from '../get_records'
-import { save_file, sleep } from '../utils/csv_analyze'
+import { append_to_arr } from './get_records'
+import { save_csv, sleep } from '../utils/csv_analyze'
 import {
     ARTICLE_HEADINGS,
     articlePayload,
@@ -58,8 +58,8 @@ export const getUserArticles = async () => {
         sleep(1000)
     }
 
-    save_file(csv, 'articles')
-    console.log('✅ DONE')
+    save_csv(csv, 'articles')
+    console.log('✅ DONE getUserArticles')
 }
 
 const processRawArticleRes = (res, username) => {
@@ -95,7 +95,7 @@ const getArticleLink = (node) => {
 }
 
 const filterNode = (node) => {
-    const frontend_id = Number(node[KEY_FRONTEND_ID])
+    const frontend_id = node[KEY_FRONTEND_ID]
     const isHard = node[KEY_DIFF].toLowerCase().trim() === 'hard'
     const isFinished = LC_SELF_FINISH_SET.has(frontend_id)
 

@@ -31,11 +31,8 @@ const loadSelfFinishCSV = () => {
         trim: true
     })
 
-    const ids = records
-        .map((row) => Number(row[0]))
-        .filter((id) => !isNaN(id) && id > 0)
-
-    return new Set(ids)
+    const ids = records.map((row) => row[0] ?? '0')
+    return new Set<string>(ids)
 }
 
 export const LC_SELF_FINISH_SET = loadSelfFinishCSV()
