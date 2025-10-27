@@ -9,7 +9,10 @@ export const getSolved = async () => {
     const questions = response.problemsetQuestionListV2.questions
     const solvedIds = questions.map((question) => question.questionFrontendId)
 
-    const filePath = getRelativePath('solved.json')
-    fs.writeFileSync(filePath, JSON.stringify(solvedIds, null, 2), 'utf8')
-    console.log(`solved ${solvedIds.length} problems`)
+    // Convert to CSV format
+    const csvContent = solvedIds.join('\n')
+
+    const filePath = getRelativePath('solved.csv')
+    fs.writeFileSync(filePath, csvContent, 'utf8')
+    console.log(`saved ${solvedIds.length} solved problems to solved.csv`)
 }

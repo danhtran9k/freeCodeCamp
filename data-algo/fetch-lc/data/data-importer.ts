@@ -1,5 +1,5 @@
 // @ts-nocheck
-import problemsData from './problems_minify.json' assert { type: 'json' }
+import problemsData from './nonjs/problems_minify.json' assert { type: 'json' }
 import { readFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
@@ -23,7 +23,7 @@ export type TFreeProblems = {
 // dùng js thuần để skip type
 
 const loadSelfFinishCSV = () => {
-    const csvPath = join(__dirname, 'lc_self_finish.csv')
+    const csvPath = join(__dirname, 'nonjs', 'lc_self_finish.csv')
     const csvContent = readFileSync(csvPath, 'utf-8')
 
     const records = parse(csvContent, {

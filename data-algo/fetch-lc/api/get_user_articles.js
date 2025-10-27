@@ -35,11 +35,13 @@ const GOOD_SOLS = [
     'ranganathv415',
     'kyratzakos',
     'Ala-dine',
-    'rojas'
+    'rojas',
+    'alexgavrilov',
+    'onifs10'
 ]
 
 const RELOAD = []
-
+const HARDCORE = ['lilongxue', 'anna-hcj']
 // ===============================================
 
 export const getUserArticles = async () => {

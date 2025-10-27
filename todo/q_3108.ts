@@ -8,7 +8,7 @@ function minimumCost(
 }
 
 export const lc_3108 = () => {
-    // https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph/?envType=problem-list-v2&envId=vox28h11
+    // https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph/
     const { n, edges, query } = tc[0]
     console.log(minimumCost(n, edges, query))
 }
