@@ -1,5 +1,6 @@
 // @ts-nocheck
 import problemsData from './nonjs/problems_minify.json' assert { type: 'json' }
+import dp_by_cate from './filterData/dp_by_cate.json' assert { type: 'json' }
 import { readFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
@@ -16,6 +17,14 @@ export type TFreeProblems = {
     topics: string[]
     follow_ups: boolean
     code_snippets: number
+}
+
+export type TDPProblems = {
+    questionFrontendId: string
+    titleSlug: string
+    difficulty: 'Easy' | 'Medium' | 'Hard'
+    cateDp: string
+    subCate: string
 }
 
 // VÌ các thư viện này phải cấu hình lại ts
@@ -37,3 +46,4 @@ const loadSelfFinishCSV = () => {
 
 export const LC_SELF_FINISH_SET = loadSelfFinishCSV()
 export const all_free_problems = problemsData.questions as TFreeProblems
+export const dp_200_prob = dp_by_cate as TDPProblems

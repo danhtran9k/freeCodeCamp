@@ -1,0 +1,1507 @@
+[
+  {
+      "questionFrontendId": "70",
+      "titleSlug": "Climbing Stairs",
+      "difficulty": "Easy",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "121",
+      "titleSlug": "Best Time to Buy and Sell Stock",
+      "difficulty": "Easy",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "746",
+      "titleSlug": "Min Cost Climbing Stairs",
+      "difficulty": "Easy",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1025",
+      "titleSlug": "Divisor Game",
+      "difficulty": "Easy",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "123",
+      "titleSlug": "Best Time to Buy and Sell Stock III",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "552",
+      "titleSlug": "Student Attendance Record II",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "639",
+      "titleSlug": "Decode Ways II",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "982",
+      "titleSlug": "Triples with Bitwise AND Equal To Zero",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1235",
+      "titleSlug": "Maximum Profit in Job Scheduling",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1326",
+      "titleSlug": "Minimum Number of Taps to Open to Water a Garden",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1359",
+      "titleSlug": "Count All Valid Pickup and Delivery Options",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1406",
+      "titleSlug": "Stone Game III",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1416",
+      "titleSlug": "Restore The Array",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1449",
+      "titleSlug": "Form Largest Integer With Digits That Add up to Target",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1510",
+      "titleSlug": "Stone Game IV",
+      "difficulty": "Hard",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "91",
+      "titleSlug": "Decode Ways",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "96",
+      "titleSlug": "Unique Binary Search Trees",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "198",
+      "titleSlug": "House Robber",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "279",
+      "titleSlug": "Perfect Squares",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "309",
+      "titleSlug": "Best Time to Buy and Sell Stock with Cooldown",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "322",
+      "titleSlug": "Coin Change",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "338",
+      "titleSlug": "Counting Bits",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "343",
+      "titleSlug": "Integer Break",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "357",
+      "titleSlug": "Count Numbers with Unique Digits",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "376",
+      "titleSlug": "Wiggle Subsequence",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "416",
+      "titleSlug": "Partition Equal Subset Sum",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "646",
+      "titleSlug": "Maximum Length of Pair Chain",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "714",
+      "titleSlug": "Best Time to Buy and Sell Stock with Transaction Fee",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "740",
+      "titleSlug": "Delete and Earn",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "790",
+      "titleSlug": "Domino and Tromino Tiling",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "935",
+      "titleSlug": "Knight Dialer",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "983",
+      "titleSlug": "Minimum Cost For Tickets",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1043",
+      "titleSlug": "Partition Array for Maximum Sum",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1105",
+      "titleSlug": "Filling Bookcase Shelves",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1218",
+      "titleSlug": "Longest Arithmetic Subsequence of Given Difference",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1262",
+      "titleSlug": "Greatest Sum Divisible by Three",
+      "difficulty": "Medium",
+      "cateDp": "1.Linear DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "879",
+      "titleSlug": "Profitable Schemes",
+      "difficulty": "Hard",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "956",
+      "titleSlug": "Tallest Billboard",
+      "difficulty": "Hard",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1388",
+      "titleSlug": "Pizza With 3n Slices",
+      "difficulty": "Hard",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1402",
+      "titleSlug": "Reducing Dishes",
+      "difficulty": "Hard",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "213",
+      "titleSlug": "House Robber II",
+      "difficulty": "Medium",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "474",
+      "titleSlug": "Ones and Zeroes",
+      "difficulty": "Medium",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "494",
+      "titleSlug": "Target Sum",
+      "difficulty": "Medium",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "638",
+      "titleSlug": "Shopping Offers",
+      "difficulty": "Medium",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "650",
+      "titleSlug": "2 Keys Keyboard",
+      "difficulty": "Medium",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "801",
+      "titleSlug": "Minimum Swaps To Make Sequences Increasing",
+      "difficulty": "Medium",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1626",
+      "titleSlug": "Best Team With No Conflicts",
+      "difficulty": "Medium",
+      "cateDp": "2.Knapsack",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "188",
+      "titleSlug": "Best Time to Buy and Sell Stock IV",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "321",
+      "titleSlug": "Create Maximum Number",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "403",
+      "titleSlug": "Frog Jump",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "410",
+      "titleSlug": "Split Array Largest Sum",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "514",
+      "titleSlug": "Freedom Trail",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "871",
+      "titleSlug": "Minimum Number of Refueling Stops",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "920",
+      "titleSlug": "Number of Music Playlists",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1220",
+      "titleSlug": "Count Vowels Permutation",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1289",
+      "titleSlug": "Minimum Falling Path Sum II",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1320",
+      "titleSlug": "Minimum Distance to Type a Word Using Two Fingers",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1335",
+      "titleSlug": "Minimum Difficulty of a Job Schedule",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1411",
+      "titleSlug": "Number of Ways to Paint N × 3 Grid",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1420",
+      "titleSlug": "Build Array Where You Can Find The Maximum Exactly K Comparisons",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1444",
+      "titleSlug": "Number of Ways of Cutting a Pizza",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1473",
+      "titleSlug": "Paint House III",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1575",
+      "titleSlug": "Count All Possible Routes",
+      "difficulty": "Hard",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "120",
+      "titleSlug": "Triangle",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "377",
+      "titleSlug": "Combination Sum IV",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "576",
+      "titleSlug": "Out of Boundary Paths",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "688",
+      "titleSlug": "Knight Probability in Chessboard",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "799",
+      "titleSlug": "Champagne Tower",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "813",
+      "titleSlug": "Largest Sum of Averages",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "931",
+      "titleSlug": "Minimum Falling Path Sum",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1024",
+      "titleSlug": "Video Stitching",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1027",
+      "titleSlug": "Longest Arithmetic Subsequence",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1140",
+      "titleSlug": "Stone Game II",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1155",
+      "titleSlug": "Number of Dice Rolls With Target Sum",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1223",
+      "titleSlug": "Dice Roll Simulation",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1621",
+      "titleSlug": "Number of Sets of K Non-Overlapping Line Segments",
+      "difficulty": "Medium",
+      "cateDp": "3.Multi Dimensions DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "132",
+      "titleSlug": "Palindrome Partitioning II",
+      "difficulty": "Hard",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "312",
+      "titleSlug": "Burst Balloons",
+      "difficulty": "Hard",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "546",
+      "titleSlug": "Remove Boxes",
+      "difficulty": "Hard",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "664",
+      "titleSlug": "Strange Printer",
+      "difficulty": "Hard",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "903",
+      "titleSlug": "Valid Permutations for DI Sequence",
+      "difficulty": "Hard",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1000",
+      "titleSlug": "Minimum Cost to Merge Stones",
+      "difficulty": "Hard",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1478",
+      "titleSlug": "Allocate Mailboxes",
+      "difficulty": "Hard",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1547",
+      "titleSlug": "Minimum Cost to Cut a Stick",
+      "difficulty": "Hard",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1563",
+      "titleSlug": "Stone Game V",
+      "difficulty": "Hard",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "375",
+      "titleSlug": "Guess Number Higher or Lower II",
+      "difficulty": "Medium",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "413",
+      "titleSlug": "Arithmetic Slices",
+      "difficulty": "Medium",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "486",
+      "titleSlug": "Predict the Winner",
+      "difficulty": "Medium",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "647",
+      "titleSlug": "Palindromic Substrings",
+      "difficulty": "Medium",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "877",
+      "titleSlug": "Stone Game",
+      "difficulty": "Medium",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1039",
+      "titleSlug": "Minimum Score Triangulation of Polygon",
+      "difficulty": "Medium",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1049",
+      "titleSlug": "Last Stone Weight II",
+      "difficulty": "Medium",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1130",
+      "titleSlug": "Minimum Cost Tree From Leaf Values",
+      "difficulty": "Medium",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1690",
+      "titleSlug": "Stone Game VII",
+      "difficulty": "Medium",
+      "cateDp": "4.Interval DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "691",
+      "titleSlug": "Stickers to Spell Word",
+      "difficulty": "Hard",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "847",
+      "titleSlug": "Shortest Path Visiting All Nodes",
+      "difficulty": "Hard",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1125",
+      "titleSlug": "Smallest Sufficient Team",
+      "difficulty": "Hard",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1349",
+      "titleSlug": "Maximum Students Taking Exam",
+      "difficulty": "Hard",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1434",
+      "titleSlug": "Number of Ways to Wear Different Hats to Each Other",
+      "difficulty": "Hard",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1595",
+      "titleSlug": "Minimum Cost to Connect Two Groups of Points",
+      "difficulty": "Hard",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1601",
+      "titleSlug": "Maximum Number of Achievable Transfer Requests",
+      "difficulty": "Hard",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1655",
+      "titleSlug": "Distribute Repeating Integers",
+      "difficulty": "Hard",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1659",
+      "titleSlug": "Maximize Grid Happiness",
+      "difficulty": "Hard",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "464",
+      "titleSlug": "Can I Win",
+      "difficulty": "Medium",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "698",
+      "titleSlug": "Partition to K Equal Sum Subsets",
+      "difficulty": "Medium",
+      "cateDp": "5.bit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "600",
+      "titleSlug": "Non-negative Integers without Consecutive Ones",
+      "difficulty": "Hard",
+      "cateDp": "6.Digit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "902",
+      "titleSlug": "Numbers At Most N Given Digit Set",
+      "difficulty": "Hard",
+      "cateDp": "6.Digit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1012",
+      "titleSlug": "Numbers With Repeated Digits",
+      "difficulty": "Hard",
+      "cateDp": "6.Digit DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "968",
+      "titleSlug": "Binary Tree Cameras",
+      "difficulty": "Hard",
+      "cateDp": "7.DP on Trees",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1373",
+      "titleSlug": "Maximum Sum BST in Binary Tree",
+      "difficulty": "Hard",
+      "cateDp": "7.DP on Trees",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1569",
+      "titleSlug": "Number of Ways to Reorder Array to Get Same BST",
+      "difficulty": "Hard",
+      "cateDp": "7.DP on Trees",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "95",
+      "titleSlug": "Unique Binary Search Trees II",
+      "difficulty": "Medium",
+      "cateDp": "7.DP on Trees",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "337",
+      "titleSlug": "House Robber III",
+      "difficulty": "Medium",
+      "cateDp": "7.DP on Trees",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1339",
+      "titleSlug": "Maximum Product of Splitted Binary Tree",
+      "difficulty": "Medium",
+      "cateDp": "7.DP on Trees",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1367",
+      "titleSlug": "Linked List in Binary Tree",
+      "difficulty": "Medium",
+      "cateDp": "7.DP on Trees",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1372",
+      "titleSlug": "Longest ZigZag Path in a Binary Tree",
+      "difficulty": "Medium",
+      "cateDp": "7.DP on Trees",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "392",
+      "titleSlug": "Is Subsequence",
+      "difficulty": "Easy",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "32",
+      "titleSlug": "Longest Valid Parentheses",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "115",
+      "titleSlug": "Distinct Subsequences",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "140",
+      "titleSlug": "Word Break II",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "466",
+      "titleSlug": "Count The Repetitions",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "472",
+      "titleSlug": "Concatenated Words",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "730",
+      "titleSlug": "Count Different Palindromic Subsequences",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "940",
+      "titleSlug": "Distinct Subsequences II",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1147",
+      "titleSlug": "Longest Chunked Palindrome Decomposition",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1278",
+      "titleSlug": "Palindrome Partitioning III",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1397",
+      "titleSlug": "Find All Good Strings",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1531",
+      "titleSlug": "String Compression II",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1639",
+      "titleSlug": "Number of Ways to Form a Target String Given a Dictionary",
+      "difficulty": "Hard",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "131",
+      "titleSlug": "Palindrome Partitioning",
+      "difficulty": "Medium",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "139",
+      "titleSlug": "Word Break",
+      "difficulty": "Medium",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "467",
+      "titleSlug": "Unique Substrings in Wraparound String",
+      "difficulty": "Medium",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "712",
+      "titleSlug": "Minimum ASCII Delete Sum for Two Strings",
+      "difficulty": "Medium",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1048",
+      "titleSlug": "Longest String Chain",
+      "difficulty": "Medium",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1405",
+      "titleSlug": "Longest Happy String",
+      "difficulty": "Medium",
+      "cateDp": "8.String DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "808",
+      "titleSlug": "Soup Servings",
+      "difficulty": "Medium",
+      "cateDp": "9.Probability DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "837",
+      "titleSlug": "New 21 Game",
+      "difficulty": "Medium",
+      "cateDp": "9.Probability DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1227",
+      "titleSlug": "Airplane Seat Assignment Probability",
+      "difficulty": "Medium",
+      "cateDp": "9.Probability DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "53",
+      "titleSlug": "Maximum Subarray",
+      "difficulty": "Easy",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cadane's Algorithm"
+  },
+  {
+      "questionFrontendId": "152",
+      "titleSlug": "Maximum Product Subarray",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cadane's Algorithm"
+  },
+  {
+      "questionFrontendId": "898",
+      "titleSlug": "Bitwise ORs of Subarrays",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cadane's Algorithm"
+  },
+  {
+      "questionFrontendId": "978",
+      "titleSlug": "Longest Turbulent Subarray",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cadane's Algorithm"
+  },
+  {
+      "questionFrontendId": "1186",
+      "titleSlug": "Maximum Subarray Sum with One Deletion",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cadane's Algorithm"
+  },
+  {
+      "questionFrontendId": "1191",
+      "titleSlug": "K-Concatenation Maximum Sum",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cadane's Algorithm"
+  },
+  {
+      "questionFrontendId": "368",
+      "titleSlug": "Largest Divisible Subset",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cadane's Algorithm"
+  },
+  {
+      "questionFrontendId": "873",
+      "titleSlug": "Length of Longest Fibonacci Subsequence",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cadane's Algorithm"
+  },
+  {
+      "questionFrontendId": "10",
+      "titleSlug": "Regular Expression Matching",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "44",
+      "titleSlug": "Wildcard Matching",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "72",
+      "titleSlug": "Edit Distance",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "97",
+      "titleSlug": "Interleaving String",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "1092",
+      "titleSlug": "Shortest Common Supersequence",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "1312",
+      "titleSlug": "Minimum Insertion Steps to Make a String Palindrome",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "1458",
+      "titleSlug": "Max Dot Product of Two Subsequences",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "5",
+      "titleSlug": "Longest Palindromic Substring",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "516",
+      "titleSlug": "Longest Palindromic Subsequence",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "718",
+      "titleSlug": "Maximum Length of Repeated Subarray",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "1143",
+      "titleSlug": "Longest Common Subsequence",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "LCS"
+  },
+  {
+      "questionFrontendId": "354",
+      "titleSlug": "Russian Doll Envelopes",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LIS"
+  },
+  {
+      "questionFrontendId": "960",
+      "titleSlug": "Delete Columns to Make Sorted III",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LIS"
+  },
+  {
+      "questionFrontendId": "1187",
+      "titleSlug": "Make Array Strictly Increasing",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LIS"
+  },
+  {
+      "questionFrontendId": "1671",
+      "titleSlug": "Minimum Number of Removals to Make Mountain Array",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LIS"
+  },
+  {
+      "questionFrontendId": "1691",
+      "titleSlug": "Maximum Height by Stacking Cuboids",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "LIS"
+  },
+  {
+      "questionFrontendId": "300",
+      "titleSlug": "Longest Increasing Subsequence",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "LIS"
+  },
+  {
+      "questionFrontendId": "673",
+      "titleSlug": "Number of Longest Increasing Subsequence",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "LIS"
+  },
+  {
+      "questionFrontendId": "174",
+      "titleSlug": "Dungeon Game",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "741",
+      "titleSlug": "Cherry Pickup",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "1301",
+      "titleSlug": "Number of Paths with Max Score",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "1463",
+      "titleSlug": "Cherry Pickup II",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "1643",
+      "titleSlug": "Kth Smallest Instructions",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "62",
+      "titleSlug": "Unique Paths",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "63",
+      "titleSlug": "Unique Paths II",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "64",
+      "titleSlug": "Minimum Path Sum",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "1594",
+      "titleSlug": "Maximum Non Negative Product in a Matrix",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "1706",
+      "titleSlug": "Where Will the Ball Fall",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "2D Grid Traversal"
+  },
+  {
+      "questionFrontendId": "303",
+      "titleSlug": "Range Sum Query - Immutable",
+      "difficulty": "Easy",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "85",
+      "titleSlug": "Maximal Rectangle",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "363",
+      "titleSlug": "Max Sum of Rectangle No Larger Than K",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "517",
+      "titleSlug": "Super Washing Machines",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "689",
+      "titleSlug": "Maximum Sum of 3 Non-Overlapping Subarrays",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "1074",
+      "titleSlug": "Number of Submatrices That Sum to Target",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "1537",
+      "titleSlug": "Get the Maximum Score",
+      "difficulty": "Hard",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "221",
+      "titleSlug": "Maximal Square",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "304",
+      "titleSlug": "Range Sum Query 2D - Immutable",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "764",
+      "titleSlug": "Largest Plus Sign",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "838",
+      "titleSlug": "Push Dominoes",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "1139",
+      "titleSlug": "Largest 1-Bordered Square",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "1277",
+      "titleSlug": "Count Square Submatrices with All Ones",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "1314",
+      "titleSlug": "Matrix Block Sum",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "1423",
+      "titleSlug": "Maximum Points You Can Obtain from Cards",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "1504",
+      "titleSlug": "Count Submatrices With All Ones",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "1664",
+      "titleSlug": "Ways to Make a Fair Array",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Cumulative Sum"
+  },
+  {
+      "questionFrontendId": "523",
+      "titleSlug": "Continuous Subarray Sum",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Hashmap (SubArray)"
+  },
+  {
+      "questionFrontendId": "1477",
+      "titleSlug": "Find Two Non-overlapping Sub-arrays Each With Target Sum",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Hashmap (SubArray)"
+  },
+  {
+      "questionFrontendId": "1546",
+      "titleSlug": "Maximum Number of Non-Overlapping Subarrays With Sum Equals Target",
+      "difficulty": "Medium",
+      "cateDp": "10.Classic DP",
+      "subCate": "Hashmap (SubArray)"
+  },
+  {
+      "questionFrontendId": "446",
+      "titleSlug": "Arithmetic Slices II - Subsequence",
+      "difficulty": "Hard",
+      "cateDp": "11. DP + Alpha (Tricks/DS)",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "975",
+      "titleSlug": "Odd Even Jump",
+      "difficulty": "Hard",
+      "cateDp": "11. DP + Alpha (Tricks/DS)",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1425",
+      "titleSlug": "Constrained Subsequence Sum",
+      "difficulty": "Hard",
+      "cateDp": "11. DP + Alpha (Tricks/DS)",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1687",
+      "titleSlug": "Delivering Boxes from Storage to Ports",
+      "difficulty": "Hard",
+      "cateDp": "11. DP + Alpha (Tricks/DS)",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "629",
+      "titleSlug": "K Inverse Pairs Array",
+      "difficulty": "Hard",
+      "cateDp": "12.Insertion DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "943",
+      "titleSlug": "Find the Shortest Superstring",
+      "difficulty": "Hard",
+      "cateDp": "13.Graph DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "787",
+      "titleSlug": "Cheapest Flights Within K Stops",
+      "difficulty": "Medium",
+      "cateDp": "13.Graph DP",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "87",
+      "titleSlug": "Scramble String",
+      "difficulty": "Hard",
+      "cateDp": "14.Memoization",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1240",
+      "titleSlug": "Tiling a Rectangle with the Fewest Squares",
+      "difficulty": "Hard",
+      "cateDp": "14.Memoization",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1269",
+      "titleSlug": "Number of Ways to Stay in the Same Place After Some Steps",
+      "difficulty": "Hard",
+      "cateDp": "14.Memoization",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1340",
+      "titleSlug": "Jump Game V",
+      "difficulty": "Hard",
+      "cateDp": "14.Memoization",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1553",
+      "titleSlug": "Minimum Number of Days to Eat N Oranges",
+      "difficulty": "Hard",
+      "cateDp": "14.Memoization",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1654",
+      "titleSlug": "Minimum Jumps to Reach Home",
+      "difficulty": "Medium",
+      "cateDp": "14.Memoization",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1483",
+      "titleSlug": "Kth Ancestor of a Tree Node",
+      "difficulty": "Hard",
+      "cateDp": "15. Binary Lifting",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "818",
+      "titleSlug": "Race Car",
+      "difficulty": "Hard",
+      "cateDp": "16. Math",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "887",
+      "titleSlug": "Super Egg Drop",
+      "difficulty": "Hard",
+      "cateDp": "16. Math",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "964",
+      "titleSlug": "Least Operators to Express Number",
+      "difficulty": "Hard",
+      "cateDp": "16. Math",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1363",
+      "titleSlug": "Largest Multiple of Three",
+      "difficulty": "Hard",
+      "cateDp": "16. Math",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1611",
+      "titleSlug": "Minimum One Bit Operations to Make Integers Zero",
+      "difficulty": "Hard",
+      "cateDp": "16. Math",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "264",
+      "titleSlug": "Ugly Number II",
+      "difficulty": "Medium",
+      "cateDp": "16. Math",
+      "subCate": ""
+  },
+  {
+      "questionFrontendId": "1641",
+      "titleSlug": "Count Sorted Vowel Strings",
+      "difficulty": "Medium",
+      "cateDp": "16. Math",
+      "subCate": ""
+  }
+]

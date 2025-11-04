@@ -12,8 +12,8 @@ const saveResultsToFile = (results) => {
 const arr = [3,...7, 10, 10, 10, 12, ...15]
 
 const idx = [0,...4,  5,  6,  7,  8, ...12]
-upp    T < 0 | 1...,  5,  _,  _,  8, ...13]
-low      -1 | 0...4, _,  _,  7,  _, ...12] < T
+low    T < 0 | 1...,  5,  _,  _,  8, ...13]
+up      -1 | 0...4, _,  _,  7,  _, ...12] < T
 max ix = len+1
 min ix = -1
 
@@ -21,23 +21,23 @@ min ix = -1
 UPPER hay LOWER còn liên quan tới đồng biến hay nghịch biến !!
 ❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗
 
-1. UPPER BOUND MIN IX
- TARGET < | <= MIN ix_num  (UPPER)
+1. LOWER BOUND MIN IX
+ TARGET < | <= MIN ix_num  (LOWER)
 [   false -- TARGET --- true ]
 
 1.a T < N -> ix = 8
 1.b T <= N -> ix = 5
 
-2. LOWER BOUND MAX IX
-(LOWER) MAX ix_num < | <= TARGET 
+2. UPPER BOUND MAX IX
+(UPPER) MAX ix_num < | <= TARGET 
 [   true -- TARGET --- false ]
 2.a N < T -> ix = 4
 2.b N <= T -> ix = 7
 
 */
 
-// Nên ưu tiên nhìn bài toán theo hướng upper bound - bisect left trước
-// default là UPPER_BOUND_EXCLUDE
+// Nên ưu tiên nhìn bài toán theo hướng LOWER bound - bisect left trước
+// default là LOWER_BOUND - 8 (EXCLUDE), 5 (INCLUDE)
 export const bisect = (arr, target, isExclude = true) => {
     let [left, right] = [0, arr.length]
     while (left < right) {
@@ -56,21 +56,21 @@ export const bisect = (arr, target, isExclude = true) => {
     return left
 }
 
-// CASE 1.1 UPPER BOUND EXCLUDE
+// CASE 1.1 lower BOUND EXCLUDE
 // (TARGET < MIN ix_num ) 8
-const upper_exclude = (arr, target) => bisect(arr, target)
+const lower_exclude = (arr, target) => bisect(arr, target)
 
-// CASE 1.2 UPPER BOUND INCLUDE
+// CASE 1.2 lower BOUND INCLUDE
 // (TARGET <= MIN ix_num ) 5
-const upper_include = (arr, target) => bisect(arr, target, false)
+const lower_include = (arr, target) => bisect(arr, target, false)
 
-// CASE 2.2 LOWER BOUND INCLUDE = UPPER BOUND EXCLUDE - 1
+// CASE 2.2 UPPER BOUND INCLUDE = lower BOUND EXCLUDE - 1
 // (MAX ix_num <= TARGET ) 4
-const lower_include = (arr, target) => upper_exclude(arr, target) - 1
+const upper_include = (arr, target) => lower_exclude(arr, target) - 1
 
-// CASE 2.1 LOWER BOUND EXCLUDE = UPPER BOUND INCLUDE - 1
+// CASE 2.1 UPPER BOUND EXCLUDE = lower BOUND INCLUDE - 1
 // (MAX ix_num < TARGET ) 7
-const lower_exclude = (arr, target) => upper_include(arr, target) - 1
+const upper_exclude = (arr, target) => lower_include(arr, target) - 1
 
 export const debug_bisect = () => {
     // const targets = [10, 11, 1, 20, 3, 15]
@@ -78,16 +78,16 @@ export const debug_bisect = () => {
     const results = []
 
     for (const target of targets) {
-        const upperExclude_8 = upper_exclude(bisect_tc, target)
-        const upperInclude_5 = upper_include(bisect_tc, target)
-        const lowerExclude_4 = lower_exclude(bisect_tc, target)
-        const lowerInclude_7 = lower_include(bisect_tc, target)
+        const lowerExclude_8 = lower_exclude(bisect_tc, target)
+        const lowerInclude_5 = lower_include(bisect_tc, target)
+        const upperExclude_4 = upper_exclude(bisect_tc, target)
+        const upperInclude_7 = upper_include(bisect_tc, target)
         const resTarget = {
             target,
-            upperExclude_8,
-            upperInclude_5,
-            lowerExclude_4,
-            lowerInclude_7
+            lowerExclude_8,
+            lowerInclude_5,
+            upperExclude_4,
+            upperInclude_7
         }
         results.push(resTarget)
         console.log(resTarget)
