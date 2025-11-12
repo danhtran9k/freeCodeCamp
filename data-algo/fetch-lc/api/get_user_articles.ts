@@ -72,7 +72,7 @@ const processRawArticleRes = (res, username) => {
     const data = graphQlData.edges
         .map(({ node }) => {
             const problem = all_free_problems.find(
-                (problem) => problem.problem_slug === node.questionSlug
+                (problem) => problem.titleSlug === node.questionSlug
             )
 
             return {

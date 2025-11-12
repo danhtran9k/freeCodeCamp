@@ -11,15 +11,22 @@ const escapeCsvCell = (s) => {
     return `"${s.replace(/"/g, ESCAPE_CHAR)}"`
 }
 
-export function save_csv(arr, filename) {
-    const filePath = getRelativePath(filename + '.csv')
+export const save_to_file = (filename, ext, data) => {
+    if (ext === 'json') data = JSON.stringify(data, null, 2)
 
+    const filePath = getRelativePath(`${filename}.${ext}`)
+    fs.writeFileSync(filePath, data, 'utf8')
+
+    console.log(`✅ Saved ${filename} to ${filePath}`)
+}
+
+export function save_csv(arr, filename) {
     // arr: string[][], row: string[]
     const content = arr
         .map((row) => row.map(escapeCsvCell).join(','))
         .join('\n')
 
-    fs.writeFileSync(filePath, content, 'utf8')
+    save_to_file(filename, 'csv', content)
 }
 
 export const read_stream_csv = (filename) =>
@@ -78,4 +85,9 @@ export const compare = (a, b) => {
 
 export function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+export const exit = (msg) => {
+    console.error(msg)
+    throw new Error(msg)
 }

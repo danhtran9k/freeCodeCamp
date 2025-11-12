@@ -8,6 +8,14 @@ const saveResultsToFile = (results) => {
 }
 
 /*
+Condition		        Name (math / algorithm)	
+min arr[i] ≥ target     Lower bound
+min arr[i] > target     Upper bound
+max arr[i] < target     Predecessor / Strict predecessor
+max arr[i] ≤ target     Floor (hoặc “inclusive predecessor”)
+*/
+
+/*
 -> target = 10 
 const arr = [3,...7, 10, 10, 10, 12, ...15]
 
@@ -36,7 +44,7 @@ UPPER hay LOWER còn liên quan tới đồng biến hay nghịch biến !!
 
 */
 
-// Nên ưu tiên nhìn bài toán theo hướng LOWER bound - bisect left trước
+// Nên ưu tiên nhìn bài toán theo hướng "cận dưới" - bisect left trước
 // default là LOWER_BOUND - 8 (EXCLUDE), 5 (INCLUDE)
 export const bisect = (arr, target, isExclude = true) => {
     let [left, right] = [0, arr.length]

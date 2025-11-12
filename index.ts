@@ -7,6 +7,5 @@ daily_lc()
 
 // ================================================
 // ================================================
-// import { lc_run_skip_tls } from './data-algo/fetch-lc/index'
+// import { lc_run_skip_tls } from './data-algo/fetch-lc/index-lc'
 // lc_run_skip_tls()
-

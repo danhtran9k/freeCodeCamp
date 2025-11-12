@@ -1,6 +1,7 @@
-import { DAILY_HEADINGS, LC_COM } from './api_lc_query'
-import { getDailyRange } from './get_daily_filter'
+import { primitiveValueMap } from '../data/data-mapping'
 import { save_csv } from '../utils/csv_analyze'
+import { DAILY_HEADINGS } from './api_lc_query'
+import { getDailyRange } from './get_daily_filter'
 
 export const getLeetDaily = async () => {
     const daily_csv = [DAILY_HEADINGS]
@@ -26,30 +27,30 @@ export type QuestionItem = {
     }
 }
 
-export function append_to_arr(response: QuestionItem[], arr: string[][]): string[][] {
+export function append_to_arr(
+    response: QuestionItem[],
+    arr: string[][]
+): string[][] {
     const HEADINGS = arr[0]
-    
+
     for (const daily of response) {
-        let row: string[] = []
+        const row: string[] = []
+
         for (const headKey of HEADINGS) {
-            let dailyInfo = daily[headKey]
-
+            const dailyInfo = daily[headKey]
             if (dailyInfo !== undefined) {
-                if (headKey === 'link') dailyInfo = LC_COM + dailyInfo
-
-                row.push(dailyInfo)
+                row.push(primitiveValueMap(headKey, dailyInfo))
                 continue
             }
 
             const detailInfo = daily['question']
 
-            let value = detailInfo[headKey] // override if special Keys
+            let value = primitiveValueMap(headKey, detailInfo[headKey])
+            // override below if special Keys
 
-            if (headKey === 'status') value = value === 'ac' ? 'X' : ''
-            if (headKey === 'isPaidOnly') value = value ? '!!!' : ''
-            if (headKey === 'topicTags') {
-                value = detailInfo[headKey].map((el: any) => el.slug).join(', ')
-            }
+            if (headKey === 'topicTags')
+                value = value.map((el: any) => el.slug).join(', ')
+            if (headKey === 'similarQuestion') value = value.join(', ')
 
             // if (headKey === 'acRate') {
             //     const stats = JSON.parse(detailInfo['stats'])
@@ -64,4 +65,3 @@ export function append_to_arr(response: QuestionItem[], arr: string[][]): string
 
     return arr
 }
-

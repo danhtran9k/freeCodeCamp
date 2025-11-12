@@ -3,207 +3,161 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjU=',
-                name: 'Array',
                 slug: 'array',
-                translatedName: null,
                 questionIds: []
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjY=',
-                name: 'Hash Table',
                 slug: 'hash-table',
-                translatedName: null,
                 questionIds: []
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjg=',
-                name: 'Math',
                 slug: 'math',
-                translatedName: null,
                 questionIds: []
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjEw',
-                name: 'String',
                 slug: 'string',
-                translatedName: null,
                 questionIds: []
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjE3',
-                name: 'Greedy',
                 slug: 'greedy',
-                translatedName: null,
                 questionIds: []
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjIx',
-                name: 'Depth-First Search',
                 slug: 'depth-first-search',
-                translatedName: null,
                 questionIds: []
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjIy',
-                name: 'Breadth-First Search',
                 slug: 'breadth-first-search',
-                translatedName: null,
                 questionIds: []
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjM3',
-                name: 'Ordered Map',
                 slug: 'ordered-map',
-                translatedName: null,
                 questionIds: []
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDQ5',
-                name: 'Sorting',
                 slug: 'sorting',
-                translatedName: null,
                 questionIds: []
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDg0',
-                name: 'Biconnected Component',
                 slug: 'biconnected-component',
-                translatedName: null,
                 questionIds: [1300]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjU0NTY5',
-                name: 'Rejection Sampling',
                 slug: 'rejection-sampling',
-                translatedName: null,
                 questionIds: [903, 915]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDYx',
-                name: 'Radix Sort',
                 slug: 'radix-sort',
-                translatedName: null,
                 questionIds: [164, 948, 2422]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDc0',
-                name: 'Eulerian Circuit',
                 slug: 'eulerian-circuit',
-                translatedName: null,
                 questionIds: [332, 754, 2201]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDg1',
-                name: 'Strongly Connected Component',
                 slug: 'strongly-connected-component',
-                translatedName: null,
                 questionIds: [1613, 1691, 3079]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjM2',
-                name: 'Reservoir Sampling',
                 slug: 'reservoir-sampling',
-                translatedName: null,
                 questionIds: [382, 398, 913, 914]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDQ0',
-                name: 'Shell',
                 slug: 'shell',
-                translatedName: null,
                 questionIds: [192, 193, 194, 195]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDYw',
-                name: 'Bucket Sort',
                 slug: 'bucket-sort',
-                translatedName: null,
                 questionIds: [164, 220, 347, 451, 692, 948]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDgz',
-                name: 'Minimum Spanning Tree',
                 slug: 'minimum-spanning-tree',
-                translatedName: null,
                 questionIds: [1100, 1144, 1613, 1706, 1865, 3902]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjU2MTE5',
-                name: 'Line Sweep',
                 slug: 'line-sweep',
-                translatedName: null,
                 questionIds: [218, 391, 761, 880, 1028, 1977, 3775]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjU2Njk4',
-                name: 'Suffix Array',
                 slug: 'suffix-array',
-                translatedName: null,
                 questionIds: [1060, 1122, 1838, 2051, 2091, 2326, 3482]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDY5',
-                name: 'Quickselect',
                 slug: 'quickselect',
-                translatedName: null,
                 questionIds: [215, 324, 347, 1014, 1860, 2113, 2422]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDc5',
-                name: 'Probability and Statistics',
                 slug: 'probability-and-statistics',
-                translatedName: null,
                 questionIds: [826, 867, 903, 1166, 1183, 1362, 1577]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDQ1',
-                name: 'Concurrency',
                 slug: 'concurrency',
-                translatedName: null,
                 questionIds: [
                     1186, 1187, 1203, 1209, 1216, 1316, 1340, 1368, 1410
                 ]
@@ -212,18 +166,14 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDY0',
-                name: 'Iterator',
                 slug: 'iterator',
-                translatedName: null,
                 questionIds: [173, 251, 281, 284, 341, 604, 936, 1211, 1729]
             }
         },
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDcy',
-                name: 'Counting Sort',
                 slug: 'counting-sort',
-                translatedName: null,
                 questionIds: [
                     274, 561, 948, 1137, 1217, 1482, 1961, 2148, 3393, 3504,
                     3812
@@ -233,9 +183,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDUx',
-                name: 'Merge Sort',
                 slug: 'merge-sort',
-                translatedName: null,
                 questionIds: [
                     23, 148, 315, 327, 493, 510, 948, 1772, 2280, 2513, 2658,
                     3417
@@ -245,9 +193,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDc1',
-                name: 'Randomized',
                 slug: 'randomized',
-                translatedName: null,
                 questionIds: [
                     380, 381, 382, 384, 398, 894, 903, 912, 913, 914, 915, 1638
                 ]
@@ -256,9 +202,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDU4',
-                name: 'Doubly-Linked List',
                 slug: 'doubly-linked-list',
-                translatedName: null,
                 questionIds: [
                     146, 432, 460, 716, 758, 766, 1582, 1905, 2389, 3577, 3615,
                     3772, 3773
@@ -268,9 +212,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjMy',
-                name: 'Brainteaser',
                 slug: 'brainteaser',
-                translatedName: null,
                 questionIds: [
                     292, 319, 828, 1086, 1103, 1362, 1627, 2062, 2481, 2503,
                     2533, 2644, 2705, 2787, 2837, 2850, 3462, 3864, 3925, 3998
@@ -280,9 +222,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDcx',
-                name: 'Monotonic Queue',
                 slug: 'monotonic-queue',
-                translatedName: null,
                 questionIds: [
                     239, 683, 892, 954, 1286, 1549, 1622, 1789, 1814, 2180,
                     2449, 2526, 2527, 2868, 3209, 3211, 3268, 3674, 3835, 3907
@@ -292,9 +232,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDYz',
-                name: 'Data Stream',
                 slug: 'data-stream',
-                translatedName: null,
                 questionIds: [
                     170, 295, 346, 359, 362, 642, 789, 937, 969, 1097, 1366,
                     1477, 1582, 1640, 1767, 1775, 1953, 2161, 2207, 2620, 3710
@@ -304,9 +242,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDU5',
-                name: 'Interactive',
                 slug: 'interactive',
-                translatedName: null,
                 questionIds: [
                     157, 158, 277, 278, 374, 786, 865, 873, 1185, 1233, 1271,
                     1358, 1374, 1384, 1672, 1681, 1931, 1959, 2875, 2995, 3222,
@@ -317,9 +253,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDcz',
-                name: 'Game Theory',
                 slug: 'game-theory',
-                translatedName: null,
                 questionIds: [
                     292, 294, 375, 464, 486, 828, 873, 909, 949, 1086, 1240,
                     1522, 1617, 1683, 1685, 1727, 1788, 1808, 2002, 2039, 2062,
@@ -330,9 +264,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjU2NTk4',
-                name: 'Rolling Hash',
                 slug: 'rolling-hash',
-                translatedName: null,
                 questionIds: [
                     187, 214, 718, 1060, 1122, 1244, 1251, 1336, 1508, 1557,
                     1697, 1838, 2051, 2275, 2303, 2326, 2339, 2510, 3245, 3269,
@@ -344,9 +276,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjI2',
-                name: 'Topological Sort',
                 slug: 'topological-sort',
-                translatedName: null,
                 questionIds: [
                     207, 210, 269, 310, 329, 444, 511, 631, 820, 881, 949, 1101,
                     1177, 1257, 1309, 1313, 1431, 1558, 1696, 1727, 1912, 1986,
@@ -358,9 +288,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDUy',
-                name: 'String Matching',
                 slug: 'string-matching',
-                translatedName: null,
                 questionIds: [
                     28, 214, 459, 572, 616, 686, 760, 812, 1080, 1508, 1513,
                     1524, 1566, 1764, 1874, 2292, 2326, 2393, 2510, 3024, 3245,
@@ -372,9 +300,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDc2',
-                name: 'Shortest Path',
                 slug: 'shortest-path',
-                translatedName: null,
                 questionIds: [
                     399, 499, 505, 744, 803, 918, 1325, 1456, 1485, 1912, 1959,
                     2056, 2090, 2171, 2230, 2321, 2375, 2612, 2678, 2686, 2711,
@@ -386,9 +312,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjMw',
-                name: 'Binary Search Tree',
                 slug: 'binary-search-tree',
-                translatedName: null,
                 questionIds: [
                     95, 96, 98, 99, 108, 109, 173, 230, 235, 255, 270, 272, 285,
                     333, 449, 450, 501, 509, 530, 538, 653, 669, 758, 783, 784,
@@ -400,9 +324,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDY1',
-                name: 'Hash Function',
                 slug: 'hash-function',
-                translatedName: null,
                 questionIds: [
                     187, 214, 535, 572, 694, 711, 718, 816, 817, 1060, 1122,
                     1244, 1251, 1336, 1508, 1557, 1697, 1838, 2051, 2079, 2275,
@@ -414,9 +336,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjMz',
-                name: 'Memoization',
                 slug: 'memoization',
-                translatedName: null,
                 questionIds: [
                     70, 139, 140, 241, 294, 329, 397, 464, 488, 546, 638, 691,
                     698, 787, 930, 949, 1004, 1013, 1236, 1376, 1488, 1555,
@@ -428,9 +348,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjI4',
-                name: 'Binary Indexed Tree',
                 slug: 'binary-indexed-tree',
-                translatedName: null,
                 questionIds: [
                     218, 307, 308, 315, 327, 406, 493, 510, 673, 683, 1262,
                     1356, 1511, 1525, 1629, 1772, 1903, 2096, 2280, 2333, 2380,
@@ -443,9 +361,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjM4',
-                name: 'Geometry',
                 slug: 'geometry',
-                translatedName: null,
                 questionIds: [
                     149, 223, 335, 391, 469, 587, 593, 830, 866, 888, 915, 919,
                     928, 976, 1003, 1014, 1094, 1115, 1349, 1395, 1501, 1563,
@@ -458,9 +374,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjMx',
-                name: 'Recursion',
                 slug: 'recursion',
-                translatedName: null,
                 questionIds: [
                     2, 10, 21, 24, 25, 44, 50, 60, 143, 203, 206, 224, 231, 233,
                     234, 241, 247, 248, 255, 273, 326, 342, 390, 394, 439, 486,
@@ -473,9 +387,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjM0',
-                name: 'Queue',
                 slug: 'queue',
-                translatedName: null,
                 questionIds: [
                     225, 232, 239, 281, 341, 346, 353, 362, 379, 387, 649, 683,
                     859, 860, 892, 954, 969, 973, 987, 1037, 1286, 1366, 1549,
@@ -488,9 +400,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjEy',
-                name: 'Divide and Conquer',
                 slug: 'divide-and-conquer',
-                translatedName: null,
                 questionIds: [
                     4, 23, 53, 105, 106, 108, 109, 148, 169, 190, 191, 215, 218,
                     240, 307, 315, 324, 327, 347, 372, 395, 493, 510, 654, 772,
@@ -503,9 +413,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDc4',
-                name: 'Bitmask',
                 slug: 'bitmask',
-                translatedName: null,
                 questionIds: [
                     351, 464, 465, 473, 526, 638, 691, 698, 823, 877, 980, 1038,
                     1067, 1220, 1381, 1418, 1471, 1531, 1587, 1717, 1740, 1758,
@@ -519,9 +427,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDU2',
-                name: 'Combinatorics',
                 slug: 'combinatorics',
-                translatedName: null,
                 questionIds: [
                     62, 458, 489, 634, 956, 1307, 1313, 1461, 1577, 1692, 1725,
                     1761, 1836, 1941, 1993, 1996, 2187, 2324, 2415, 2477, 2605,
@@ -535,9 +441,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjI3',
-                name: 'Trie',
                 slug: 'trie',
-                translatedName: null,
                 questionIds: [
                     14, 139, 140, 208, 211, 212, 336, 386, 421, 425, 440, 472,
                     527, 588, 616, 642, 648, 676, 677, 692, 720, 746, 760, 808,
@@ -551,9 +455,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjI5',
-                name: 'Segment Tree',
                 slug: 'segment-tree',
-                translatedName: null,
                 questionIds: [
                     218, 307, 308, 315, 327, 406, 493, 510, 673, 683, 699, 715,
                     729, 731, 732, 880, 1262, 1294, 1511, 1629, 1645, 1728,
@@ -568,9 +470,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDU0',
-                name: 'Monotonic Stack',
                 slug: 'monotonic-stack',
-                translatedName: null,
                 questionIds: [
                     42, 84, 85, 255, 316, 321, 402, 456, 496, 503, 581, 654,
                     739, 779, 780, 883, 937, 943, 1002, 1017, 1050, 1061, 1072,
@@ -585,9 +485,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDcw',
-                name: 'Ordered Set',
                 slug: 'ordered-set',
-                translatedName: null,
                 questionIds: [
                     218, 220, 315, 327, 352, 363, 456, 493, 510, 635, 683, 699,
                     715, 716, 729, 731, 732, 880, 885, 914, 931, 1017, 1470,
@@ -603,9 +501,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjc=',
-                name: 'Linked List',
                 slug: 'linked-list',
-                translatedName: null,
                 questionIds: [
                     2, 19, 21, 23, 24, 25, 61, 82, 83, 86, 92, 109, 114, 116,
                     117, 138, 141, 142, 143, 146, 147, 148, 160, 203, 206, 234,
@@ -621,9 +517,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDY3',
-                name: 'Number Theory',
                 slug: 'number-theory',
-                translatedName: null,
                 questionIds: [
                     204, 258, 888, 897, 950, 989, 1223, 1307, 1372, 1543, 1585,
                     1836, 1875, 1906, 1936, 1947, 2083, 2105, 2106, 2125, 2129,
@@ -640,9 +534,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjIz',
-                name: 'Union Find',
                 slug: 'union-find',
-                translatedName: null,
                 questionIds: [
                     128, 130, 200, 261, 305, 323, 399, 547, 684, 685, 694, 695,
                     711, 721, 737, 770, 794, 801, 821, 854, 869, 922, 960, 964,
@@ -659,9 +551,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjE0',
-                name: 'Backtracking',
                 slug: 'backtracking',
-                translatedName: null,
                 questionIds: [
                     17, 22, 37, 39, 40, 46, 47, 51, 52, 77, 78, 79, 89, 90, 93,
                     95, 113, 126, 131, 140, 212, 216, 254, 257, 267, 282, 291,
@@ -679,9 +569,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDY2',
-                name: 'Enumeration',
                 slug: 'enumeration',
-                translatedName: null,
                 questionIds: [
                     204, 479, 681, 818, 834, 856, 875, 900, 942, 986, 1010,
                     1212, 1334, 1363, 1656, 1689, 1723, 1726, 1740, 1743, 1747,
@@ -702,9 +590,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjI1',
-                name: 'Design',
                 slug: 'design',
-                translatedName: null,
                 questionIds: [
                     146, 155, 170, 173, 208, 211, 225, 232, 244, 251, 271, 281,
                     284, 288, 295, 297, 303, 304, 307, 308, 341, 346, 348, 352,
@@ -724,9 +610,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjU1ODIx',
-                name: 'Sliding Window',
                 slug: 'sliding-window',
-                translatedName: null,
                 questionIds: [
                     3, 30, 76, 159, 187, 209, 219, 220, 239, 340, 395, 413, 424,
                     438, 480, 487, 567, 594, 632, 643, 658, 683, 689, 713, 718,
@@ -750,9 +634,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjE1',
-                name: 'Stack',
                 slug: 'stack',
-                translatedName: null,
                 questionIds: [
                     20, 32, 42, 71, 84, 85, 94, 114, 143, 144, 145, 150, 155,
                     173, 224, 225, 227, 232, 234, 255, 272, 316, 321, 331, 341,
@@ -777,9 +659,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDYy',
-                name: 'Counting',
                 slug: 'counting',
-                translatedName: null,
                 questionIds: [
                     169, 229, 299, 347, 358, 383, 387, 451, 594, 621, 692, 778,
                     829, 837, 900, 920, 936, 950, 959, 982, 1034, 1055, 1112,
@@ -805,9 +685,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjI0',
-                name: 'Graph',
                 slug: 'graph',
-                translatedName: null,
                 questionIds: [
                     133, 207, 210, 261, 269, 277, 310, 323, 329, 332, 399, 444,
                     499, 505, 511, 547, 631, 684, 685, 744, 754, 770, 801, 803,
@@ -833,9 +711,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDU3',
-                name: 'Binary Tree',
                 slug: 'binary-tree',
-                translatedName: null,
                 questionIds: [
                     94, 95, 96, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107,
                     108, 109, 110, 111, 112, 113, 114, 116, 117, 124, 129, 144,
@@ -859,9 +735,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDU1',
-                name: 'Simulation',
                 slug: 'simulation',
-                translatedName: null,
                 questionIds: [
                     43, 54, 59, 67, 68, 157, 158, 258, 289, 348, 353, 412, 415,
                     495, 498, 537, 544, 566, 592, 640, 657, 682, 723, 735, 750,
@@ -888,9 +762,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDUw',
-                name: 'Heap (Priority Queue)',
                 slug: 'heap-priority-queue',
-                translatedName: null,
                 questionIds: [
                     23, 215, 218, 239, 253, 264, 272, 295, 347, 355, 358, 373,
                     378, 407, 420, 451, 480, 499, 502, 505, 506, 621, 630, 632,
@@ -918,9 +790,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDY4',
-                name: 'Prefix Sum',
                 slug: 'prefix-sum',
-                translatedName: null,
                 questionIds: [
                     209, 238, 253, 303, 304, 325, 363, 370, 410, 519, 523, 525,
                     548, 560, 644, 689, 713, 724, 731, 732, 814, 831, 878, 892,
@@ -949,9 +819,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjk=',
-                name: 'Two Pointers',
                 slug: 'two-pointers',
-                translatedName: null,
                 questionIds: [
                     5, 11, 15, 16, 18, 19, 26, 27, 28, 31, 42, 61, 75, 80, 82,
                     86, 88, 125, 141, 142, 143, 148, 151, 160, 161, 165, 167,
@@ -980,9 +848,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjIw',
-                name: 'Tree',
                 slug: 'tree',
-                translatedName: null,
                 questionIds: [
                     94, 95, 96, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107,
                     108, 109, 110, 111, 112, 113, 114, 116, 117, 124, 129, 144,
@@ -1014,9 +880,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjE5',
-                name: 'Bit Manipulation',
                 slug: 'bit-manipulation',
-                translatedName: null,
                 questionIds: [
                     29, 67, 78, 89, 90, 136, 137, 187, 190, 191, 201, 222, 231,
                     260, 266, 268, 287, 318, 320, 338, 342, 351, 371, 389, 393,
@@ -1049,9 +913,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDUz',
-                name: 'Matrix',
                 slug: 'matrix',
-                translatedName: null,
                 questionIds: [
                     36, 37, 48, 54, 59, 63, 64, 73, 74, 79, 85, 130, 174, 200,
                     212, 221, 240, 286, 289, 296, 302, 304, 308, 311, 317, 329,
@@ -1085,9 +947,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjYxMDQz',
-                name: 'Database',
                 slug: 'database',
-                translatedName: null,
                 questionIds: [
                     175, 176, 177, 178, 180, 181, 182, 183, 184, 185, 196, 197,
                     262, 569, 570, 571, 574, 577, 578, 579, 580, 584, 585, 586,
@@ -1126,9 +986,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjEx',
-                name: 'Binary Search',
                 slug: 'binary-search',
-                translatedName: null,
                 questionIds: [
                     4, 33, 34, 35, 69, 74, 81, 153, 154, 162, 167, 209, 222,
                     240, 259, 268, 270, 275, 278, 287, 300, 302, 315, 327, 349,
@@ -1167,9 +1025,7 @@ export const sortLeetTags = {
         {
             node: {
                 id: 'VG9waWNUYWdOb2RlOjEz',
-                name: 'Dynamic Programming',
                 slug: 'dynamic-programming',
-                translatedName: null,
                 questionIds: [
                     5, 10, 22, 32, 42, 44, 45, 53, 55, 62, 63, 64, 70, 72, 85,
                     87, 91, 95, 96, 97, 115, 118, 119, 120, 121, 122, 123, 124,

@@ -191,6 +191,43 @@ problemsetQuestionListV2(
     
 `
 
+// ================================================
+export const query_questionDataV2 = `
+query 
+questionDataV2($titleSlug: String!) {
+    question(titleSlug: $titleSlug) {            
+        questionFrontendId
+        titleSlug
+        similarQuestions
+        categoryTitle
+
+        # topicTags { name }
+        # difficulty
+        # isPaidOnly
+
+        # freqBar
+        # frequency
+
+        # acRate
+        # title
+        # stats
+        # questionId
+        # likes
+        # dislikes
+        # hints
+        # content
+        # companyTags { name }
+
+        hasSolution 
+        hasVideoSolution
+        solution { 
+            canSeeDetail 
+            # content 
+        }
+    }
+}   
+`
+
 /*
 {
     "skip": 0,
