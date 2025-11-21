@@ -1,4 +1,4 @@
-import { primitiveValueMap } from '../data/data-mapping'
+import { primitiveValueMap } from '../data/csv-save-map'
 import { save_csv } from '../utils/csv_analyze'
 import { DAILY_HEADINGS } from './api_lc_query'
 import { getDailyRange } from './get_daily_filter'
